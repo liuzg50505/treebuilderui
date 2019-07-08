@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean name="editorFactory" class="com.liuzg.editorui.RegistedValueEditorFactory">
+        <property name="typeEditorMap">
+            <map>
+                <entry key="String">
+                    <bean class="com.liuzg.editorui.StringEditor"/>
+                </entry>
+                <entry key="Align">
+                    <bean class="com.liuzg.editorui.ComboEditor">
+                        <property name="choices">
+                            <list>
+                                <value>left</value>
+                                <value>right</value>
+                                <value>center</value>
+                            </list>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="MainAxisAlignment">
+                    <bean class="com.liuzg.editorui.ComboEditor">
+                        <property name="choices">
+                            <list>
+                                <value>start</value>
+                                <value>end</value>
+                                <value>center</value>
+                                <value>spaceBetween</value>
+                                <value>spaceAround</value>
+                                <value>spaceEvenly</value>
+                            </list>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="MainAxisSize">
+                    <bean class="com.liuzg.editorui.ComboEditor">
+                        <property name="choices">
+                            <list>
+                                <value>min</value>
+                                <value>max</value>
+                            </list>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="CrossAxisAlignment">
+                    <bean class="com.liuzg.editorui.ComboEditor">
+                        <property name="choices">
+                            <list>
+                                <value>start</value>
+                                <value>end</value>
+                                <value>center</value>
+                                <value>stretch</value>
+                                <value>baseline</value>
+                            </list>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="TextDirection">
+                    <bean class="com.liuzg.editorui.ComboEditor">
+                        <property name="choices">
+                            <list>
+                                <value>ltr</value>
+                                <value>rtl</value>
+                            </list>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="VerticalDirection">
+                    <bean class="com.liuzg.editorui.ComboEditor">
+                        <property name="choices">
+                            <list>
+                                <value>up</value>
+                                <value>down</value>
+                            </list>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="TextBaseline">
+                    <bean class="com.liuzg.editorui.ComboEditor">
+                        <property name="choices">
+                            <list>
+                                <value>alphabetic</value>
+                                <value>ideographic</value>
+                            </list>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="TextAlign">
+                    <bean class="com.liuzg.editorui.ComboEditor">
+                        <property name="choices">
+                            <list>
+                                <value>left</value>
+                                <value>right</value>
+                                <value>center</value>
+                                <value>justify</value>
+                                <value>start</value>
+                                <value>end</value>
+                            </list>
+                        </property>
+                    </bean>
+                </entry>
+                <entry key="TextOverflow">
+                    <bean class="com.liuzg.editorui.ComboEditor">
+                        <property name="choices">
+                            <list>
+                                <value>clip</value>
+                                <value>fade</value>
+                                <value>ellipsis</value>
+                                <value>visible</value>
+                            </list>
+                        </property>
+                    </bean>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean name="definationManager" class="com.liuzg.treenodes.RegistedTreeNodeDefinationManager">
+        <property name="definations">
+            <list>
+                <bean class="com.liuzg.models.TreeNodeDefination">
+                    <property name="name" value="If"/>
+                    <property name="nodeProperties">
+                        <set>
+                        </set>
+                    </property>
+                    <property name="nodesProperties">
+                        <set>
+                            <value>children</value>
+                        </set>
+                    </property>
+                    <property name="propertyTypeMap">
+                        <map>
+                            <entry key="condition" value="String" />
+                        </map>
+                    </property>
+                </bean>
+                <bean class="com.liuzg.models.TreeNodeDefination">
+                    <property name="name" value="Foreach"/>
+                    <property name="nodeProperties">
+                        <set>
+                        </set>
+                    </property>
+                    <property name="nodesProperties">
+                        <set>
+                            <value>children</value>
+                        </set>
+                    </property>
+                    <property name="propertyTypeMap">
+                        <map>
+                            <entry key="variable" value="String" />
+                            <entry key="collection" value="String" />
+                        </map>
+                    </property>
+                </bean>
+                <bean class="com.liuzg.models.TreeNodeDefination">
+                    <property name="name" value="Controller"/>
+                    <property name="nodeProperties">
+                        <set>
+                        </set>
+                    </property>
+                    <property name="nodesProperties">
+                        <set>
+                        </set>
+                    </property>
+                    <property name="propertyTypeMap">
+                        <map>
+                            <entry key="controllername" value="String" />
+                            <entry key="params" value="Map" />
+                        </map>
+                    </property>
+                </bean>
+                <bean class="com.liuzg.models.TreeNodeDefination">
+                    <property name="name" value="Column"/>
+                    <property name="icon" value="/assets/column.png"/>
+                    <property name="nodeProperties">
+                        <set>
+                        </set>
+                    </property>
+                    <property name="nodesProperties">
+                        <set>
+                            <value>children</value>
+                        </set>
+                    </property>
+                    <property name="propertyTypeMap">
+                        <map>
+                            <entry key="mainAxisAlignment" value="MainAxisAlignment" />
+                            <entry key="mainAxisSize" value="MainAxisSize" />
+                            <entry key="crossAxisAlignment" value="CrossAxisAlignment" />
+                            <entry key="textDirection" value="TextDirection" />
+                            <entry key="verticalDirection" value="VerticalDirection" />
+                            <entry key="textBaseline" value="TextBaseline" />
+                        </map>
+                    </property>
+                </bean>
+                <bean class="com.liuzg.models.TreeNodeDefination">
+                    <property name="name" value="Row"/>
+                    <property name="icon" value="/assets/row.png"/>
+                    <property name="nodeProperties">
+                        <set>
+                        </set>
+                    </property>
+                    <property name="nodesProperties">
+                        <set>
+                            <value>children</value>
+                        </set>
+                    </property>
+                    <property name="propertyTypeMap">
+                        <map>
+                            <entry key="mainAxisAlignment" value="MainAxisAlignment" />
+                            <entry key="mainAxisSize" value="MainAxisSize" />
+                            <entry key="crossAxisAlignment" value="CrossAxisAlignment" />
+                            <entry key="textDirection" value="TextDirection" />
+                            <entry key="verticalDirection" value="VerticalDirection" />
+                            <entry key="textBaseline" value="TextBaseline" />
+                        </map>
+                    </property>
+                </bean>
+                <bean class="com.liuzg.models.TreeNodeDefination">
+                    <property name="name" value="Text"/>
+                    <property name="icon" value="/assets/text.png"/>
+                    <property name="nodeProperties">
+                        <set>
+                        </set>
+                    </property>
+                    <property name="nodesProperties">
+                        <set>
+                        </set>
+                    </property>
+                    <property name="propertyTypeMap">
+                        <map>
+                            <entry key="text" value="String" />
+                            <entry key="textAlign" value="TextAlign" />
+                            <entry key="textDirection" value="TextDirection" />
+                            <entry key="overflow" value="TextOverflow" />
+                            <entry key="maxLines" value="String" />
+                        </map>
+                    </property>
+                </bean>
+                <bean class="com.liuzg.models.TreeNodeDefination">
+                    <property name="name" value="Scaffold"/>
+                    <property name="icon" value="/assets/view.png"/>
+                    <property name="nodeProperties">
+                        <set>
+                            <value>appBar</value>
+                            <value>body</value>
+                            <value>drawer</value>
+                        </set>
+                    </property>
+                    <property name="nodesProperties">
+                        <set>
+                        </set>
+                    </property>
+                    <property name="propertyTypeMap">
+                        <map>
+                        </map>
+                    </property>
+                </bean>
+                <bean class="com.liuzg.models.TreeNodeDefination">
+                    <property name="name" value="AppBar"/>
+                    <property name="icon" value="/assets/view.png"/>
+                    <property name="nodeProperties">
+                        <set>
+                            <value>title</value>
+                        </set>
+                    </property>
+                    <property name="nodesProperties">
+                        <set>
+                        </set>
+                    </property>
+                    <property name="propertyTypeMap">
+                        <map>
+                        </map>
+                    </property>
+                </bean>
+                <bean class="com.liuzg.models.TreeNodeDefination">
+                    <property name="name" value="Gesture"/>
+                    <property name="icon" value="/assets/view.png"/>
+                    <property name="nodeProperties">
+                        <set>
+                            <value>child</value>
+                        </set>
+                    </property>
+                    <property name="nodesProperties">
+                        <set>
+                        </set>
+                    </property>
+                    <property name="propertyTypeMap">
+                        <map>
+                        </map>
+                    </property>
+                </bean>
+                <bean class="com.liuzg.models.TreeNodeDefination">
+                    <property name="name" value="RefreshIndicator"/>
+                    <property name="icon" value="/assets/view.png"/>
+                    <property name="nodeProperties">
+                        <set>
+                            <value>child</value>
+                        </set>
+                    </property>
+                    <property name="nodesProperties">
+                        <set>
+                        </set>
+                    </property>
+                    <property name="propertyTypeMap">
+                        <map>
+                        </map>
+                    </property>
+                </bean>
+                <bean class="com.liuzg.models.TreeNodeDefination">
+                    <property name="name" value="Expanded"/>
+                    <property name="icon" value="/assets/view.png"/>
+                    <property name="nodeProperties">
+                        <set>
+                            <value>child</value>
+                        </set>
+                    </property>
+                    <property name="nodesProperties">
+                        <set>
+                        </set>
+                    </property>
+                    <property name="propertyTypeMap">
+                        <map>
+                        </map>
+                    </property>
+                </bean>
+                <bean class="com.liuzg.models.TreeNodeDefination">
+                    <property name="name" value="ListView"/>
+                    <property name="icon" value="/assets/view.png"/>
+                    <property name="nodeProperties">
+                        <set>
+                        </set>
+                    </property>
+                    <property name="nodesProperties">
+                        <set>
+                            <value>children</value>
+                        </set>
+                    </property>
+                    <property name="propertyTypeMap">
+                        <map>
+                        </map>
+                    </property>
+                </bean>
+
+            </list>
+        </property>
+    </bean>
+
+    <bean name="flutterRunner" class="com.liuzg.flutter.MacosFlutterRunner">
+    </bean>
+</beans>

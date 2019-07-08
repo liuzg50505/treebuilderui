@@ -1,0 +1,28 @@
+<root>
+    <treenodes>
+        <treenode name="Scaffold">
+            <nodeproperties>
+                <item name="appBar"/>
+                <item name="body"/>
+            </nodeproperties>
+        </treenode>
+        <treenode name="Scaffold">
+            <nodeproperties>
+                <item name="appBar"/>
+                <item name="body"/>
+            </nodeproperties>
+        </treenode>
+
+    </treenodes>
+    <valueeditors>
+        <editor type="String" editorclass="com.liuzg.editorui.StringEditor"/>
+        <editor type="AlignEnum" enum="Align" editorclass="com.liuzg.editorui.ComboEditor"/>
+    </valueeditors>
+    <enums>
+        <enum name="Align">
+            <item name="Left"/>
+            <item name="Top"/>
+            <item name="Bottom"/>
+        </enum>
+    </enums>
+</root>
