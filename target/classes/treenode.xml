@@ -173,7 +173,7 @@
                 </bean>
                 <bean class="com.liuzg.models.TreeNodeDefinition">
                     <property name="name" value="Column"/>
-                    <property name="icon" value="/assets/column.png"/>
+                    <property name="icon" value="/assets/nodes/column.png"/>
                     <property name="nodeProperties">
                         <set>
                         </set>
@@ -196,7 +196,7 @@
                 </bean>
                 <bean class="com.liuzg.models.TreeNodeDefinition">
                     <property name="name" value="Row"/>
-                    <property name="icon" value="/assets/row.png"/>
+                    <property name="icon" value="/assets/nodes/row.png"/>
                     <property name="nodeProperties">
                         <set>
                         </set>
@@ -219,7 +219,7 @@
                 </bean>
                 <bean class="com.liuzg.models.TreeNodeDefinition">
                     <property name="name" value="Text"/>
-                    <property name="icon" value="/assets/text.png"/>
+                    <property name="icon" value="/assets/nodes/text.png"/>
                     <property name="nodeProperties">
                         <set>
                         </set>
@@ -240,7 +240,7 @@
                 </bean>
                 <bean class="com.liuzg.models.TreeNodeDefinition">
                     <property name="name" value="Scaffold"/>
-                    <property name="icon" value="/assets/view.png"/>
+                    <property name="icon" value="/assets/nodes/view.png"/>
                     <property name="nodeProperties">
                         <set>
                             <value>appBar</value>
@@ -259,7 +259,7 @@
                 </bean>
                 <bean class="com.liuzg.models.TreeNodeDefinition">
                     <property name="name" value="AppBar"/>
-                    <property name="icon" value="/assets/view.png"/>
+                    <property name="icon" value="/assets/nodes/view.png"/>
                     <property name="nodeProperties">
                         <set>
                             <value>title</value>
@@ -276,7 +276,7 @@
                 </bean>
                 <bean class="com.liuzg.models.TreeNodeDefinition">
                     <property name="name" value="Gesture"/>
-                    <property name="icon" value="/assets/view.png"/>
+                    <property name="icon" value="/assets/nodes/view.png"/>
                     <property name="nodeProperties">
                         <set>
                             <value>child</value>
@@ -293,7 +293,7 @@
                 </bean>
                 <bean class="com.liuzg.models.TreeNodeDefinition">
                     <property name="name" value="RefreshIndicator"/>
-                    <property name="icon" value="/assets/view.png"/>
+                    <property name="icon" value="/assets/nodes/view.png"/>
                     <property name="nodeProperties">
                         <set>
                             <value>child</value>
@@ -310,7 +310,7 @@
                 </bean>
                 <bean class="com.liuzg.models.TreeNodeDefinition">
                     <property name="name" value="Expanded"/>
-                    <property name="icon" value="/assets/view.png"/>
+                    <property name="icon" value="/assets/nodes/view.png"/>
                     <property name="nodeProperties">
                         <set>
                             <value>child</value>
@@ -327,7 +327,7 @@
                 </bean>
                 <bean class="com.liuzg.models.TreeNodeDefinition">
                     <property name="name" value="ListView"/>
-                    <property name="icon" value="/assets/view.png"/>
+                    <property name="icon" value="/assets/nodes/view.png"/>
                     <property name="nodeProperties">
                         <set>
                         </set>

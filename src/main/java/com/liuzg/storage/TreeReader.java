@@ -49,7 +49,11 @@ public class TreeReader {
                 .findFirst().orElse(null);
     }
 
-    public TreeNode parseXml(Element treenodelem) {
+    public List<Widget> getWidgets() {
+        return new ArrayList<>(widgets);
+    }
+
+    private TreeNode parseXml(Element treenodelem) {
         String tag = treenodelem.getName();
         TreeNodeDefinition defination = treeNodeDefinitionManager.getDefination(tag);
         if(defination==null) {

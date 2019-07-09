@@ -24,7 +24,7 @@ public class TreeNode {
 
     private Node propertyIcon(Node icon) {
         ImageView propicon = new ImageView(
-                new Image(TreeNode.class.getResourceAsStream("/assets/property.png"), 12, 12, true, true)
+                new Image(TreeNode.class.getResourceAsStream("/assets/nodes/property.png"), 12, 12, true, true)
         );
         Pane pane = new Pane(icon, propicon);
         propicon.setX(12);
@@ -34,14 +34,14 @@ public class TreeNode {
 
     private Node emptyPropertyIcon() {
         return new ImageView(
-                new Image(TreeNode.class.getResourceAsStream("/assets/property.png"), iconsize, iconsize, true, true)
+                new Image(TreeNode.class.getResourceAsStream("/assets/nodes/property.png"), iconsize, iconsize, true, true)
         );
     }
 
 
     private Node propertiesIcon() {
         return new ImageView(
-                new Image(TreeNode.class.getResourceAsStream("/assets/properties.png"), iconsize, iconsize, true, true)
+                new Image(TreeNode.class.getResourceAsStream("/assets/nodes/properties.png"), iconsize, iconsize, true, true)
         );
     }
 

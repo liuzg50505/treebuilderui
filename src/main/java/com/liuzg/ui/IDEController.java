@@ -3,11 +3,7 @@ package com.liuzg.ui;
 import com.liuzg.editorui.ValueEditor;
 import com.liuzg.editorui.ValueEditorFactory;
 import com.liuzg.flutter.FlutterRunner;
-import com.liuzg.models.TreeNode;
-import com.liuzg.models.TreeNodeCollection;
-import com.liuzg.models.TreeNodeDefinition;
-import com.liuzg.models.Widget;
-import com.liuzg.storage.TreeReader;
+import com.liuzg.models.*;
 import com.liuzg.treenodes.TreeNodeDefinitionManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,11 +12,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.control.TitledPane;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.DirectoryChooser;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.io.File;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -29,7 +28,14 @@ import java.util.stream.Collectors;
 
 public class IDEController {
     @FXML
+    TitledPane editorPane;
+
+    @FXML
+    ProjectTreeView projectTreeView;
+
+    @FXML
     Accordion accordion;
+
     @FXML
     TreeNodeEditor treenodeEditor;
 
@@ -47,16 +53,43 @@ public class IDEController {
     private TreeNodeDefinitionManager definationManager;
     private ViewNode prevselectedtreeitem;
     private FlutterRunner flutterRunner;
-    private TreeReader treeReader;
+    private Widget selectedProjectWidget;
+
+    private Project currentProject;
+    private Scene scene;
 
     public IDEController() {
     }
 
-    public void loadDesignXml(String filepath) {
-        treeReader.readFile(filepath);
+    // outlets
+
+    public void init() {
+        accordion.setExpandedPane(defaulttab);
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:treenode.xml");
+        editorFactory = (ValueEditorFactory) context.getBean("editorFactory");
+        definationManager = (TreeNodeDefinitionManager) context.getBean("definationManager");
+        flutterRunner = (FlutterRunner) context.getBean("flutterRunner");
+
+        loadControlToolbox();
+
+        treenodeEditor.addViewNodeSelectedListener(viewnode -> {
+            onSelectedTreeItemChanged();
+        });
+
+        projectTreeView.addWidgetChangedListener(selectedWidget -> {
+            IDEController.this.selectedProjectWidget = selectedWidget;
+        });
+
+
+        scene.getWindow().setOnCloseRequest(event -> {
+            flutterRunner.stopapp();
+        });
+
     }
 
-    public void loadControlToolbox() {
+    // methods
+
+    private void loadControlToolbox() {
         acc_controls.getChildren().clear();
         List<TreeNodeDefinition> definitions = definationManager.getTreeNodeDefinitions();
 
@@ -95,38 +128,10 @@ public class IDEController {
         }
     }
 
-    public void init() {
-        accordion.setExpandedPane(defaulttab);
-        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:treenode.xml");
-        editorFactory = (ValueEditorFactory) context.getBean("editorFactory");
-        definationManager = (TreeNodeDefinitionManager) context.getBean("definationManager");
-        flutterRunner = (FlutterRunner) context.getBean("flutterRunner");
-        treeReader = new TreeReader(definationManager);
 
-        loadControlToolbox();
+    // event handlers
 
-        loadDesignXml("/Volumes/macdata/MyProjects/treebuildermvcprj/assets/design.xml");
-        Widget widget = treeReader.getWidget("AddressBookController");
-
-
-        TreeNode root = widget.getTreeNode();
-        treenodeEditor.initialized();
-        treenodeEditor.setRoot(root);
-        treenodeEditor.refresh(true);
-        treenodeEditor.addViewNodeSelectedListener(viewnode -> {
-            onSelectedTreeItemChanged();
-        });
-
-
-        Scene scene = treenodeEditor.getScene();
-        scene.getWindow().setOnCloseRequest(event -> {
-            flutterRunner.stopapp();
-        });
-
-    }
-
-
-    public void onSelectedTreeItemChanged() {
+    private void onSelectedTreeItemChanged() {
         ViewNode item = treenodeEditor.getSelectedNode();
         if (prevselectedtreeitem == item) return;
         prevselectedtreeitem = item;
@@ -163,7 +168,7 @@ public class IDEController {
     }
 
     public void onStartClick(ActionEvent actionEvent) {
-        flutterRunner.setProjectPath("/Volumes/macdata/MyProjects/treebuildermvcprj");
+        flutterRunner.setProjectPath(currentProject.getProjectPath());
         flutterRunner.startapp();
     }
 
@@ -177,5 +182,77 @@ public class IDEController {
 
     public void onStopClick(ActionEvent actionEvent) {
         flutterRunner.stopapp();
+    }
+
+    public void onProjectDoubleClick(MouseEvent mouseEvent) {
+        if(mouseEvent.getClickCount()>1) {
+            if(selectedProjectWidget!=null) {
+                if(treenodeEditor.getRoot()!=null) {
+                    if(treenodeEditor.isDirty()){
+                        selectedProjectWidget.getDesign().setDirty(true);
+                    }
+                }
+                editorPane.setText(String.format("Editor: %s(%s)", selectedProjectWidget.getControllerName(),selectedProjectWidget.getDesign().getRelativePath()));
+
+                treenodeEditor.setRoot(selectedProjectWidget.getTreeNode());
+                treenodeEditor.initialize();
+                treenodeEditor.refresh(true);
+            }
+        }
+    }
+
+    public void onProjectOpenClick(ActionEvent actionEvent) {
+        DirectoryChooser fileChooser = new DirectoryChooser();
+        fileChooser.setTitle("Open Resource File");
+        File file = fileChooser.showDialog(treenodeEditor.getScene().getWindow());
+        if(file!=null) {
+            // load project
+            currentProject = new Project();
+            currentProject.setProjectPath(file.getAbsolutePath());
+            currentProject.setTreeNodeDefinitionManager(definationManager);
+            // update project view
+            projectTreeView.setProject(currentProject);
+            projectTreeView.refreshView();
+        }
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public void onCopyClick(ActionEvent actionEvent) {
+        treenodeEditor.onCopyClick(actionEvent);
+    }
+
+    public void onCutClick(ActionEvent actionEvent) {
+        treenodeEditor.onCutClick(actionEvent);
+    }
+
+    public void onPasteClick(ActionEvent actionEvent) {
+        treenodeEditor.onPasteClick(actionEvent);
+    }
+
+    public void onDuplicateClick(ActionEvent actionEvent) {
+        treenodeEditor.onDuplicateClick(actionEvent);
+    }
+
+    public void onMoveDownClick(ActionEvent actionEvent) {
+        treenodeEditor.onMoveDownClick(actionEvent);
+    }
+
+    public void onMoveUpClick(ActionEvent actionEvent) {
+        treenodeEditor.onMoveUpClick(actionEvent);
+    }
+
+    public void onCollapseClick(ActionEvent actionEvent) {
+        treenodeEditor.onCollapseClick(actionEvent);
+    }
+
+    public void onExpandClick(ActionEvent actionEvent) {
+        treenodeEditor.onExpandClick(actionEvent);
+    }
+
+    public void onDeleteClick(ActionEvent actionEvent) {
+        treenodeEditor.onDeleteClick(actionEvent);
     }
 }

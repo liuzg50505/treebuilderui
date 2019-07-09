@@ -34,8 +34,9 @@ public class TreeNodeEditor extends AnchorPane {
     private TreeNode root; // root treenode of this editor
     private Set<ViewNode> selectednodes; // selected treenodes
     private Set<ViewNode> expandednodes; // expanded treenodes
+    private boolean dirty;
 
-    ScrollBarState vscrollBarState;
+    private ScrollBarState vscrollBarState;
 
     public TreeNodeEditor() {
         treeView = new TreeView<>();
@@ -53,7 +54,7 @@ public class TreeNodeEditor extends AnchorPane {
     }
 
     // initialize treenode editor
-    public void initialized() {
+    public void initialize() {
 
         vscrollBarState = new ScrollBarState(treeView, Orientation.VERTICAL);
 
@@ -78,7 +79,7 @@ public class TreeNodeEditor extends AnchorPane {
 
         scene.getAccelerators().put(new KeyCodeCombination(KeyCode.D, KeyCombination.CONTROL_ANY),
                 () -> {
-                    if(treeView.isFocused()) onDumplicatedClick(null);
+                    if(treeView.isFocused()) onDuplicateClick(null);
                 }
         );
 
@@ -143,6 +144,7 @@ public class TreeNodeEditor extends AnchorPane {
 
     public void setRoot(TreeNode root) {
         this.root = root;
+        dirty = false;
     }
 
     public TreeNode getClipboard() {
@@ -151,6 +153,10 @@ public class TreeNodeEditor extends AnchorPane {
 
     public void setClipboard(TreeNode clipboard) {
         this.clipboard = clipboard;
+    }
+
+    public boolean isDirty() {
+        return dirty;
     }
 
     // outlets
@@ -258,7 +264,7 @@ public class TreeNodeEditor extends AnchorPane {
 
     // event callbacks
 
-    private void onCopyClick(ActionEvent actionEvent) {
+    public void onCopyClick(ActionEvent actionEvent) {
         TreeItem<ViewNode> item = treeView.getSelectionModel().getSelectedItem();
         if (item != null && (item.getValue().getType() == ViewNodeType.NODE_PROPERTY || item.getValue().getType() == ViewNodeType.NODE)) {
             ViewNode viewnode = item.getValue();
@@ -271,7 +277,7 @@ public class TreeNodeEditor extends AnchorPane {
         }
     }
 
-    private void onCutClick(ActionEvent actionEvent) {
+    public void onCutClick(ActionEvent actionEvent) {
         TreeItem<ViewNode> item = treeView.getSelectionModel().getSelectedItem();
         if (item != null && (item.getValue().getType() == ViewNodeType.NODE_PROPERTY || item.getValue().getType() == ViewNodeType.NODE)) {
             ViewNode viewnode = item.getValue();
@@ -292,11 +298,12 @@ public class TreeNodeEditor extends AnchorPane {
             } else {
                 root = null;
             }
+            dirty = true;
         }
         refreshTree();
     }
 
-    private void onDeleteClick(ActionEvent actionEvent) {
+    public void onDeleteClick(ActionEvent actionEvent) {
         TreeItem<ViewNode> item = treeView.getSelectionModel().getSelectedItem();
         if (item != null && (item.getValue().getType() == ViewNodeType.NODE_PROPERTY || item.getValue().getType() == ViewNodeType.NODE)) {
             ViewNode viewnode = item.getValue();
@@ -332,11 +339,12 @@ public class TreeNodeEditor extends AnchorPane {
             } else {
                 root = null;
             }
+            dirty = true;
         }
         refreshTree();
     }
 
-    private void onPasteClick(ActionEvent actionEvent) {
+    public void onPasteClick(ActionEvent actionEvent) {
         if (clipboard != null) {
             TreeNode pastenode = clipboard.cloneTreeNode();
             TreeItem<ViewNode> item = treeView.getSelectionModel().getSelectedItem();
@@ -355,11 +363,12 @@ public class TreeNodeEditor extends AnchorPane {
                 }
                 item.setExpanded(true);
                 refreshTree();
+                dirty = true;
             }
         }
     }
 
-    private void onDumplicatedClick(ActionEvent actionEvent) {
+    public void onDuplicateClick(ActionEvent actionEvent) {
         TreeItem<ViewNode> item = treeView.getSelectionModel().getSelectedItem();
         if (item != null && (item.getValue().getType() == ViewNodeType.NODE)) {
             TreeNode cur = item.getValue().getTreeNode();
@@ -370,10 +379,11 @@ public class TreeNodeEditor extends AnchorPane {
             int idx = collection.indexOf(cur);
             collection.add(idx+1, curDump);
             refreshTree();
+            dirty = true;
         }
     }
 
-    private void onMoveDownClick(ActionEvent actionEvent) {
+    public void onMoveDownClick(ActionEvent actionEvent) {
         TreeItem<ViewNode> item = treeView.getSelectionModel().getSelectedItem();
         if (item != null) {
             ViewNode viewnode = item.getValue();
@@ -387,12 +397,13 @@ public class TreeNodeEditor extends AnchorPane {
                     nodes.remove(cur);
                     nodes.add(idx+1, cur);
                     refreshTree();
+                    dirty = true;
                 }
             }
         }
     }
 
-    private void onMoveUpClick(ActionEvent actionEvent) {
+    public void onMoveUpClick(ActionEvent actionEvent) {
         TreeItem<ViewNode> item = treeView.getSelectionModel().getSelectedItem();
         if (item != null) {
             ViewNode viewnode = item.getValue();
@@ -406,12 +417,13 @@ public class TreeNodeEditor extends AnchorPane {
                     nodes.remove(cur);
                     nodes.add(idx-1, cur);
                     refreshTree();
+                    dirty = true;
                 }
             }
         }
     }
 
-    private void onExpandClick(ActionEvent actionEvent) {
+    public void onExpandClick(ActionEvent actionEvent) {
         TreeItem<ViewNode> item = treeView.getSelectionModel().getSelectedItem();
         if (item != null) {
             expandTreeView(item);
@@ -419,7 +431,7 @@ public class TreeNodeEditor extends AnchorPane {
         treeView.getSelectionModel().select(item);
     }
 
-    private void onCollapseClick(ActionEvent actionEvent) {
+    public void onCollapseClick(ActionEvent actionEvent) {
         TreeItem<ViewNode> item = treeView.getSelectionModel().getSelectedItem();
         if (item != null) {
             collapseTreeView(item);

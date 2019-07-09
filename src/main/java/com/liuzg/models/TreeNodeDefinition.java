@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class TreeNodeDefinition {
     String name;
-    String icon = "/assets/node.png";
+    String icon = "/assets/nodes/node.png";
     Map<String, String> propertyTypeMap = new HashMap<>();
     Set<String> nodeProperties = new HashSet<>();
     Set<String> nodesProperties = new HashSet<>();
