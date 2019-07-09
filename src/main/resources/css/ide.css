@@ -1,0 +1,7 @@
+.toolbar1 {
+    -fx-background-image: url(/assets/align.png);
+}
+
+a {
+    -fx-background-size: stretch;
+}

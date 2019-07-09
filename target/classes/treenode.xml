@@ -116,7 +116,7 @@
         </property>
     </bean>
 
-    <bean name="definationManager" class="com.liuzg.treenodes.RegistedTreeNodeDefinationManager">
+    <bean name="definationManager" class="com.liuzg.treenodes.RegistedTreeNodeDefinitionManager">
         <property name="definations">
             <list>
                 <bean class="com.liuzg.models.TreeNodeDefinition">

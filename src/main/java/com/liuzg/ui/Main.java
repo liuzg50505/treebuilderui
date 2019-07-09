@@ -19,9 +19,12 @@ public class Main extends Application {
         loader.setLocation(location);
         loader.setBuilderFactory(new JavaFXBuilderFactory());
         Parent root = loader.load();
+        Scene scene = new Scene(root, 1200, 675);
+//        scene.setUserAgentStylesheet("/css/ide.css");
+
         IDEController controller = loader.getController();
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 1200, 675));
+        primaryStage.setScene(scene);
         controller.init();
         primaryStage.show();
     }

@@ -45,17 +45,17 @@ public class TreeNodeEditor extends AnchorPane {
         expandednodes = new HashSet<>();
 
         this.getChildren().add(treeView);
+        AnchorPane.setTopAnchor(treeView, 0.0);
+        AnchorPane.setBottomAnchor(treeView, 0.0);
+        AnchorPane.setLeftAnchor(treeView, 0.0);
+        AnchorPane.setRightAnchor(treeView, 0.0);
+
     }
 
     // initialize treenode editor
     public void initialized() {
 
         vscrollBarState = new ScrollBarState(treeView, Orientation.VERTICAL);
-
-        AnchorPane.setTopAnchor(treeView, 0.0);
-        AnchorPane.setBottomAnchor(treeView, 0.0);
-        AnchorPane.setLeftAnchor(treeView, 0.0);
-        AnchorPane.setRightAnchor(treeView, 0.0);
 
         Scene scene = this.getScene();
         scene.getAccelerators().put(new KeyCodeCombination(KeyCode.C, KeyCombination.CONTROL_ANY),

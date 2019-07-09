@@ -13,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.AnchorPane;
@@ -27,6 +28,8 @@ import java.util.stream.Collectors;
 
 
 public class IDEController {
+    @FXML
+    Accordion accordion;
     @FXML
     TreeNodeEditor treenodeEditor;
 
@@ -93,8 +96,7 @@ public class IDEController {
     }
 
     public void init() {
-        defaulttab.expandedProperty().setValue(true);
-        defaulttab.setExpanded(true);
+        accordion.setExpandedPane(defaulttab);
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:treenode.xml");
         editorFactory = (ValueEditorFactory) context.getBean("editorFactory");
         definationManager = (TreeNodeDefinitionManager) context.getBean("definationManager");
@@ -116,7 +118,7 @@ public class IDEController {
         });
 
 
-        Scene scene = editorspane.getScene();
+        Scene scene = treenodeEditor.getScene();
         scene.getWindow().setOnCloseRequest(event -> {
             flutterRunner.stopapp();
         });
