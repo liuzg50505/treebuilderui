@@ -14,9 +14,9 @@ public class TreeNode {
 
     Map<String, Object> propertyMap = new HashMap<>();
 
-    final TreeNodeDefination defination;
+    final TreeNodeDefinition defination;
 
-    public TreeNode(TreeNodeDefination defination) {
+    public TreeNode(TreeNodeDefinition defination) {
         this.defination = defination;
     }
 
@@ -55,7 +55,7 @@ public class TreeNode {
         return defination.getName();
     }
 
-    public TreeNodeDefination getDefination() {
+    public TreeNodeDefinition getDefination() {
         return defination;
     }
 

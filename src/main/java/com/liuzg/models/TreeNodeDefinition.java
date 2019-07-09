@@ -5,17 +5,17 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public class TreeNodeDefination {
+public class TreeNodeDefinition {
     String name;
     String icon = "/assets/node.png";
     Map<String, String> propertyTypeMap = new HashMap<>();
     Set<String> nodeProperties = new HashSet<>();
     Set<String> nodesProperties = new HashSet<>();
 
-    public TreeNodeDefination() {
+    public TreeNodeDefinition() {
     }
 
-    public TreeNodeDefination(String name) {
+    public TreeNodeDefinition(String name) {
         this.name = name;
     }
 

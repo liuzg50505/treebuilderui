@@ -116,10 +116,10 @@
         </property>
     </bean>
 
-    <bean name="definationManager" class="com.liuzg.treenodes.RegistedTreeNodeDefinationManager">
+    <bean name="definationManager" class="com.liuzg.treenodes.RegistedTreeNodeDefinitionManager">
         <property name="definations">
             <list>
-                <bean class="com.liuzg.models.TreeNodeDefination">
+                <bean class="com.liuzg.models.TreeNodeDefinition">
                     <property name="name" value="If"/>
                     <property name="nodeProperties">
                         <set>
@@ -136,7 +136,7 @@
                         </map>
                     </property>
                 </bean>
-                <bean class="com.liuzg.models.TreeNodeDefination">
+                <bean class="com.liuzg.models.TreeNodeDefinition">
                     <property name="name" value="Foreach"/>
                     <property name="nodeProperties">
                         <set>
@@ -154,7 +154,7 @@
                         </map>
                     </property>
                 </bean>
-                <bean class="com.liuzg.models.TreeNodeDefination">
+                <bean class="com.liuzg.models.TreeNodeDefinition">
                     <property name="name" value="Controller"/>
                     <property name="nodeProperties">
                         <set>
@@ -171,7 +171,7 @@
                         </map>
                     </property>
                 </bean>
-                <bean class="com.liuzg.models.TreeNodeDefination">
+                <bean class="com.liuzg.models.TreeNodeDefinition">
                     <property name="name" value="Column"/>
                     <property name="icon" value="/assets/column.png"/>
                     <property name="nodeProperties">
@@ -194,7 +194,7 @@
                         </map>
                     </property>
                 </bean>
-                <bean class="com.liuzg.models.TreeNodeDefination">
+                <bean class="com.liuzg.models.TreeNodeDefinition">
                     <property name="name" value="Row"/>
                     <property name="icon" value="/assets/row.png"/>
                     <property name="nodeProperties">
@@ -217,7 +217,7 @@
                         </map>
                     </property>
                 </bean>
-                <bean class="com.liuzg.models.TreeNodeDefination">
+                <bean class="com.liuzg.models.TreeNodeDefinition">
                     <property name="name" value="Text"/>
                     <property name="icon" value="/assets/text.png"/>
                     <property name="nodeProperties">
@@ -238,7 +238,7 @@
                         </map>
                     </property>
                 </bean>
-                <bean class="com.liuzg.models.TreeNodeDefination">
+                <bean class="com.liuzg.models.TreeNodeDefinition">
                     <property name="name" value="Scaffold"/>
                     <property name="icon" value="/assets/view.png"/>
                     <property name="nodeProperties">
@@ -257,7 +257,7 @@
                         </map>
                     </property>
                 </bean>
-                <bean class="com.liuzg.models.TreeNodeDefination">
+                <bean class="com.liuzg.models.TreeNodeDefinition">
                     <property name="name" value="AppBar"/>
                     <property name="icon" value="/assets/view.png"/>
                     <property name="nodeProperties">
@@ -274,7 +274,7 @@
                         </map>
                     </property>
                 </bean>
-                <bean class="com.liuzg.models.TreeNodeDefination">
+                <bean class="com.liuzg.models.TreeNodeDefinition">
                     <property name="name" value="Gesture"/>
                     <property name="icon" value="/assets/view.png"/>
                     <property name="nodeProperties">
@@ -291,7 +291,7 @@
                         </map>
                     </property>
                 </bean>
-                <bean class="com.liuzg.models.TreeNodeDefination">
+                <bean class="com.liuzg.models.TreeNodeDefinition">
                     <property name="name" value="RefreshIndicator"/>
                     <property name="icon" value="/assets/view.png"/>
                     <property name="nodeProperties">
@@ -308,7 +308,7 @@
                         </map>
                     </property>
                 </bean>
-                <bean class="com.liuzg.models.TreeNodeDefination">
+                <bean class="com.liuzg.models.TreeNodeDefinition">
                     <property name="name" value="Expanded"/>
                     <property name="icon" value="/assets/view.png"/>
                     <property name="nodeProperties">
@@ -325,7 +325,7 @@
                         </map>
                     </property>
                 </bean>
-                <bean class="com.liuzg.models.TreeNodeDefination">
+                <bean class="com.liuzg.models.TreeNodeDefinition">
                     <property name="name" value="ListView"/>
                     <property name="icon" value="/assets/view.png"/>
                     <property name="nodeProperties">

@@ -1,19 +1,17 @@
-package com.liuzg.treereader;
+package com.liuzg.storage;
 
 import com.liuzg.models.TreeNode;
-import com.liuzg.models.TreeNodeDefination;
+import com.liuzg.models.TreeNodeDefinition;
 import com.liuzg.models.Widget;
 import com.liuzg.treenodes.TreeNodeDefinitionManager;
 import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.Element;
-import org.dom4j.Node;
 import org.dom4j.io.SAXReader;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class TreeReader {
     List<Widget> widgets;
@@ -53,7 +51,7 @@ public class TreeReader {
 
     public TreeNode parseXml(Element treenodelem) {
         String tag = treenodelem.getName();
-        TreeNodeDefination defination = treeNodeDefinitionManager.getDefination(tag);
+        TreeNodeDefinition defination = treeNodeDefinitionManager.getDefination(tag);
         if(defination==null) {
             System.out.println(String.format("Tag %s not found!", tag));
         }

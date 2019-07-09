@@ -1,11 +1,11 @@
 package com.liuzg.treenodes;
 
-import com.liuzg.models.TreeNodeDefination;
+import com.liuzg.models.TreeNodeDefinition;
 
 import java.util.List;
 
 public interface TreeNodeDefinitionManager {
-    List<TreeNodeDefination> getTreeNodeDefinitions();
+    List<TreeNodeDefinition> getTreeNodeDefinitions();
 
-    TreeNodeDefination getDefination(String nodetype);
+    TreeNodeDefinition getDefination(String nodetype);
 }
