@@ -62,6 +62,11 @@
                                 <Tooltip text="Open Project" />
                             </tooltip>
                         </Button>
+                  <Button layoutX="44.0" layoutY="10.0" mnemonicParsing="false" onAction="#onSaveProjectClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/save.png); -fx-background-size: 18,18; -fx-background-repeat: no-repeat; -fx-background-position: center;">
+                     <tooltip>
+                        <Tooltip text="Open Project" />
+                     </tooltip>
+                  </Button>
                         <Line endY="20.0" stroke="#dadada" />
                         <ChoiceBox prefWidth="150.0" />
                   <Line endY="20.0" layoutX="340.0" layoutY="14.0" stroke="#dadada" />

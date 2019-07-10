@@ -11,6 +11,7 @@ public class TreeNodeDefinition {
     Map<String, String> propertyTypeMap = new HashMap<>();
     Set<String> nodeProperties = new HashSet<>();
     Set<String> nodesProperties = new HashSet<>();
+    Set<String> mapProperties = new HashSet<>();
 
     public TreeNodeDefinition() {
     }
@@ -25,6 +26,10 @@ public class TreeNodeDefinition {
 
     public void defineNodesProperties(String nodesProperty) {
         nodesProperties.add(nodesProperty);
+    }
+
+    public void defineMapProperties(String mapProperty) {
+        mapProperties.add(mapProperty);
     }
 
     public void defineProperty(String prop, String type) {
@@ -69,5 +74,13 @@ public class TreeNodeDefinition {
 
     public void setNodesProperties(Set<String> nodesProperties) {
         this.nodesProperties = nodesProperties;
+    }
+
+    public Set<String> getMapProperties() {
+        return mapProperties;
+    }
+
+    public void setMapProperties(Set<String> mapProperties) {
+        this.mapProperties = mapProperties;
     }
 }

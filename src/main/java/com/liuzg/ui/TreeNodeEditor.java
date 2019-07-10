@@ -27,7 +27,14 @@ public class TreeNodeEditor extends AnchorPane {
         void onViewNodeSelected(ViewNode treeNode);
     }
 
+    public static interface DataChangedListener {
+        void onDataChanged();
+    }
+
+
+
     private List<ViewNodeSelectedListener> viewNodeSelectedListeners;
+    private List<DataChangedListener> dataChangedListener;
 
     private TreeView<ViewNode> treeView;
     private TreeNode clipboard = null; // clipboard
@@ -41,6 +48,7 @@ public class TreeNodeEditor extends AnchorPane {
     public TreeNodeEditor() {
         treeView = new TreeView<>();
         viewNodeSelectedListeners = new ArrayList<>();
+        dataChangedListener = new ArrayList<>();
 
         selectednodes = new HashSet<>();
         expandednodes = new HashSet<>();
@@ -137,6 +145,11 @@ public class TreeNodeEditor extends AnchorPane {
         viewNodeSelectedListeners.add(listener);
     }
 
+    public void addDataChangedListener(DataChangedListener listener) {
+        if(listener==null) return;
+        dataChangedListener.add(listener);
+    }
+
     // getter and setters
     public TreeNode getRoot() {
         return root;
@@ -180,6 +193,9 @@ public class TreeNodeEditor extends AnchorPane {
         expandViewNode(viewNode, treeView.getRoot(), expanded);
     }
 
+
+    // methods
+
     private void expandViewNode(ViewNode viewNode, TreeItem<ViewNode> item, boolean expanded) {
         if(item.getValue()==viewNode){
             item.setExpanded(expanded);
@@ -188,6 +204,15 @@ public class TreeNodeEditor extends AnchorPane {
             expandViewNode(viewNode, child, expanded);
         }
     }
+
+    private void notifyDataChanged() {
+        for(DataChangedListener listener: dataChangedListener) {
+            if(listener!=null) {
+                listener.onDataChanged();
+            }
+        }
+    }
+
 
     // utils functions
     private void rememberTreeNodeStates(){
@@ -299,6 +324,7 @@ public class TreeNodeEditor extends AnchorPane {
                 root = null;
             }
             dirty = true;
+            notifyDataChanged();
         }
         refreshTree();
     }
@@ -340,6 +366,7 @@ public class TreeNodeEditor extends AnchorPane {
                 root = null;
             }
             dirty = true;
+            notifyDataChanged();
         }
         refreshTree();
     }
@@ -364,6 +391,8 @@ public class TreeNodeEditor extends AnchorPane {
                 item.setExpanded(true);
                 refreshTree();
                 dirty = true;
+                notifyDataChanged();
+
             }
         }
     }
@@ -380,6 +409,8 @@ public class TreeNodeEditor extends AnchorPane {
             collection.add(idx+1, curDump);
             refreshTree();
             dirty = true;
+            notifyDataChanged();
+
         }
     }
 
@@ -398,6 +429,8 @@ public class TreeNodeEditor extends AnchorPane {
                     nodes.add(idx+1, cur);
                     refreshTree();
                     dirty = true;
+                    notifyDataChanged();
+
                 }
             }
         }
@@ -418,6 +451,8 @@ public class TreeNodeEditor extends AnchorPane {
                     nodes.add(idx-1, cur);
                     refreshTree();
                     dirty = true;
+                    notifyDataChanged();
+
                 }
             }
         }

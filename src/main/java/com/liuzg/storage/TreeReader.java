@@ -10,8 +10,7 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class TreeReader {
     List<Widget> widgets;
@@ -62,10 +61,23 @@ public class TreeReader {
         TreeNode treeNode = new TreeNode(defination);
         for (String propname: defination.getPropertyTypeMap().keySet()) {
             String type = defination.getPropertyTypeMap().get(propname);
-            if("Map".equals(type)) continue; //TODO:
             Object value = getElemPropertyValue(treenodelem, propname);
             if(value==null) continue;
             treeNode.setProperty(propname, value);
+        }
+
+        for(String propname: defination.getMapProperties()) {
+            Element subelem = treenodelem.element(propname);
+            if(subelem!=null){
+                Map<Object, Object> mapvalue = new HashMap<>();
+                for(Object itemelemobj: subelem.elements()){
+                    Element itemelem = (Element) itemelemobj;
+                    Object key = getElemPropertyValue(itemelem, "key");
+                    Object value = getElemPropertyValue(itemelem, "value");
+                    mapvalue.put(key, value);
+                }
+                treeNode.setProperty(propname, mapvalue);
+            }
         }
 
         for(String propname: defination.getNodeProperties()) {

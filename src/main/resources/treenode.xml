@@ -167,8 +167,12 @@
                     <property name="propertyTypeMap">
                         <map>
                             <entry key="controllername" value="String" />
-                            <entry key="params" value="Map" />
                         </map>
+                    </property>
+                    <property name="mapProperties">
+                        <set>
+                            <value>params</value>
+                        </set>
                     </property>
                 </bean>
                 <bean class="com.liuzg.models.TreeNodeDefinition">
@@ -288,6 +292,7 @@
                     </property>
                     <property name="propertyTypeMap">
                         <map>
+                            <entry key="onTap" value="String"/>
                         </map>
                     </property>
                 </bean>
@@ -305,6 +310,7 @@
                     </property>
                     <property name="propertyTypeMap">
                         <map>
+                            <entry key="onRefresh" value="String"/>
                         </map>
                     </property>
                 </bean>

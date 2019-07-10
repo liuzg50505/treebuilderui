@@ -30,17 +30,20 @@ public class ProjectTreeView extends TreeView<ProjectTreeView.Node> {
         public Widget widget;
         public Design design;
         public String projectName;
+        public boolean isDirty;
 
         @Override
         public String toString() {
+            String result = "";
             if(nodeType==NodeType.DESIGN) {
-                return design.getRelativePath();
+                result = design.getRelativePath();
             }else if(nodeType==NodeType.WIDGET) {
-                return widget.getControllerName();
+                result = widget.getControllerName();
             }else if(nodeType==NodeType.ROOT) {
-                return projectName;
+                result = projectName;
             }
-            return "";
+            if(isDirty) result+="*";
+            return result;
         }
     }
 
@@ -79,7 +82,6 @@ public class ProjectTreeView extends TreeView<ProjectTreeView.Node> {
     }
 
     public void refreshView() {
-        project.scanFile();
         List<Design> designs = project.getDesigns();
         designs.sort(Comparator.comparing(Design::getRelativePath));
 
@@ -94,6 +96,7 @@ public class ProjectTreeView extends TreeView<ProjectTreeView.Node> {
             Node designNode = new Node();
             designNode.nodeType = NodeType.DESIGN;
             designNode.design = design;
+            designNode.isDirty = design.isDirty();
             TreeItem<Node> designItem = new TreeItem<>(designNode);
             rootItem.getChildren().add(designItem);
 
