@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="1. add outout pane&#10;2. add refresh button at solution pane">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/toolbars/save.png" afterDir="false" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="1. update data structure of Treenode and TreeNodeDefinition, add mapProperties for Treenode&#10;2. add save button to IDE&#10;3. save dirty design files">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/uitls/FxUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/toolbars/add.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/info.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/models/TreeNodeDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/models/TreeNodeDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/storage/TreeReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/storage/TreeReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/storage/TreeWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/storage/TreeWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/flutter/FlutterRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutter/FlutterRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/flutter/MacosFlutterRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutter/MacosFlutterRunner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/ui/IDEController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/ui/IDEController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/ui/ProjectTreeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/ui/ProjectTreeView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/ui/TreeNodeEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/ui/TreeNodeEditor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/treenode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/treenode.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/ui/ideui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/ideui.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/flutter/FlutterRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/liuzg/flutter/FlutterRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/flutter/MacosFlutterRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/liuzg/flutter/MacosFlutterRunner.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/ui/IDEController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/liuzg/ui/IDEController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/treenode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/treenode.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/ideui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/ideui.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -80,75 +79,60 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/ui/IDEController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="305" column="38" selection-start-line="305" selection-start-column="38" selection-end-line="305" selection-end-column="38" />
+            <state relative-caret-position="2278">
+              <caret line="362" selection-start-line="362" selection-end-line="362" />
               <folding>
-                <element signature="e#2318#2375#0" />
-                <element signature="method#onSelectedTreeItemChanged#0;class#IDEController#0" />
+                <element signature="method#IDEController#0;class#IDEController#0" />
+                <element signature="method#init#0;class#IDEController#0" />
+                <element signature="e#2262#2326#0" />
+                <element signature="e#2376#2428#0" />
+                <element signature="e#2481#2581#0" />
+                <element signature="e#2630#2687#0" />
+                <element signature="method#loadControlToolbox#0;class#IDEController#0" />
+                <element signature="e#3079#4601#1" />
+                <element signature="e#3243#4304#0" />
+                <element signature="e#3424#4289#1" />
+                <element signature="e#3568#3665#1" />
+                <element signature="e#3726#4158#1" />
                 <element signature="method#onStartClick#0;class#IDEController#0" />
-                <element signature="e#6626#6791#1" />
-                <element signature="e#6676#6773#1" />
-                <element signature="e#7935#7936#0" expanded="true" />
-                <element signature="e#7965#7966#0" expanded="true" />
-                <element signature="e#8045#8046#0" expanded="true" />
-                <element signature="e#8099#8100#0" expanded="true" />
-                <element signature="e#8156#8157#0" expanded="true" />
-                <element signature="e#8218#8219#0" expanded="true" />
-                <element signature="e#8267#8268#0" expanded="true" />
-                <element signature="e#8329#8330#0" expanded="true" />
-                <element signature="e#8272#8273#0" expanded="true" />
-                <element signature="e#8331#8332#0" expanded="true" />
-                <element signature="e#8390#8391#0" expanded="true" />
-                <element signature="e#8447#8448#0" expanded="true" />
-                <element signature="e#8506#8507#0" expanded="true" />
-                <element signature="e#8554#8555#0" expanded="true" />
-                <element signature="e#8623#8624#0" expanded="true" />
-                <element signature="e#8682#8683#0" expanded="true" />
-                <element signature="e#8822#8823#0" expanded="true" />
-                <element signature="e#8879#8880#0" expanded="true" />
-                <element signature="e#8945#8946#0" expanded="true" />
-                <element signature="e#8990#8991#0" expanded="true" />
+                <element signature="method#onProjectDoubleClick#0;class#IDEController#0" />
+                <element signature="e#6840#7521#1" />
+                <element signature="e#6886#7511#1" />
+                <element signature="e#6939#7104#1" />
+                <element signature="e#6989#7086#1" />
+                <element signature="method#onProjectOpenClick#0;class#IDEController#0" />
+                <element signature="e#7812#8211#1" />
+                <element signature="method#onSaveProjectClick#0;class#IDEController#0" />
+                <element signature="e#8420#9621#1" />
+                <element signature="e#8455#9611#1" />
+                <element signature="e#8670#9517#0" />
+                <element signature="e#8971#9177#1" />
+                <element signature="e#9537#9597#0" />
+                <element signature="method#onSelectedTreeItemChanged#0;class#IDEController#0" />
+                <element signature="method#onWidgetTreeChanged#0;class#IDEController#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/storage/TreeWriter.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutter/FlutterRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="272">
+              <caret line="20" column="68" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar!/org/dom4j/Element.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/models/Widget.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-              <folding>
-                <element signature="e#551#552#0" expanded="true" />
-                <element signature="e#779#780#0" expanded="true" />
-                <element signature="e#831#832#0" expanded="true" />
-                <element signature="e#864#865#0" expanded="true" />
-                <element signature="e#893#894#0" expanded="true" />
-              </folding>
+        <entry file="file://$PROJECT_DIR$/src/main/resources/ui/ideui.fxml">
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="-650">
+              <caret line="288" column="85" selection-start-line="288" selection-start-column="85" selection-end-line="288" selection-end-column="85" />
             </state>
           </provider>
         </entry>
@@ -156,8 +140,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/ui/ProjectTreeView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="98" selection-start-line="98" selection-end-line="98" />
+            <state relative-caret-position="205">
+              <caret line="84" selection-start-line="84" selection-end-line="84" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -166,108 +150,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/storage/TreeReader.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutter/MacosFlutterRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="81" selection-start-line="81" selection-end-line="81" />
+            <state relative-caret-position="905">
+              <caret line="96" column="16" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1819#1820#0" expanded="true" />
-                <element signature="e#1866#1867#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/models/TreeNode.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-              <folding>
-                <element signature="method#cloneTreeNode#0;class#TreeNode#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/treenode.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="285" column="48" lean-forward="true" selection-start-line="285" selection-start-column="48" selection-end-line="285" selection-end-column="48" />
-              <folding>
-                <element signature="n#bean#0;n#beans#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/info.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/ui/TreeNodeEditor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="244" column="52" selection-start-line="244" selection-start-column="52" selection-end-line="244" selection-end-column="52" />
-              <folding>
-                <element signature="class#ViewNodeSelectedListener#0;class#TreeNodeEditor#0" />
-                <element signature="method#initialize#0;class#TreeNodeEditor#0" />
-                <element signature="e#2041#2130#0" />
-                <element signature="e#2258#2346#0" />
-                <element signature="e#2474#2564#0" />
-                <element signature="e#2692#2788#0" />
-                <element signature="e#2893#2984#0" />
-                <element signature="e#3115#3208#0" />
-                <element signature="e#3337#3428#0" />
-                <element signature="e#3559#3652#0" />
-                <element signature="e#3784#3875#0" />
-                <element signature="class#3964:4663" />
-                <element signature="method#changed#0;class#3964:4663" />
-                <element signature="e#4175#4264#0" />
-                <element signature="e#4402#4639#1" />
-                <element signature="e#4443#4621#1" />
-                <element signature="e#4472#4577#0" />
-                <element signature="method#addViewNodeSelectedListener#0;class#TreeNodeEditor#0" />
-                <element signature="method#setRoot#0;class#TreeNodeEditor#0" />
-                <element signature="method#getSelectedNode#0;class#TreeNodeEditor#0" />
-                <element signature="method#expandViewNode#0;class#TreeNodeEditor#0" />
-                <element signature="e#6200#6531#0" />
-                <element signature="e#6350#6401#1" />
-                <element signature="e#6459#6525#1" />
-                <element signature="method#rememberTreeNodeStates#0;class#TreeNodeEditor#0" />
-                <element signature="e#6358#6417#1" />
-                <element signature="method#rememberTreeNodeStates#1;class#TreeNodeEditor#0" />
-                <element signature="e#6617#6680#1" />
-                <element signature="e#6742#6795#1" />
-                <element signature="e#6834#6835#0" expanded="true" />
-                <element signature="e#6868#6869#0" expanded="true" />
-                <element signature="method#recoverExpandState#0;class#TreeNodeEditor#0" />
-                <element signature="e#7368#7415#1" />
-                <element signature="e#7419#7467#1" />
-                <element signature="e#7520#7586#1" />
-                <element signature="e#7648#7700#1" />
-                <element signature="method#expandTreeView#0;class#TreeNodeEditor#0" />
-                <element signature="e#7804#7963#1" />
-                <element signature="e#7899#7953#1" />
-                <element signature="method#collapseTreeView#0;class#TreeNodeEditor#0" />
-                <element signature="e#8069#8231#1" />
-                <element signature="e#8165#8221#1" />
-                <element signature="method#onCopyClick#0;class#TreeNodeEditor#0" />
-                <element signature="e#8539#8976#1" />
-                <element signature="e#8656#8832#1" />
-                <element signature="e#8883#8966#1" />
-                <element signature="e#9408#10187#1" />
-                <element signature="e#9480#9734#1" />
-                <element signature="e#9785#10173#1" />
-                <element signature="e#10193#10237#1" />
+                <element signature="e#304#305#0" expanded="true" />
+                <element signature="e#354#355#0" expanded="true" />
+                <element signature="e#701#702#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -289,11 +180,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>4.3.</find>
-      <find>remember</find>
-      <find>scroll</find>
-      <find>refreshtr</find>
-      <find>accor</find>
       <find>loa</find>
       <find>Sax</find>
       <find>solution</find>
@@ -317,8 +203,13 @@
       <find>attributeva</find>
       <find>attributevalue</find>
       <find>&quot;Map&quot;</find>
-      <find>refresh</find>
       <find>gestu</find>
+      <find>inset</find>
+      <find>textare</find>
+      <find>txt</find>
+      <find>New Wid</find>
+      <find>refresh</find>
+      <find>onRefreshProjectClick</find>
     </findStrings>
     <replaceStrings>
       <replace>/assets/nodes</replace>
@@ -336,7 +227,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/liuzg/ui/sample.fxml" />
         <option value="$PROJECT_DIR$/src/com/liuzg/ui/ideui.fxml" />
         <option value="$PROJECT_DIR$/src/com/liuzg/ui/Main.java" />
         <option value="$PROJECT_DIR$/src/com/liuzg/treenodes/TreeNodeDefinationManager.java" />
@@ -365,8 +255,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/editorui/StringEditor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/models/TreeNode.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/models/TreeNodeCollection.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/flutter/FlutterRunner.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/flutter/MacosFlutterRunner.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/TestRuntime.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/treereader/TreeReader.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -378,15 +266,18 @@
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/models/Widget.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/models/Project.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/ui/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/ui/ideui.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/ui/TreeNodeEditor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/ui/ProjectTreeView.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/models/TreeNodeDefinition.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/storage/TreeReader.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/storage/TreeWriter.java" />
         <option value="$PROJECT_DIR$/src/main/resources/treenode.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/ui/IDEController.java" />
         <option value="$PROJECT_DIR$/info.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/uitls/FxUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/flutter/FlutterRunner.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/flutter/MacosFlutterRunner.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/ui/ideui.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/ui/ProjectTreeView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/ui/IDEController.java" />
       </list>
     </option>
   </component>
@@ -471,7 +362,41 @@
               <item name="treebuilderui" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="liuzg" type="462c0819:PsiDirectoryNode" />
+              <item name="uitls" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="treebuilderui" type="b2602c69:ProjectViewProjectNode" />
+              <item name="treebuilderui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="treebuilderui" type="b2602c69:ProjectViewProjectNode" />
+              <item name="treebuilderui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="treebuilderui" type="b2602c69:ProjectViewProjectNode" />
+              <item name="treebuilderui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="toolbars" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="treebuilderui" type="b2602c69:ProjectViewProjectNode" />
+              <item name="treebuilderui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -649,7 +574,7 @@
       <workItem from="1562519194014" duration="11686000" />
       <workItem from="1562630195051" duration="12000" />
       <workItem from="1562630224692" duration="29908000" />
-      <workItem from="1562691056446" duration="9899000" />
+      <workItem from="1562691056446" duration="13159000" />
     </task>
     <task id="LOCAL-00001" summary="update pom dependency">
       <created>1562629923029</created>
@@ -686,11 +611,18 @@
       <option name="project" value="LOCAL" />
       <updated>1562726869131</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="1. update data structure of Treenode and TreeNodeDefinition, add mapProperties for Treenode&#10;2. add save button to IDE&#10;3. save dirty design files">
+      <created>1562732502986</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1562732502986</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116918000" />
+    <option name="totallyTimeSpent" value="120178000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -705,7 +637,7 @@
     <frame x="52" y="23" width="1868" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.1796276" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.1796276" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -714,7 +646,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32953367" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32746115" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32746115" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40829015" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -746,6 +678,48 @@
       <window_info anchor="right" id="Flutter Inspector" order="12" />
       <window_info anchor="right" id="Flutter Outline" order="13" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.1796276" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Favorites" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Image Layers" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32953367" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32746115" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.40829015" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32953367" />
+      <window_info anchor="bottom" id="Application Servers" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32953367" />
+      <window_info anchor="bottom" id="Problems" order="9" />
+      <window_info anchor="bottom" id="Changes" order="10" />
+      <window_info anchor="bottom" id="Profiler" order="11" />
+      <window_info anchor="bottom" id="Event Log" order="12" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.3284974" />
+      <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="15" />
+      <window_info anchor="bottom" id="Spring" order="16" />
+      <window_info anchor="bottom" id="Docker" order="17" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Flutter Performance" order="18" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="JetGradle" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Palette" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.32968834" />
+      <window_info anchor="right" id="Maven" order="11" />
+      <window_info anchor="right" id="Flutter Inspector" order="12" />
+      <window_info anchor="right" id="Flutter Outline" order="13" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -759,7 +733,8 @@
     <MESSAGE value="1. accordion default open pane&#10;2. IDE layout changed" />
     <MESSAGE value="1. project model&#10;2. design model&#10;3. ide toolbars&#10;4. icons" />
     <MESSAGE value="1. add outout pane&#10;2. add refresh button at solution pane" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. add outout pane&#10;2. add refresh button at solution pane" />
+    <MESSAGE value="1. update data structure of Treenode and TreeNodeDefinition, add mapProperties for Treenode&#10;2. add save button to IDE&#10;3. save dirty design files" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. update data structure of Treenode and TreeNodeDefinition, add mapProperties for Treenode&#10;2. add save button to IDE&#10;3. save dirty design files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -834,9 +809,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/nodes/node.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/assets/nodes/properties.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -886,26 +858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="500" column="29" selection-start-line="500" selection-start-column="29" selection-end-line="500" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutter/FlutterRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-          <folding>
-            <element signature="e#170#171#0" expanded="true" />
-            <element signature="e#204#205#0" expanded="true" />
-            <element signature="e#258#259#0" expanded="true" />
-            <element signature="e#304#305#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutter/MacosFlutterRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="788">
-          <caret line="79" column="17" lean-forward="true" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1037,14 +989,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/assets/toolbars/delete.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/ideui.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="64" column="109" selection-start-line="64" selection-start-column="109" selection-end-line="64" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/models/Project.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="694">
@@ -1053,16 +997,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1266#1267#0" expanded="true" />
             <element signature="e#1296#1297#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/ui/ProjectTreeView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="98" selection-start-line="98" selection-end-line="98" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1193,40 +1127,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/ui/IDEController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="305" column="38" selection-start-line="305" selection-start-column="38" selection-end-line="305" selection-end-column="38" />
-          <folding>
-            <element signature="e#2318#2375#0" />
-            <element signature="method#onSelectedTreeItemChanged#0;class#IDEController#0" />
-            <element signature="method#onStartClick#0;class#IDEController#0" />
-            <element signature="e#6626#6791#1" />
-            <element signature="e#6676#6773#1" />
-            <element signature="e#7935#7936#0" expanded="true" />
-            <element signature="e#7965#7966#0" expanded="true" />
-            <element signature="e#8045#8046#0" expanded="true" />
-            <element signature="e#8099#8100#0" expanded="true" />
-            <element signature="e#8156#8157#0" expanded="true" />
-            <element signature="e#8218#8219#0" expanded="true" />
-            <element signature="e#8267#8268#0" expanded="true" />
-            <element signature="e#8329#8330#0" expanded="true" />
-            <element signature="e#8272#8273#0" expanded="true" />
-            <element signature="e#8331#8332#0" expanded="true" />
-            <element signature="e#8390#8391#0" expanded="true" />
-            <element signature="e#8447#8448#0" expanded="true" />
-            <element signature="e#8506#8507#0" expanded="true" />
-            <element signature="e#8554#8555#0" expanded="true" />
-            <element signature="e#8623#8624#0" expanded="true" />
-            <element signature="e#8682#8683#0" expanded="true" />
-            <element signature="e#8822#8823#0" expanded="true" />
-            <element signature="e#8879#8880#0" expanded="true" />
-            <element signature="e#8945#8946#0" expanded="true" />
-            <element signature="e#8990#8991#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/treenode.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
@@ -1241,6 +1141,88 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/uitls/FxUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutter/MacosFlutterRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="905">
+          <caret line="96" column="16" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#304#305#0" expanded="true" />
+            <element signature="e#354#355#0" expanded="true" />
+            <element signature="e#701#702#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutter/FlutterRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="20" column="68" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/ui/ProjectTreeView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="84" selection-start-line="84" selection-end-line="84" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/ideui.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="-650">
+          <caret line="288" column="85" selection-start-line="288" selection-start-column="85" selection-end-line="288" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/ui/IDEController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2278">
+          <caret line="362" selection-start-line="362" selection-end-line="362" />
+          <folding>
+            <element signature="method#IDEController#0;class#IDEController#0" />
+            <element signature="method#init#0;class#IDEController#0" />
+            <element signature="e#2262#2326#0" />
+            <element signature="e#2376#2428#0" />
+            <element signature="e#2481#2581#0" />
+            <element signature="e#2630#2687#0" />
+            <element signature="method#loadControlToolbox#0;class#IDEController#0" />
+            <element signature="e#3079#4601#1" />
+            <element signature="e#3243#4304#0" />
+            <element signature="e#3424#4289#1" />
+            <element signature="e#3568#3665#1" />
+            <element signature="e#3726#4158#1" />
+            <element signature="method#onStartClick#0;class#IDEController#0" />
+            <element signature="method#onProjectDoubleClick#0;class#IDEController#0" />
+            <element signature="e#6840#7521#1" />
+            <element signature="e#6886#7511#1" />
+            <element signature="e#6939#7104#1" />
+            <element signature="e#6989#7086#1" />
+            <element signature="method#onProjectOpenClick#0;class#IDEController#0" />
+            <element signature="e#7812#8211#1" />
+            <element signature="method#onSaveProjectClick#0;class#IDEController#0" />
+            <element signature="e#8420#9621#1" />
+            <element signature="e#8455#9611#1" />
+            <element signature="e#8670#9517#0" />
+            <element signature="e#8971#9177#1" />
+            <element signature="e#9537#9597#0" />
+            <element signature="method#onSelectedTreeItemChanged#0;class#IDEController#0" />
+            <element signature="method#onWidgetTreeChanged#0;class#IDEController#0" />
+          </folding>
         </state>
       </provider>
     </entry>

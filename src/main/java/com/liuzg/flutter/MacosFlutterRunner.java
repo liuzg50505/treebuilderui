@@ -1,11 +1,34 @@
 package com.liuzg.flutter;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MacosFlutterRunner extends FlutterRunner{
 
     private BufferedWriter bout;
     private Process process;
+
+    private List<OutputListener> outputListeners;
+
+    public MacosFlutterRunner() {
+        outputListeners = new ArrayList<>();
+    }
+
+    // methods
+
+    public void notifyOutputListeners(String output) {
+        for(OutputListener outputListener: outputListeners){
+            outputListener.onOutput(output);
+        }
+    }
+
+    // outlets
+
+    @Override
+    public void addOutputListener(OutputListener listener) {
+        if(listener!=null) outputListeners.add(listener);
+    }
 
     @Override
     public void startapp() {
@@ -28,7 +51,7 @@ public class MacosFlutterRunner extends FlutterRunner{
                 try {
                     String line = bin.readLine();
                     while (line != null){
-                        System.out.println(line);
+                        notifyOutputListeners(line);
                         line = bin.readLine();
                     }
                 } catch (IOException e) {
@@ -40,7 +63,7 @@ public class MacosFlutterRunner extends FlutterRunner{
                 try {
                     String line = berr.readLine();
                     while (line != null){
-                        System.out.println(line);
+                        notifyOutputListeners(line);
                         line = berr.readLine();
                     }
                 } catch (IOException e) {

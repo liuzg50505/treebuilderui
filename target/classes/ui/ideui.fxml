@@ -11,6 +11,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.control.Tooltip?>
@@ -52,9 +53,9 @@
             <center>
                 <ToolBar prefHeight="0.0" prefWidth="1043.0" BorderPane.alignment="CENTER">
                     <items>
-                        <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/new.png); -fx-background-size: 18,18; -fx-background-repeat: no-repeat; -fx-background-position: center;">
+                        <Button mnemonicParsing="false" onAction="#onProjectAddClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/new.png); -fx-background-size: 18,18; -fx-background-repeat: no-repeat; -fx-background-position: center;">
                             <tooltip>
-                                <Tooltip text="New Widget" />
+                                <Tooltip text="New Project" />
                             </tooltip>
                         </Button>
                         <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onProjectOpenClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/open.png); -fx-background-size: 18,18; -fx-background-repeat: no-repeat; -fx-background-position: center;">
@@ -62,31 +63,29 @@
                                 <Tooltip text="Open Project" />
                             </tooltip>
                         </Button>
-                  <Button layoutX="44.0" layoutY="10.0" mnemonicParsing="false" onAction="#onSaveProjectClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/save.png); -fx-background-size: 18,18; -fx-background-repeat: no-repeat; -fx-background-position: center;">
-                     <tooltip>
-                        <Tooltip text="Open Project" />
-                     </tooltip>
-                  </Button>
+                        <Button layoutX="44.0" layoutY="10.0" mnemonicParsing="false" onAction="#onSaveProjectClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/save.png); -fx-background-size: 18,18; -fx-background-repeat: no-repeat; -fx-background-position: center;">
+                            <tooltip>
+                                <Tooltip text="Save Project" />
+                            </tooltip>
+                        </Button>
                         <Line endY="20.0" stroke="#dadada" />
                         <ChoiceBox prefWidth="150.0" />
-                  <Line endY="20.0" layoutX="340.0" layoutY="14.0" stroke="#dadada" />
-                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/run.png); -fx-background-size: 18,18; -fx-background-repeat: no-repeat; -fx-background-position: center;">
+                        <Line endY="20.0" layoutX="340.0" layoutY="14.0" stroke="#dadada" />
+                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onStartClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/run.png); -fx-background-size: 18,18; -fx-background-repeat: no-repeat; -fx-background-position: center;">
                             <tooltip>
                                 <Tooltip text="Run" />
                             </tooltip>
                         </Button>
-                        <Button layoutX="49.0" layoutY="10.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/restart.png); -fx-background-size: 18,18; -fx-background-repeat: no-repeat; -fx-background-position: center;">
+                        <Button layoutX="49.0" layoutY="10.0" mnemonicParsing="false" onAction="#onHotRestartClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/restart.png); -fx-background-size: 18,18; -fx-background-repeat: no-repeat; -fx-background-position: center;">
                             <tooltip>
                                 <Tooltip text="Hot Restart" />
                             </tooltip>
                         </Button>
-                        <Button layoutX="83.0" layoutY="10.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/reload.png); -fx-background-size: 18,18; -fx-background-repeat: no-repeat; -fx-background-position: center;">
+                        <Button layoutX="83.0" layoutY="10.0" mnemonicParsing="false" onAction="#onHotReloadClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/reload.png); -fx-background-size: 18,18; -fx-background-repeat: no-repeat; -fx-background-position: center;">
                             <tooltip>
                                 <Tooltip text="Hot Reload" />
                             </tooltip>
                         </Button>
-                        <Line endY="20.0" layoutX="45.0" layoutY="14.0" stroke="#dadada" />
-                        <Button layoutX="117.0" layoutY="10.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/nodes/align.png); -fx-background-size: 18,18; -fx-background-repeat: no-repeat; -fx-background-position: center;" />
                     </items>
                 </ToolBar>
             </center>
@@ -110,23 +109,39 @@
                                     <Tab text="Project">
                                         <content>
                                             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                    <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <center>
-                                                      <ProjectTreeView fx:id="projectTreeView" onMouseClicked="#onProjectDoubleClick" BorderPane.alignment="CENTER" />
-                                       </center>
-                                       <top>
-                                          <ToolBar prefHeight="5.0" prefWidth="298.0" BorderPane.alignment="CENTER">
-                                             <items>
-                                                <Button mnemonicParsing="false" onAction="#onRefreshProjectClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/refresh.png); -fx-background-size: 18,18; -fx-background-position: center; -fx-background-repeat: no-repeat;">
-                                                   <tooltip>
-                                                      <Tooltip text="New Widget" />
-                                                   </tooltip>
-                                                </Button>
-                                                <Line endY="20.0" stroke="#dadada" />
-                                             </items>
-                                          </ToolBar>
-                                       </top>
-                                    </BorderPane>
+                                                <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <center>
+                                                        <ProjectTreeView fx:id="projectTreeView" onMouseClicked="#onProjectDoubleClick" BorderPane.alignment="CENTER" />
+                                                    </center>
+                                                    <top>
+                                                        <ToolBar prefHeight="5.0" prefWidth="298.0" BorderPane.alignment="CENTER">
+                                                            <items>
+                                                                <Button mnemonicParsing="false" onAction="#onAddProjectItemClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/add.png); -fx-background-size: 18,18; -fx-background-position: center; -fx-background-repeat: no-repeat;">
+                                                                    <tooltip>
+                                                                        <Tooltip text="Add Project Item" />
+                                                                    </tooltip>
+                                                                </Button>
+                                                                <Line endY="20.0" stroke="#dadada" />
+                                                                <Button mnemonicParsing="false" onAction="#onDuplicateProjectTreeItemClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/duplicate.png); -fx-background-size: 18,18; -fx-background-position: center; -fx-background-repeat: no-repeat;">
+                                                                    <tooltip>
+                                                                        <Tooltip text="Duplicate Widget or Design" />
+                                                                    </tooltip>
+                                                                </Button>
+                                                                <Button mnemonicParsing="false" onAction="#onDeleteProjectItemClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/delete.png); -fx-background-size: 18,18; -fx-background-position: center; -fx-background-repeat: no-repeat;">
+                                                                    <tooltip>
+                                                                        <Tooltip text="Delete Widget or Design" />
+                                                                    </tooltip>
+                                                                </Button>
+                                                                <Line endY="20.0" layoutX="45.0" layoutY="14.0" stroke="#dadada" />
+                                                                <Button mnemonicParsing="false" onAction="#onRefreshProjectClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/refresh.png); -fx-background-size: 18,18; -fx-background-position: center; -fx-background-repeat: no-repeat;">
+                                                                    <tooltip>
+                                                                        <Tooltip text="Refresh Project" />
+                                                                    </tooltip>
+                                                                </Button>
+                                                            </items>
+                                                        </ToolBar>
+                                                    </top>
+                                                </BorderPane>
                                             </AnchorPane>
                                         </content>
                                     </Tab>
@@ -204,94 +219,101 @@
             </children>
         </AnchorPane>
     </left>
-   <center>
-      <BorderPane>
-         <center>
-             <AnchorPane>
-                 <padding>
-                     <Insets bottom="0" left="0" right="0" top="0" />
-                 </padding>
-                 <children>
-                     <TitledPane fx:id="editorPane" animated="false" collapsible="false" text="Editor: Empty" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                         <content>
-                             <AnchorPane>
-                                 <padding>
-                                     <Insets bottom="0" left="0" right="0" top="0" />
-                                 </padding>
-                                 <children>
-                                     <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                         <center>
-                                             <TreeNodeEditor fx:id="treenodeEditor" style="-fx-font-size: 18;" BorderPane.alignment="CENTER" />
-                                         </center>
-                                         <top>
-                                             <ToolBar prefHeight="1.0" prefWidth="543.0" BorderPane.alignment="CENTER">
-                                                 <items>
-                                                     <Button mnemonicParsing="false" onAction="#onCopyClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/copy.png); -fx-background-size: 18,18; -fx-background-position: center; -fx-background-repeat: no-repeat;">
-                                                         <tooltip>
-                                                             <Tooltip text="New Widget" />
-                                                         </tooltip>
-                                                     </Button>
-                                                     <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCutClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/cut.png); -fx-background-size: 18,18; -fx-background-position: center; -fx-background-repeat: no-repeat;">
-                                                         <tooltip>
-                                                             <Tooltip text="New Widget" />
-                                                         </tooltip>
-                                                     </Button>
-                                                     <Button layoutX="44.0" layoutY="10.0" mnemonicParsing="false" onAction="#onPasteClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/paste.png); -fx-background-size: 18,18; -fx-background-position: center; -fx-background-repeat: no-repeat;">
-                                                         <tooltip>
-                                                             <Tooltip text="New Widget" />
-                                                         </tooltip>
-                                                     </Button>
-                                                     <Line endY="20.0" layoutX="147.0" layoutY="14.0" stroke="#dadada" />
-                                                     <Button layoutX="78.0" layoutY="10.0" mnemonicParsing="false" onAction="#onDuplicateClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/duplicate.png); -fx-background-size: 18,18; -fx-background-position: center; -fx-background-repeat: no-repeat;">
-                                                         <tooltip>
-                                                             <Tooltip text="New Widget" />
-                                                         </tooltip>
-                                                     </Button>
-                                                     <Button layoutX="117.0" layoutY="10.0" mnemonicParsing="false" onAction="#onDeleteClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/delete.png); -fx-background-size: 18,18; -fx-background-position: center; -fx-background-repeat: no-repeat;">
-                                                         <tooltip>
-                                                             <Tooltip text="New Widget" />
-                                                         </tooltip>
-                                                     </Button>
-                                                     <Line endY="20.0" stroke="#dadada" />
-                                                     <Button layoutX="78.0" layoutY="10.0" mnemonicParsing="false" onAction="#onMoveDownClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/movedown.png); -fx-background-size: 18,18; -fx-background-position: center; -fx-background-repeat: no-repeat;">
-                                                         <tooltip>
-                                                             <Tooltip text="New Widget" />
-                                                         </tooltip>
-                                                     </Button>
-                                                     <Button layoutX="117.0" layoutY="10.0" mnemonicParsing="false" onAction="#onMoveUpClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/moveup.png); -fx-background-size: 18,18; -fx-background-position: center; -fx-background-repeat: no-repeat;">
-                                                         <tooltip>
-                                                             <Tooltip text="New Widget" />
-                                                         </tooltip>
-                                                     </Button>
-                                                     <Line endY="20.0" layoutX="113.0" layoutY="14.0" stroke="#dadada" />
-                                                     <Button layoutX="117.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCollapseClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/collapse.png); -fx-background-size: 18,18; -fx-background-position: center; -fx-background-repeat: no-repeat;">
-                                                         <tooltip>
-                                                             <Tooltip text="New Widget" />
-                                                         </tooltip>
-                                                     </Button>
-                                                     <Button layoutX="151.0" layoutY="10.0" mnemonicParsing="false" onAction="#onExpandClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/expand.png); -fx-background-size: 18,18; -fx-background-position: center; -fx-background-repeat: no-repeat;">
-                                                         <tooltip>
-                                                             <Tooltip text="New Widget" />
-                                                         </tooltip>
-                                                     </Button>
-                                                 </items>
-                                             </ToolBar>
-                                         </top>
-                                     </BorderPane>
-                                 </children>
-                             </AnchorPane>
-                         </content>
-                     </TitledPane>
-                 </children>
-             </AnchorPane>
-         </center>
-         <bottom>
-            <TitledPane animated="false" text="Output" BorderPane.alignment="CENTER">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-              </content>
-            </TitledPane>
-         </bottom>
-      </BorderPane>
-   </center>
+    <center>
+        <BorderPane>
+            <center>
+                <AnchorPane>
+                    <padding>
+                        <Insets bottom="0" left="0" right="0" top="0" />
+                    </padding>
+                    <children>
+                        <TitledPane fx:id="editorPane" animated="false" collapsible="false" text="Editor: Empty" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <content>
+                                <AnchorPane>
+                                    <padding>
+                                        <Insets bottom="0" left="0" right="0" top="0" />
+                                    </padding>
+                                    <children>
+                                        <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <center>
+                                                <TreeNodeEditor fx:id="treenodeEditor" style="-fx-font-size: 18;" BorderPane.alignment="CENTER" />
+                                            </center>
+                                            <top>
+                                                <ToolBar prefHeight="1.0" prefWidth="543.0" BorderPane.alignment="CENTER">
+                                                    <items>
+                                                        <Button mnemonicParsing="false" onAction="#onCopyClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/copy.png); -fx-background-size: 18,18; -fx-background-position: center; -fx-background-repeat: no-repeat;">
+                                                            <tooltip>
+                                                                <Tooltip text="Copy Widget" />
+                                                            </tooltip>
+                                                        </Button>
+                                                        <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCutClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/cut.png); -fx-background-size: 18,18; -fx-background-position: center; -fx-background-repeat: no-repeat;">
+                                                            <tooltip>
+                                                                <Tooltip text="Cut Widget" />
+                                                            </tooltip>
+                                                        </Button>
+                                                        <Button layoutX="44.0" layoutY="10.0" mnemonicParsing="false" onAction="#onPasteClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/paste.png); -fx-background-size: 18,18; -fx-background-position: center; -fx-background-repeat: no-repeat;">
+                                                            <tooltip>
+                                                                <Tooltip text="Paste Widget" />
+                                                            </tooltip>
+                                                        </Button>
+                                                        <Line endY="20.0" layoutX="147.0" layoutY="14.0" stroke="#dadada" />
+                                                        <Button layoutX="78.0" layoutY="10.0" mnemonicParsing="false" onAction="#onDuplicateClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/duplicate.png); -fx-background-size: 18,18; -fx-background-position: center; -fx-background-repeat: no-repeat;">
+                                                            <tooltip>
+                                                                <Tooltip text="Duplicate Widget" />
+                                                            </tooltip>
+                                                        </Button>
+                                                        <Button layoutX="117.0" layoutY="10.0" mnemonicParsing="false" onAction="#onDeleteClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/delete.png); -fx-background-size: 18,18; -fx-background-position: center; -fx-background-repeat: no-repeat;">
+                                                            <tooltip>
+                                                                <Tooltip text="Delete Widget" />
+                                                            </tooltip>
+                                                        </Button>
+                                                        <Line endY="20.0" stroke="#dadada" />
+                                                        <Button layoutX="78.0" layoutY="10.0" mnemonicParsing="false" onAction="#onMoveDownClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/movedown.png); -fx-background-size: 18,18; -fx-background-position: center; -fx-background-repeat: no-repeat;">
+                                                            <tooltip>
+                                                                <Tooltip text="Move Down" />
+                                                            </tooltip>
+                                                        </Button>
+                                                        <Button layoutX="117.0" layoutY="10.0" mnemonicParsing="false" onAction="#onMoveUpClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/moveup.png); -fx-background-size: 18,18; -fx-background-position: center; -fx-background-repeat: no-repeat;">
+                                                            <tooltip>
+                                                                <Tooltip text="Move Up" />
+                                                            </tooltip>
+                                                        </Button>
+                                                        <Line endY="20.0" layoutX="113.0" layoutY="14.0" stroke="#dadada" />
+                                                        <Button layoutX="117.0" layoutY="10.0" mnemonicParsing="false" onAction="#onCollapseClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/collapse.png); -fx-background-size: 18,18; -fx-background-position: center; -fx-background-repeat: no-repeat;">
+                                                            <tooltip>
+                                                                <Tooltip text="Collapse" />
+                                                            </tooltip>
+                                                        </Button>
+                                                        <Button layoutX="151.0" layoutY="10.0" mnemonicParsing="false" onAction="#onExpandClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/expand.png); -fx-background-size: 18,18; -fx-background-position: center; -fx-background-repeat: no-repeat;">
+                                                            <tooltip>
+                                                                <Tooltip text="Expand" />
+                                                            </tooltip>
+                                                        </Button>
+                                                    </items>
+                                                </ToolBar>
+                                            </top>
+                                        </BorderPane>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </TitledPane>
+                    </children>
+                </AnchorPane>
+            </center>
+            <bottom>
+                <TitledPane animated="false" text="Output" BorderPane.alignment="CENTER">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <padding>
+                                <Insets bottom="0" left="0" right="0" top="0" />
+                            </padding>
+                            <children>
+                                <TextArea fx:id="txtOutput" editable="false" layoutX="25.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </TitledPane>
+            </bottom>
+        </BorderPane>
+    </center>
 </BorderPane>

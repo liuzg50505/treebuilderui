@@ -1,6 +1,10 @@
 package com.liuzg.flutter;
 
 public abstract class FlutterRunner {
+    public static interface OutputListener{
+        void onOutput(String outputstr);
+    }
+
     protected String projectPath;
 
     public FlutterRunner() {
@@ -13,6 +17,8 @@ public abstract class FlutterRunner {
     public void setProjectPath(String projectPath) {
         this.projectPath = projectPath;
     }
+
+    public abstract void addOutputListener(OutputListener listener);
 
     public abstract void startapp();
 

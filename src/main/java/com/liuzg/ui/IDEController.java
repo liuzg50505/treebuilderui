@@ -6,12 +6,15 @@ import com.liuzg.flutter.FlutterRunner;
 import com.liuzg.models.*;
 import com.liuzg.storage.TreeWriter;
 import com.liuzg.treenodes.TreeNodeDefinitionManager;
+import com.liuzg.uitls.FxUtils;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TitledPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -34,6 +37,9 @@ import java.util.stream.Collectors;
 
 
 public class IDEController {
+    @FXML
+    TextArea txtOutput;
+
     @FXML
     TitledPane editorPane;
 
@@ -69,6 +75,12 @@ public class IDEController {
     public IDEController() {
     }
 
+    // getters and setters
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
     // outlets
 
     public void init() {
@@ -92,12 +104,16 @@ public class IDEController {
             IDEController.this.selectedProjectWidget = selectedWidget;
         });
 
+        flutterRunner.addOutputListener(outputstr -> {
+            onFlutterOutput(outputstr);
+        });
 
         scene.getWindow().setOnCloseRequest(event -> {
             flutterRunner.stopapp();
         });
 
     }
+
 
 
     // methods
@@ -127,6 +143,7 @@ public class IDEController {
                         parent.setProperty(viewnode.getProp(), newnodes);
 
                     }
+                    onWidgetTreeChanged();
                     treenodeEditor.expandViewNode(viewnode, true);
                     treenodeEditor.refresh();
                 }
@@ -144,42 +161,7 @@ public class IDEController {
 
     // event handlers
 
-    private void onSelectedTreeItemChanged() {
-        ViewNode item = treenodeEditor.getSelectedNode();
-        if (prevselectedtreeitem == item) return;
-        prevselectedtreeitem = item;
-        if (item != null) {
-            TreeNode treenode = item.getTreeNode();
-
-            if (item.getType() == ViewNodeType.NODES_PROPERTY) {
-                editorspane.getChildren().clear();
-                return;
-            }
-            editorspane.getChildren().clear();
-            if (treenode != null) {
-                Map<String, String> proptypemap = treenode.getDefination().getPropertyTypeMap();
-                for (Map.Entry<String, String> entry : proptypemap.entrySet()) {
-                    String prop = entry.getKey();
-                    String type = entry.getValue();
-
-                    if (!treenode.getDefination().getNodeProperties().contains(prop) &&
-                            !treenode.getDefination().getNodesProperties().contains(prop)) {
-                        ValueEditor editor = editorFactory.createValueEditor(type);
-                        if (editor != null) {
-                            editor.setLabel(prop + ":");
-                            editor.setValue(treenode.getProperty(prop));
-                            editor.addListener((curEditor, newValue) -> {
-                                treenode.setProperty(prop, newValue);
-                                treenodeEditor.refresh();
-                            });
-                            editorspane.getChildren().add((Node) editor);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
+    // event handlers - flutter runner
     public void onStartClick(ActionEvent actionEvent) {
         flutterRunner.setProjectPath(currentProject.getProjectPath());
         flutterRunner.startapp();
@@ -197,6 +179,15 @@ public class IDEController {
         flutterRunner.stopapp();
     }
 
+    private void onFlutterOutput(String outputstr) {
+        Platform.runLater(()->{
+            txtOutput.appendText(outputstr);
+            txtOutput.appendText("\n");
+            txtOutput.setScrollTop(Double.MAX_VALUE);
+        });
+    }
+
+    // event handlers - projecttreeview
     public void onProjectDoubleClick(MouseEvent mouseEvent) {
         if(mouseEvent.getClickCount()>1) {
             if(selectedProjectWidget!=null) {
@@ -231,8 +222,106 @@ public class IDEController {
         }
     }
 
-    public void setScene(Scene scene) {
-        this.scene = scene;
+    // event handlers - IDE main toolbar
+
+    public void onProjectAddClick(ActionEvent actionEvent) {
+    }
+
+    public void onSaveProjectClick(ActionEvent actionEvent) {
+        for(Design design: currentProject.getDesigns()) {
+            if(design.isDirty()) {
+                design.setDirty(false);
+                File file = new File(design.getProject().getProjectPath(), design.getRelativePath());
+                SAXReader reader = new SAXReader();
+                try{
+                    Document document = reader.read(file);
+                    Element root = document.getRootElement();
+                    Element widgetselems = root.element("widgets");
+                    widgetselems.clearContent();
+                    for (Widget widget: design.getWidgets()) {
+                        TreeWriter treeWriter = new TreeWriter();
+                        Element elem = treeWriter.widgetXml(widget);
+                        widgetselems.add(elem);
+                    }
+
+                    OutputFormat format = OutputFormat.createPrettyPrint();
+                    format.setEncoding("UTF-8");
+                    XMLWriter write = new XMLWriter(new FileWriter(file), format);
+                    write.write(document);
+                    write.flush();
+                    write.close();
+                }catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        FxUtils.alert("Project Saved","Hint");
+        projectTreeView.refreshView();
+    }
+
+
+    // event handlers - solution explorer
+    public void onAddProjectItemClick(ActionEvent actionEvent) {
+        if(currentProject==null) return;
+        //TODO
+    }
+
+    public void onRefreshProjectClick(ActionEvent actionEvent) {
+        if(currentProject==null) return;
+        projectTreeView.refreshView();
+    }
+
+    public void onDuplicateProjectTreeItemClick(ActionEvent actionEvent) {
+        if(currentProject==null) return;
+        //TODO
+    }
+
+    public void onDeleteProjectItemClick(ActionEvent actionEvent) {
+        if(currentProject==null) return;
+        //TODO
+    }
+
+    // event handlers - treenodeeditor
+    private void onSelectedTreeItemChanged() {
+        ViewNode item = treenodeEditor.getSelectedNode();
+        if (prevselectedtreeitem == item) return;
+        prevselectedtreeitem = item;
+        if (item != null) {
+            TreeNode treenode = item.getTreeNode();
+
+            if (item.getType() == ViewNodeType.NODES_PROPERTY) {
+                editorspane.getChildren().clear();
+                return;
+            }
+            editorspane.getChildren().clear();
+            if (treenode != null) {
+                Map<String, String> proptypemap = treenode.getDefination().getPropertyTypeMap();
+                for (Map.Entry<String, String> entry : proptypemap.entrySet()) {
+                    String prop = entry.getKey();
+                    String type = entry.getValue();
+
+                    if (!treenode.getDefination().getNodeProperties().contains(prop) &&
+                            !treenode.getDefination().getNodesProperties().contains(prop)) {
+                        ValueEditor editor = editorFactory.createValueEditor(type);
+                        if (editor != null) {
+                            editor.setLabel(prop + ":");
+                            editor.setValue(treenode.getProperty(prop));
+                            editor.addListener((curEditor, newValue) -> {
+                                treenode.setProperty(prop, newValue);
+                                onWidgetTreeChanged();
+                                treenodeEditor.refresh();
+                            });
+                            editorspane.getChildren().add((Node) editor);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private void onWidgetTreeChanged() {
+        currentWidget.getDesign().setDirty(true);
+        projectTreeView.refreshView();
     }
 
     public void onCopyClick(ActionEvent actionEvent) {
@@ -269,46 +358,6 @@ public class IDEController {
 
     public void onDeleteClick(ActionEvent actionEvent) {
         treenodeEditor.onDeleteClick(actionEvent);
-    }
-
-    public void onRefreshProjectClick(ActionEvent actionEvent) {
-        projectTreeView.refreshView();
-    }
-
-    public void onSaveProjectClick(ActionEvent actionEvent) {
-        for(Design design: currentProject.getDesigns()) {
-            if(design.isDirty()) {
-                design.setDirty(false);
-                File file = new File(design.getProject().getProjectPath(), design.getRelativePath());
-                SAXReader reader = new SAXReader();
-                try{
-                    Document document = reader.read(file);
-                    Element root = document.getRootElement();
-                    Element widgetselems = root.element("widgets");
-                    widgetselems.clearContent();
-                    for (Widget widget: design.getWidgets()) {
-                        TreeWriter treeWriter = new TreeWriter();
-                        Element elem = treeWriter.widgetXml(widget);
-                        widgetselems.add(elem);
-                    }
-
-                    OutputFormat format = OutputFormat.createPrettyPrint();
-                    format.setEncoding("UTF-8");
-                    XMLWriter write = new XMLWriter(new FileWriter(file), format);
-                    write.write(document);
-                    write.flush();
-                    write.close();
-                }catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        projectTreeView.refreshView();
-    }
-
-    public void onWidgetTreeChanged() {
-        currentWidget.getDesign().setDirty(true);
-        projectTreeView.refreshView();
     }
 
 }
