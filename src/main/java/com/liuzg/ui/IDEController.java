@@ -255,4 +255,8 @@ public class IDEController {
     public void onDeleteClick(ActionEvent actionEvent) {
         treenodeEditor.onDeleteClick(actionEvent);
     }
+
+    public void onRefreshProjectClick(ActionEvent actionEvent) {
+        projectTreeView.refreshView();
+    }
 }
