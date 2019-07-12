@@ -8,6 +8,7 @@ public class MacosFlutterRunner extends FlutterRunner{
 
     private BufferedWriter bout;
     private Process process;
+    private boolean running;
 
     private List<OutputListener> outputListeners;
 
@@ -31,7 +32,13 @@ public class MacosFlutterRunner extends FlutterRunner{
     }
 
     @Override
+    public String name() {
+        return "MacOS Runner";
+    }
+
+    @Override
     public void startapp() {
+        if(running) stopapp();
         ProcessBuilder builder = new ProcessBuilder( "bash","-c","flutter run");
 
         builder.directory( new File( "/Volumes/macdata/MyProjects/treebuildermvcprj" ).getAbsoluteFile() ); // this is where you set the root folder for the executable to run with
@@ -69,7 +76,7 @@ public class MacosFlutterRunner extends FlutterRunner{
                 } catch (IOException e) {
                 }
             }).start();
-
+            running = true;
 
         }
 
@@ -95,12 +102,16 @@ public class MacosFlutterRunner extends FlutterRunner{
 
     @Override
     public void stopapp() {
-        try {
-            bout.write("q\n");
-            bout.flush();
-            Thread.sleep(1000);
-            process.destroy();
-        } catch (Exception e) {
+        if(running) {
+            try {
+                bout.write("q\n");
+                bout.flush();
+                Thread.sleep(1000);
+                process.destroy();
+            } catch (Exception e) {
+            }
+            running = false;
         }
+
     }
 }

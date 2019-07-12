@@ -69,7 +69,7 @@
                             </tooltip>
                         </Button>
                         <Line endY="20.0" stroke="#dadada" />
-                        <ChoiceBox prefWidth="150.0" />
+                        <ChoiceBox fx:id="choiceRunner" prefWidth="150.0" />
                         <Line endY="20.0" layoutX="340.0" layoutY="14.0" stroke="#dadada" />
                         <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onStartClick" prefHeight="27.0" prefWidth="30.0" style="-fx-background-image: url(/assets/toolbars/run.png); -fx-background-size: 18,18; -fx-background-repeat: no-repeat; -fx-background-position: center;">
                             <tooltip>

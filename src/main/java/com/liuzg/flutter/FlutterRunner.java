@@ -10,6 +10,8 @@ public abstract class FlutterRunner {
     public FlutterRunner() {
     }
 
+
+
     public String getProjectPath() {
         return projectPath;
     }
@@ -20,6 +22,8 @@ public abstract class FlutterRunner {
 
     public abstract void addOutputListener(OutputListener listener);
 
+    public abstract String name();
+
     public abstract void startapp();
 
     public abstract void hotload();
@@ -27,4 +31,9 @@ public abstract class FlutterRunner {
     public abstract void hotRestart();
 
     public abstract void stopapp();
+
+    @Override
+    public String toString() {
+        return name();
+    }
 }

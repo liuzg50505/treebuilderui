@@ -1,4 +1,39 @@
 ================================================================================================
+新计划：
+1. 尝试 yaml解析，分析工程中的assets
+2. 做工程目录读取，读取整个目录，能修改assets，比如添加资源到assets
+================================================================================================
+可以尝试 flutter for desktop
+
+文章：
+* https://medium.com/flutter-community/flutter-for-desktop-create-and-run-a-desktop-application-ebeb1604f1e0
+* https://medium.com/flutter-community/flutter-from-mobile-to-desktop-93635e8de64e
+
+repo:
+
+* https://github.com/google/flutter-desktop-embedding/tree/master/example
+    并不好用， no device found
+https://github.com/Drakirus/go-flutter-desktop-embedder
+    安装了一半， 没有golang 在环境中
+
+
+* https://hover.build/docs/quick-start/
+    成熟的产品 需要安装go  以及hower
+    应该是最简单的集成方法
+    不支持windows 目前 2019-07-10
+可以用 不过速度似乎并不快
+在hover init 的时候
+
+hover build  在除了第一次之后 都能在2秒左右
+hover init
+hover run 都是
+
+option.go 文件可以修改 窗口的分辨率
+在我的mac上  启动后 会 黑屏，需要强制刷新 比如最小化在最大化 会变好
+
+原理似乎是 编译go代码 所以需要go的环境
+
+================================================================================================
 * 更改了TreeNode和 TreeNodeDefinition的结构 增加了mapProperties
   TreeReader
 ================================================================================================

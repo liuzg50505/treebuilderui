@@ -23,6 +23,7 @@ public class Project {
         designs = new ArrayList<>();
         ignoredPrefixList = new ArrayList<>();
         ignoredPrefixList.add("/build");
+        ignoredPrefixList.add("/desktop");
 
     }
 
@@ -48,6 +49,10 @@ public class Project {
 
     public List<Design> getDesigns() {
         return designs;
+    }
+
+    public void addIgnorePrefix(String prefix) {
+        ignoredPrefixList.add(prefix);
     }
 
     // private methods

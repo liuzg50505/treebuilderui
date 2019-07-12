@@ -8,14 +8,12 @@ import com.liuzg.storage.TreeWriter;
 import com.liuzg.treenodes.TreeNodeDefinitionManager;
 import com.liuzg.uitls.FxUtils;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Accordion;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TitledPane;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -37,6 +35,9 @@ import java.util.stream.Collectors;
 
 
 public class IDEController {
+    @FXML
+    ChoiceBox<FlutterRunner> choiceRunner;
+
     @FXML
     TextArea txtOutput;
 
@@ -65,7 +66,7 @@ public class IDEController {
     private ValueEditorFactory editorFactory;
     private TreeNodeDefinitionManager definationManager;
     private ViewNode prevselectedtreeitem;
-    private FlutterRunner flutterRunner;
+    private List<FlutterRunner> flutterRunners;
     private Widget selectedProjectWidget;
 
     private Project currentProject;
@@ -88,7 +89,10 @@ public class IDEController {
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:treenode.xml");
         editorFactory = (ValueEditorFactory) context.getBean("editorFactory");
         definationManager = (TreeNodeDefinitionManager) context.getBean("definationManager");
-        flutterRunner = (FlutterRunner) context.getBean("flutterRunner");
+        flutterRunners = (List<FlutterRunner>) context.getBean("flutterRunners");
+
+        choiceRunner.setItems(FXCollections.observableArrayList(flutterRunners));
+        choiceRunner.getSelectionModel().select(0);
 
         loadControlToolbox();
 
@@ -104,12 +108,16 @@ public class IDEController {
             IDEController.this.selectedProjectWidget = selectedWidget;
         });
 
-        flutterRunner.addOutputListener(outputstr -> {
-            onFlutterOutput(outputstr);
-        });
+        for (FlutterRunner flutterRunner: flutterRunners) {
+            flutterRunner.addOutputListener(outputstr -> {
+                onFlutterOutput(outputstr);
+            });
+        }
 
         scene.getWindow().setOnCloseRequest(event -> {
-            flutterRunner.stopapp();
+            for (FlutterRunner flutterRunner: flutterRunners) {
+                flutterRunner.stopapp();
+            }
         });
 
     }
@@ -163,19 +171,27 @@ public class IDEController {
 
     // event handlers - flutter runner
     public void onStartClick(ActionEvent actionEvent) {
+        if(currentProject==null) return;
+        FlutterRunner flutterRunner = choiceRunner.getSelectionModel().getSelectedItem();
         flutterRunner.setProjectPath(currentProject.getProjectPath());
         flutterRunner.startapp();
     }
 
     public void onHotRestartClick(ActionEvent actionEvent) {
+        if(currentProject==null) return;
+        FlutterRunner flutterRunner = choiceRunner.getSelectionModel().getSelectedItem();
         flutterRunner.hotRestart();
     }
 
     public void onHotReloadClick(ActionEvent actionEvent) {
+        if(currentProject==null) return;
+        FlutterRunner flutterRunner = choiceRunner.getSelectionModel().getSelectedItem();
         flutterRunner.hotload();
     }
 
     public void onStopClick(ActionEvent actionEvent) {
+        if(currentProject==null) return;
+        FlutterRunner flutterRunner = choiceRunner.getSelectionModel().getSelectedItem();
         flutterRunner.stopapp();
     }
 

@@ -23,7 +23,7 @@ public class Main extends Application {
         loader.setLocation(location);
         loader.setBuilderFactory(new JavaFXBuilderFactory());
         Parent root = loader.load();
-        Scene scene = new Scene(root, 1200, 675);
+        Scene scene = new Scene(root, 1400, 875);
 //        scene.setUserAgentStylesheet("/css/ide.css");
 
         IDEController controller = loader.getController();
