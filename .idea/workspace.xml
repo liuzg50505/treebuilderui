@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="1. adjust ideui.fxml (icon, tooltip)&#10;2. refactor code in IDEController.java">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="1">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/liuzg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/definition.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/design.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/def/DefinitionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/def/DefinitionManagerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/def/DefinitionReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/def/Dom4JDefinitionReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/def/EnumDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/def/EnumInstance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/def/Instance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/def/SimpleTypeDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/def/TypeDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/def/WidgetBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/def/WidgetDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/def/WidgetInstance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/DefTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/info.txt" beforeDir="false" afterPath="$PROJECT_DIR$/info.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/flutter/FlutterRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutter/FlutterRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/flutter/MacosFlutterRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutter/MacosFlutterRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/models/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/models/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/ui/IDEController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/ui/IDEController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/ui/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/treenode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/treenode.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/ideui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/ideui.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/flutter/FlutterRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/liuzg/flutter/FlutterRunner.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/flutter/MacosFlutterRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/liuzg/flutter/MacosFlutterRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/ui/IDEController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/liuzg/ui/IDEController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/ui/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/liuzg/ui/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/treenode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/treenode.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/ideui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/ideui.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treebuilderui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/treebuilderui.iml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,47 +92,21 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/ui/IDEController.java">
+        <entry file="file://$PROJECT_DIR$/design.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="289" column="15" selection-start-line="289" selection-start-column="15" selection-end-line="289" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/ui/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/models/Project.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1266#1267#0" expanded="true" />
-                <element signature="e#1296#1297#0" expanded="true" />
-                <element signature="e#1393#1394#0" expanded="true" />
-                <element signature="e#1425#1426#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="85">
+              <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/ui/ideui.fxml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
+        <entry file="file://$PROJECT_DIR$/definition.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="731">
+              <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
             </state>
           </provider>
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
     </leaf>
@@ -135,17 +118,13 @@
         <option value="Interface" />
         <option value="spring-beans.schema" />
         <option value="CSS File" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>solution</find>
-      <find>treeview</find>
-      <find>new Node</find>
-      <find>expand</find>
       <find>project</find>
       <find>treenode</find>
       <find>tabEditors</find>
@@ -172,9 +151,14 @@
       <find>onRefreshProjectClick</find>
       <find>choiceRunner</find>
       <find>ignore</find>
+      <find>import</find>
+      <find>SaxReader</find>
+      <find>generateCode</find>
+      <find>trim</find>
     </findStrings>
     <replaceStrings>
       <replace>/assets/nodes</replace>
+      <replace>importlib</replace>
     </replaceStrings>
   </component>
   <component name="FindManager">
@@ -189,29 +173,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/liuzg/ui/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/liuzg/treenodes/TreeNodeDefinationManager.java" />
-        <option value="$PROJECT_DIR$/src/com/liuzg/treenodes/TreeNodeDefinitionManager.java" />
-        <option value="$PROJECT_DIR$/src/com/liuzg/treenodes/XmlTreeNodeDefinationManager.java" />
-        <option value="$PROJECT_DIR$/src/com/liuzg/editorui/RegistedValueEditorFactory.java" />
-        <option value="$PROJECT_DIR$/src/com/liuzg/editorui/ValueEditorFactory.java" />
-        <option value="$PROJECT_DIR$/src/com/liuzg/editorui/ValueEditor.java" />
-        <option value="$PROJECT_DIR$/src/com/liuzg/editorui/StringEditor.java" />
-        <option value="$PROJECT_DIR$/src/com/liuzg/editorui/StringEditorFactory.java" />
-        <option value="$PROJECT_DIR$/src/com/liuzg/editorui/EditorCreator.java" />
-        <option value="$PROJECT_DIR$/src/com/liuzg/models/EnumType.java" />
-        <option value="$PROJECT_DIR$/src/com/liuzg/editorui/StringEditorCreator.java" />
-        <option value="$PROJECT_DIR$/treenodes.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/editorui/EditorCreator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/editorui/StringEditorCreator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/editorui/ValueEditor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/editorui/RegistedValueEditorFactory.java" />
-        <option value="$PROJECT_DIR$/treenode.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/ui/comboeditor.fxml" />
-        <option value="$PROJECT_DIR$/src/main/resources/ui/stringeditor.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/treenodes/XmlTreeNodeDefinationManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/treenodes/TreeNodeDefinitionManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/treenodes/RegistedTreeNodeDefinationManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/editorui/ComboEditor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/editorui/StringEditor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/models/TreeNode.java" />
@@ -231,7 +192,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/storage/TreeWriter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/uitls/FxUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/ui/ProjectTreeView.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/flutter/MacosFlutterRunner.java" />
         <option value="$PROJECT_DIR$/src/main/resources/treenode.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/flutter/FlutterRunner.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/ui/IDEController.java" />
@@ -240,6 +200,30 @@
         <option value="$PROJECT_DIR$/src/main/resources/ui/dd.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/ui/ideui.fxml" />
         <option value="$PROJECT_DIR$/info.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/flutter/MacosFlutterRunner.java" />
+        <option value="$PROJECT_DIR$/design.yaml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/EnumDefination.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/SimpleTypeInstance.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/SimpleTypeDefinition.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/TypeDefination.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/DefinationReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/Dom4JDefinationReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/ClassDefination.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/DefinitionManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/DefinitionReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/Instance.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/EnumInstance.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/DefinitionManagerImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/ClassDefinition.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/ClassInstance.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/WidgetDefinition.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/WidgetInstance.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/Dom4JDefinitionReader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/EnumDefinition.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/WidgetBuilder.java" />
+        <option value="$PROJECT_DIR$/src/test/java/DefTest.java" />
+        <option value="$PROJECT_DIR$/design.xml" />
+        <option value="$PROJECT_DIR$/definition.xml" />
       </list>
     </option>
   </component>
@@ -252,8 +236,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="67" />
-    <option name="y" value="23" />
+    <option name="x" value="155" />
+    <option name="y" value="81" />
     <option name="width" value="1868" />
     <option name="height" value="1057" />
   </component>
@@ -268,17 +252,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="treebuilderui" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="treebuilderui" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -319,7 +293,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="liuzg" type="462c0819:PsiDirectoryNode" />
-              <item name="flutter" type="462c0819:PsiDirectoryNode" />
+              <item name="def" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="treebuilderui" type="b2602c69:ProjectViewProjectNode" />
@@ -328,45 +302,51 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="liuzg" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="treebuilderui" type="b2602c69:ProjectViewProjectNode" />
               <item name="treebuilderui" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="treebuilderui" type="b2602c69:ProjectViewProjectNode" />
+              <item name="treebuilderui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="treebuilderui" type="b2602c69:ProjectViewProjectNode" />
+              <item name="treebuilderui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="treebuilderui" type="b2602c69:ProjectViewProjectNode" />
+              <item name="treebuilderui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="liuzg" type="462c0819:PsiDirectoryNode" />
-              <item name="uitls" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="treebuilderui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="treebuilderui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="treebuilderui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="treebuilderui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="treebuilderui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="treebuilderui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="treebuilderui" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="treebuilderui" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -392,17 +372,20 @@
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/assets/nodes" />
-      <recent name="$PROJECT_DIR$/src/main/resources" />
-      <recent name="$PROJECT_DIR$/src/main/resources/ui" />
-      <recent name="$PROJECT_DIR$/src/com/liuzg/ui" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/assets/toolbars" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets" />
       <recent name="$PROJECT_DIR$/src/main/resources/ui" />
       <recent name="$PROJECT_DIR$/src/sample" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.liuzg.def" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/assets/nodes" />
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/resources/ui" />
+      <recent name="$PROJECT_DIR$/src/com/liuzg/ui" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -417,7 +400,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.DefTest.test3">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -470,6 +453,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DefTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="treebuilderui" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DefTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DefTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="treebuilderui" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DefTest" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DefTest.test3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="treebuilderui" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DefTest" />
+      <option name="METHOD_NAME" value="test3" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -503,6 +528,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DefTest.test3" />
+        <item itemvalue="JUnit.DefTest.test2" />
+        <item itemvalue="JUnit.DefTest.test1" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.TestRuntime" />
       </list>
@@ -529,6 +557,11 @@
       <workItem from="1562630224692" duration="29908000" />
       <workItem from="1562691056446" duration="17410000" />
       <workItem from="1562750900770" duration="10657000" />
+      <workItem from="1562930474184" duration="638000" />
+      <workItem from="1562931150821" duration="2543000" />
+      <workItem from="1562987121890" duration="3105000" />
+      <workItem from="1563100672385" duration="1089000" />
+      <workItem from="1563157201696" duration="26828000" />
     </task>
     <task id="LOCAL-00001" summary="update pom dependency">
       <created>1562629923029</created>
@@ -579,11 +612,50 @@
       <option name="project" value="LOCAL" />
       <updated>1562735726490</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="1">
+      <created>1562930499371</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1562930499371</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="DefTest_test2 - 2019.07.15 at 20h 02m 49s.xml">
+      <configuration name="DefTest.test2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DefTest_test2 - 2019.07.15 at 20h 39m 53s.xml">
+      <configuration name="DefTest.test2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DefTest_test2 - 2019.07.15 at 22h 23m 37s.xml">
+      <configuration name="DefTest.test2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DefTest_test2 - 2019.07.15 at 22h 24m 16s.xml">
+      <configuration name="DefTest.test2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DefTest_test3 - 2019.07.15 at 22h 29m 12s.xml">
+      <configuration name="DefTest.test3" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DefTest_test3 - 2019.07.15 at 22h 29m 44s.xml">
+      <configuration name="DefTest.test3" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DefTest_test3 - 2019.07.15 at 22h 30m 06s.xml">
+      <configuration name="DefTest.test3" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DefTest_test3 - 2019.07.15 at 22h 31m 56s.xml">
+      <configuration name="DefTest.test3" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DefTest_test3 - 2019.07.15 at 22h 32m 00s.xml">
+      <configuration name="DefTest.test3" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DefTest_test3 - 2019.07.16 at 16h 48m 42s.xml">
+      <configuration name="DefTest.test3" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135086000" />
+    <option name="totallyTimeSpent" value="169289000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -595,9 +667,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="66" y="23" width="1854" height="1057" extended-state="6" />
+    <frame x="52" y="23" width="1868" height="1057" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.18267109" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.19331872" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -623,6 +695,8 @@
       <window_info anchor="bottom" id="Spring" order="16" />
       <window_info anchor="bottom" id="Docker" order="17" show_stripe_button="false" />
       <window_info anchor="bottom" id="Flutter Performance" order="18" side_tool="true" />
+      <window_info anchor="bottom" id="Tool Output" order="19" />
+      <window_info anchor="bottom" id="ANTLR Preview" order="20" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -695,7 +769,8 @@
     <MESSAGE value="1. add outout pane&#10;2. add refresh button at solution pane" />
     <MESSAGE value="1. update data structure of Treenode and TreeNodeDefinition, add mapProperties for Treenode&#10;2. add save button to IDE&#10;3. save dirty design files" />
     <MESSAGE value="1. adjust ideui.fxml (icon, tooltip)&#10;2. refactor code in IDEController.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. adjust ideui.fxml (icon, tooltip)&#10;2. refactor code in IDEController.java" />
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -705,6 +780,18 @@
           <line>24</line>
           <properties />
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/DefTest.java</url>
+          <line>87</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/liuzg/def/WidgetBuilder.java</url>
+          <line>16</line>
+          <properties />
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -770,137 +857,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/nodes/text.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/nodes/view.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/nodes/textbox.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/nodes/column.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/editorui/StringEditor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/ui/WrapperController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/models/TreeNodeCollection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/io/DataInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="500" column="29" selection-start-line="500" selection-start-column="29" selection-end-line="500" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/TestRuntime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/javafx-src.zip!/javafx/scene/layout/AnchorPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2544">
-          <caret line="108" column="3" lean-forward="true" selection-start-line="108" selection-start-column="3" selection-end-line="108" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/javafx-src.zip!/javafx/beans/value/ChangeListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/uitls/ScrollBarState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/nodes/align.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/ui/TreeEditorController.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/css/ide.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/editorui/ComboEditor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="39" column="42" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/editorui/OnEditorChangedCallback.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" lean-forward="true" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/models/Design.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="519">
-          <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#354#355#0" expanded="true" />
-            <element signature="e#389#390#0" expanded="true" />
-            <element signature="e#688#689#0" expanded="true" />
-            <element signature="e#718#719#0" expanded="true" />
-            <element signature="e#765#766#0" expanded="true" />
-            <element signature="e#803#804#0" expanded="true" />
-            <element signature="e#890#891#0" expanded="true" />
-            <element signature="e#933#934#0" expanded="true" />
-            <element signature="e#967#968#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/assets/toolbars/new.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/assets/toolbars/open.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1005,30 +961,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/models/TreeNodeDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="78" column="43" selection-start-line="78" selection-start-column="43" selection-end-line="78" selection-end-column="43" />
-          <folding>
-            <element signature="e#827#828#0" expanded="true" />
-            <element signature="e#877#878#0" expanded="true" />
-            <element signature="e#1950#1951#0" expanded="true" />
-            <element signature="e#2013#2014#0" expanded="true" />
-            <element signature="e#2063#2064#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/models/TreeNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-          <folding>
-            <element signature="method#cloneTreeNode#0;class#TreeNode#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/storage/TreeReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="393">
@@ -1082,18 +1014,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutter/MacosFlutterRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="113" selection-start-line="113" selection-end-line="113" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#772#773#0" expanded="true" />
-            <element signature="e#809#810#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutter/FlutterRunner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -1105,45 +1025,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/treenode.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-          <folding>
-            <element signature="n#bean#0;n#beans#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/dd.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" lean-forward="true" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/dd.fxml" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/ui/stringeditor.fxml">
-      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+      <provider editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/models/Project.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1266#1267#0" expanded="true" />
-            <element signature="e#1296#1297#0" expanded="true" />
-            <element signature="e#1393#1394#0" expanded="true" />
-            <element signature="e#1425#1426#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="252">
+          <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/ui/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
+        <state relative-caret-position="221">
           <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
         </state>
       </provider>
@@ -1151,24 +1047,250 @@
     <entry file="file://$PROJECT_DIR$/info.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
-          <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/models/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/treenode.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+          <folding>
+            <element signature="n#bean#0;n#beans#0;n#!!top" />
+            <element signature="n#bean#1;n#beans#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutter/MacosFlutterRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#772#773#0" expanded="true" />
+            <element signature="e#809#810#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/SimpleTypeInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+          <folding>
+            <element signature="e#122#123#0" expanded="true" />
+            <element signature="e#149#150#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/SimpleTypeDefinition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/TypeDefinition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="36" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/ui/IDEController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="289" column="15" selection-start-line="289" selection-start-column="15" selection-end-line="289" selection-end-column="15" />
+        <state relative-caret-position="380">
+          <caret line="254" selection-start-line="252" selection-end-line="254" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/util/stream/Collectors.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="228" column="31" selection-start-line="228" selection-start-column="31" selection-end-line="228" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/EnumInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/DefinitionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/DefinitionManagerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="44" lean-forward="true" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#179#180#0" expanded="true" />
+            <element signature="e#210#211#0" expanded="true" />
+            <element signature="e#688#689#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/DefinitionReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#235#236#0" expanded="true" />
+            <element signature="e#286#287#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/Dom4JDefinitionReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/WidgetDefinition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/WidgetInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/EnumDefinition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#363#364#0" expanded="true" />
+            <element signature="e#395#396#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/Instance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#154#155#0" expanded="true" />
+            <element signature="e#206#207#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/DefTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="86" column="54" selection-start-line="86" selection-start-column="54" selection-end-line="86" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/WidgetBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="33" column="19" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/ui/ideui.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="206">
+        <state relative-caret-position="548">
           <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/ui/ViewNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/models/TreeNodeCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/models/TreeNodeDefinition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <folding>
+            <element signature="e#1910#1911#0" expanded="true" />
+            <element signature="e#1946#1947#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/models/TreeNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2091">
+          <caret line="137" column="27" selection-start-line="137" selection-start-column="27" selection-end-line="137" selection-end-column="27" />
+          <folding>
+            <element signature="method#cloneTreeNode#0;class#TreeNode#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/design.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/definition.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="13" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

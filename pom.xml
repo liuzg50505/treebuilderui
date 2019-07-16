@@ -36,6 +36,12 @@
             <artifactId>spring-context</artifactId>
             <version>4.3.24.RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
 
 
     </dependencies>

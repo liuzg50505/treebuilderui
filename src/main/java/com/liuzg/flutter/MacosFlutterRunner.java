@@ -39,7 +39,7 @@ public class MacosFlutterRunner extends FlutterRunner{
     @Override
     public void startapp() {
         if(running) stopapp();
-        ProcessBuilder builder = new ProcessBuilder( "bash","-c","flutter run");
+        ProcessBuilder builder = new ProcessBuilder( "bash","-c","flutter run -t lib/main_dev.dart");
 
         builder.directory( new File( "/Volumes/macdata/MyProjects/treebuildermvcprj" ).getAbsoluteFile() ); // this is where you set the root folder for the executable to run with
         builder.redirectErrorStream(true);

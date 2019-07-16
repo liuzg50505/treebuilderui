@@ -1,0 +1,49 @@
+<root>
+    <Enum type="Alignment">
+        <item key="Center" code="Alignment.Center" descrption=""/>
+        <item key="Left" code="Alignment.Left" descrption=""/>
+        <item key="Right" code="Alignment.Right" descrption=""/>
+    </Enum>
+    <Enum type="MainAxisAlignment">
+        <item key="start" code="MainAxisAlignment.start" descrption=""/>
+        <item key="end" code="MainAxisAlignment.end" descrption=""/>
+        <item key="center" code="MainAxisAlignment.center" descrption=""/>
+        <item key="spaceBetween" code="MainAxisAlignment.spaceBetween" descrption=""/>
+        <item key="spaceAround" code="MainAxisAlignment.spaceAround" descrption=""/>
+        <item key="spaceEvenly" code="MainAxisAlignment.spaceEvenly" descrption=""/>
+    </Enum>
+    <Widget type="EdgeInsets" constructorname="all">
+        <property name="value" type="double" required="true"/>
+    </Widget>
+    <Widget type="EdgeInsets" constructorname="fromLTRB">
+        <property name="left" type="double" required="true"/>
+        <property name="top" type="double" required="true"/>
+        <property name="right" type="double" required="true"/>
+        <property name="bottom" type="double" required="true"/>
+    </Widget>
+    <Widget type="EdgeInsets" constructorname="only">
+        <property name="left" type="double" />
+        <property name="top" type="double" />
+        <property name="right" type="double" />
+        <property name="bottom" type="double" />
+    </Widget>
+    <Widget type="Column" constructorname="">
+        <property name="children" type="Widget" collection="true"  defaultvalue="[]"/>
+        <property name="mainAxisAlignment" type="MainAxisAlignment" />
+    </Widget>
+    <Widget type="Scaffold" constructorname="">
+        <property name="appBar" type="Widget" />
+        <property name="body" type="Widget" />
+    </Widget>
+    <Widget type="AppBar" constructorname="">
+        <property name="title" type="Widget"/>
+    </Widget>
+    <Widget type="Padding">
+        <property name="child" type="Widget"  />
+        <property name="padding" type="EdgeInsetsGeometry" />
+    </Widget>
+    <Widget type="Text">
+        <property name="data" type="String"  />
+    </Widget>
+
+</root>

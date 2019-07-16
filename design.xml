@@ -1,0 +1,18 @@
+<widget name="test">
+    <Scaffold>
+        <appBar>
+            <AppBar>
+                <title>
+                    <Text data="abc"/>
+                </title>
+            </AppBar>
+        </appBar>
+        <body>
+            <Column mainAxisAlignment="start">
+                <children>
+                    <Column/>
+                </children>
+            </Column>
+        </body>
+    </Scaffold>
+</widget>
