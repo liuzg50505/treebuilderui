@@ -3,7 +3,12 @@
         <appBar>
             <AppBar>
                 <title>
-                    <Text data="abc"/>
+                    <Text data="abc">
+                        <decorateby>
+                            <Padding></Padding>
+                            <Container></Container>
+                        </decorateby>
+                    </Text>
                 </title>
             </AppBar>
         </appBar>

@@ -296,172 +296,178 @@
     </Class>
 
     <!--布局控件-->
-    <Class type="Row" constructorname="">
-        <property name="mainAxisAlignment" type="MainAxisAlignment" defaultvalue="MainAxisAlignment.start"/>
-        <property name="mainAxisSize" type="MainAxisSize" defaultvalue="MainAxisSize.max"/>
-        <property name="crossAxisAlignment" type="CrossAxisAlignment" defaultvalue="CrossAxisAlignment.center"/>
-        <property name="textDirection" type="TextDirection"/>
-        <property name="verticalDirection" type="VerticalDirection" defaultvalue="VerticalDirection.down"/>
-        <property name="textBaseline" type="TextBaseline"/>
-        <property name="children" type="Widget" collection="true"  defaultvalue="[]"/>
-    </Class>
-    <Class type="Column" constructorname="">
-        <property name="mainAxisAlignment" type="MainAxisAlignment" defaultvalue="MainAxisAlignment.start"/>
-        <property name="mainAxisSize" type="MainAxisSize" defaultvalue="MainAxisSize.max"/>
-        <property name="crossAxisAlignment" type="CrossAxisAlignment" defaultvalue="CrossAxisAlignment.center"/>
-        <property name="textDirection" type="TextDirection"/>
-        <property name="verticalDirection" type="VerticalDirection" defaultvalue="VerticalDirection.down"/>
-        <property name="textBaseline" type="TextBaseline"/>
-        <property name="children" type="Widget" collection="true"  defaultvalue="[]"/>
-    </Class>
-    <Class type="Container" constructorname="">
-        <property name="alignment" type="Alignment" />
-        <property name="padding" type="EdgeInsets" />
-        <property name="color" type="Color" />
-        <property name="decoration" type="Decoration" />
-        <property name="foregroundDecoration" type="Decoration" />
-        <property name="width" type="double" />
-        <property name="height" type="double" />
-        <property name="constraints" type="BoxConstraints" />
-        <property name="margin" type="EdgeInsets" />
-<!--        <property name="transform" type="Matrix4" />-->
-        <property name="child" type="Widget" />
-    </Class>
-    <Class type="Padding" constructorname="">
-        <property name="padding" type="EdgeInsetsGeometry" editor="com.xxx.PaddingEditor" />
-        <property name="child" type="Widget"  />
-    </Class>
-    <Class type="Expanded" constructorname="">
-        <property name="flex" type="int"  />
-        <property name="fit" type="FlexFit" defaultvalue="FlexFit.tight"  />
-        <property name="child" type="Widget"  />
-    </Class>
-    <Class type="GestureDetector" constructorname="">
-        <property name="child" type="Widget"  />
-        <property name="onTapDown" type="EventHandler" />
-        <property name="onTapUp" type="EventHandler" />
-        <property name="onTap" type="EventHandler" />
-        <property name="onTapCancel" type="EventHandler" />
-        <property name="onSecondaryTapDown" type="EventHandler" />
-        <property name="onSecondaryTapUp" type="EventHandler" />
-        <property name="onSecondaryTapCancel" type="EventHandler" />
-        <property name="onDoubleTap" type="EventHandler" />
-        <property name="onLongPress" type="EventHandler" />
-        <property name="onLongPressStart" type="EventHandler" />
-        <property name="onLongPressMoveUpdate" type="EventHandler" />
-        <property name="onLongPressUp" type="EventHandler" />
-        <property name="onLongPressEnd" type="EventHandler" />
-        <property name="onVerticalDragDown" type="EventHandler" />
-        <property name="onVerticalDragStart" type="EventHandler" />
-        <property name="onVerticalDragUpdate" type="EventHandler" />
-        <property name="onVerticalDragEnd" type="EventHandler" />
-        <property name="onVerticalDragCancel" type="EventHandler" />
-        <property name="onHorizontalDragDown" type="EventHandler" />
-        <property name="onHorizontalDragStart" type="EventHandler" />
-        <property name="onHorizontalDragUpdate" type="EventHandler" />
-        <property name="onHorizontalDragEnd" type="EventHandler" />
-        <property name="onHorizontalDragCancel" type="EventHandler" />
-        <property name="onForcePressStart" type="EventHandler" />
-        <property name="onForcePressPeak" type="EventHandler" />
-        <property name="onForcePressUpdate" type="EventHandler" />
-        <property name="onForcePressEnd" type="EventHandler" />
-        <property name="onPanDown" type="EventHandler" />
-        <property name="onPanStart" type="EventHandler" />
-        <property name="onPanUpdate" type="EventHandler" />
-        <property name="onPanEnd" type="EventHandler" />
-        <property name="onPanCancel" type="EventHandler" />
-        <property name="onScaleStart" type="EventHandler" />
-        <property name="onScaleUpdate" type="EventHandler" />
-        <property name="onScaleEnd" type="EventHandler" />
-        <property name="behavior" type="HitTestBehavior" />
-        <property name="excludeFromSemantics" type="bool" defaultvalue="false" />
-        <property name="dragStartBehavior" type="DragStartBehavior" defaultvalue="DragStartBehavior.start" />
-    </Class>
-    <!--显示控件-->
-    <Class type="Scaffold" constructorname="">
-        <property name="appBar" type="Widget" />
-        <property name="body" type="Widget" />
-        <!--TODO-->
-    </Class>
-    <Class type="AppBar" constructorname="">
-        <property name="title" type="Widget"/>
-        <!--TODO-->
-    </Class>
-    <Class type="Text" constructorname="">
-        <property name="data" type="String" parametertype="RequiredParameter" />
-        <property name="style" type="TextStyle"  />
-        <property name="strutStyle" type="StrutStyle"  />
-        <property name="textAlign" type="TextAlign"  />
-        <property name="textDirection" type="TextDirection"  />
-        <property name="locale" type="Locale"  />
-        <property name="softWrap" type="bool"  />
-        <property name="overflow" type="TextOverflow"  />
-        <property name="textScaleFactor" type="double"  />
-        <property name="maxLines" type="int"  />
-        <property name="semanticsLabel" type="String"  />
-        <property name="textWidthBasis" type="TextWidthBasis"  />
-    </Class>
-    <Class type="RaisedButton" constructorname="">
-        <property name="onPressed" type="EventHandler" />
-        <property name="onHighlightChanged" type="EventHandler" />
-        <property name="textTheme" type="ButtonTextTheme" />
-        <property name="textColor" type="Color" />
-        <property name="disabledTextColor" type="Color" />
-        <property name="color" type="Color" />
-        <property name="disabledColor" type="Color" />
-        <property name="focusColor" type="Color" />
-        <property name="hoverColor" type="Color" />
-        <property name="highlightColor" type="Color" />
-        <property name="splashColor" type="Color" />
-        <property name="colorBrightness" type="Brightness" />
-        <property name="elevation" type="double" />
-        <property name="focusElevation" type="double" />
-        <property name="hoverElevation" type="double" />
-        <property name="highlightElevation" type="double" />
-        <property name="disabledElevation" type="double" />
-        <property name="padding" type="EdgeInsets" />
-        <property name="shape" type="ShapeBorder" />
-        <property name="clipBehavior" type="Clip" />
-        <property name="focusNode" type="FocusNode" />
-        <property name="materialTapTargetSize" type="MaterialTapTargetSize" />
-        <property name="animationDuration" type="Duration" />
-        <property name="child" type="Widget" />
-    </Class>
-    <Class type="RefreshIndicator" constructorname="">
-        <property name="child" type="Widget" />
-        <property name="displacement" type="double" />
-        <property name="onRefresh" type="RefreshCallback" />
-        <property name="color" type="Color" />
-        <property name="backgroundColor" type="Color" />
-        <property name="semanticsLabel" type="String" />
-        <property name="semanticsValue" type="String" />
-    </Class>
-    <Class constructorname="" type="ListView">
-        <property defaultvalue="Axis.vertical" name="scrollDirection" type="Axis"/>
-        <property defaultvalue="false" name="reverse" type="bool"/>
-        <property name="controller" type="ScrollController"/>
-        <property name="primary" type="bool"/>
-        <property name="physics" type="ScrollPhysics"/>
-        <property defaultvalue="false" name="shrinkWrap" type="bool"/>
+    <Class constructorname="" type="Container" decoratorproperty="child">
+        <property name="alignment" type="AlignmentGeometry"/>
         <property name="padding" type="EdgeInsetsGeometry"/>
-        <property name="itemExtent" type="double"/>
-        <property defaultvalue="true" name="addAutomaticKeepAlives" type="bool"/>
-        <property defaultvalue="true" name="addRepaintBoundaries" type="bool"/>
-        <property defaultvalue="true" name="addSemanticIndexes" type="bool"/>
-        <property name="cacheExtent" type="double"/>
-        <property collection="true" defaultvalue="const []" name="children" type="widget"/>
-        <property name="semanticChildCount" type="int"/>
-        <property defaultvalue="DragStartBehavior.start" name="dragStartBehavior" type="DragStartBehavior"/>
-    </Class>
-    <Class constructorname="" type="Card">
         <property name="color" type="Color"/>
+        <property name="decoration" type="Decoration"/>
+        <property name="foregroundDecoration" type="Decoration"/>
+        <property name="width" type="double"/>
+        <property name="height" type="double"/>
+        <property name="constraints" type="BoxConstraints"/>
+        <property name="margin" type="EdgeInsetsGeometry"/>
+        <property name="transform" type="Matrix4"/>
+        <property name="child" type="Widget"/>
+    </Class>
+
+    <Class type="Padding" constructorname="" decoratorproperty="child">
+        <property name="padding" type="EdgeInsets" editor="com.xxx.PaddingEditor" />
+        <property name="child" type="Widget"  />
+    </Class>
+
+    <Class constructorname="" type="Row">
+        <property defaultvalue="MainAxisAlignment.start" name="mainAxisAlignment" type="MainAxisAlignment"/>
+        <property defaultvalue="MainAxisSize.max" name="mainAxisSize" type="MainAxisSize"/>
+        <property defaultvalue="CrossAxisAlignment.center" name="crossAxisAlignment" type="CrossAxisAlignment"/>
+        <property name="textDirection" type="TextDirection"/>
+        <property defaultvalue="VerticalDirection.down" name="verticalDirection" type="VerticalDirection"/>
+        <property name="textBaseline" type="TextBaseline"/>
+        <property collection="true" defaultvalue="const []" name="children" type="Widget"/>
+    </Class>
+
+
+    <Class constructorname="" type="Column">
+        <property defaultvalue="MainAxisAlignment.start" name="mainAxisAlignment" type="MainAxisAlignment"/>
+        <property defaultvalue="MainAxisSize.max" name="mainAxisSize" type="MainAxisSize"/>
+        <property defaultvalue="CrossAxisAlignment.center" name="crossAxisAlignment" type="CrossAxisAlignment"/>
+        <property name="textDirection" type="TextDirection"/>
+        <property defaultvalue="VerticalDirection.down" name="verticalDirection" type="VerticalDirection"/>
+        <property name="textBaseline" type="TextBaseline"/>
+        <property collection="true" defaultvalue="const []" name="children" type="Widget"/>
+    </Class>
+
+
+    <Class constructorname="" type="Image">
+        <property name="image" type="ImageProvider"/>
+        <property name="frameBuilder" type="ImageFrameBuilder"/>
+        <property name="loadingBuilder" type="ImageLoadingBuilder"/>
+        <property name="semanticLabel" type="String"/>
+        <property defaultvalue="false" name="excludeFromSemantics" type="bool"/>
+        <property name="width" type="double"/>
+        <property name="height" type="double"/>
+        <property name="color" type="Color"/>
+        <property name="colorBlendMode" type="BlendMode"/>
+        <property name="fit" type="BoxFit"/>
+        <property defaultvalue="Alignment.center" name="alignment" type="AlignmentGeometry"/>
+        <property defaultvalue="ImageRepeat.noRepeat" name="repeat" type="ImageRepeat"/>
+        <property name="centerSlice" type="Rect"/>
+        <property defaultvalue="false" name="matchTextDirection" type="bool"/>
+        <property defaultvalue="false" name="gaplessPlayback" type="bool"/>
+        <property defaultvalue="FilterQuality.low" name="filterQuality" type="FilterQuality"/>
+    </Class>
+
+
+    <Class constructorname="" type="Text">
+        <property name="data" type="String"/>
+        <property name="style" type="TextStyle"/>
+        <property name="strutStyle" type="StrutStyle"/>
+        <property name="textAlign" type="TextAlign"/>
+        <property name="textDirection" type="TextDirection"/>
+        <property name="locale" type="Locale"/>
+        <property name="softWrap" type="bool"/>
+        <property name="overflow" type="TextOverflow"/>
+        <property name="textScaleFactor" type="double"/>
+        <property name="maxLines" type="int"/>
+        <property name="semanticsLabel" type="String"/>
+        <property name="textWidthBasis" type="TextWidthBasis"/>
+    </Class>
+
+
+    <Class constructorname="" type="Icon">
+        <property name="icon" type="IconData"/>
+        <property name="size" type="double"/>
+        <property name="color" type="Color"/>
+        <property name="semanticLabel" type="String"/>
+        <property name="textDirection" type="TextDirection"/>
+    </Class>
+
+
+    <Class constructorname="" type="RaisedButton">
+        <property name="onPressed" type="VoidCallback"/>
+        <property name="onHighlightChanged" type="ValueChanged&lt;bool&gt;"/>
+        <property name="textTheme" type="ButtonTextTheme"/>
+        <property name="textColor" type="Color"/>
+        <property name="disabledTextColor" type="Color"/>
+        <property name="color" type="Color"/>
+        <property name="disabledColor" type="Color"/>
+        <property name="focusColor" type="Color"/>
+        <property name="hoverColor" type="Color"/>
+        <property name="highlightColor" type="Color"/>
+        <property name="splashColor" type="Color"/>
+        <property name="colorBrightness" type="Brightness"/>
+        <property name="elevation" type="double"/>
+        <property name="focusElevation" type="double"/>
+        <property name="hoverElevation" type="double"/>
+        <property name="highlightElevation" type="double"/>
+        <property name="disabledElevation" type="double"/>
+        <property name="padding" type="EdgeInsetsGeometry"/>
+        <property name="shape" type="ShapeBorder"/>
+        <property name="clipBehavior" type="Clip"/>
+        <property name="focusNode" type="FocusNode"/>
+        <property name="materialTapTargetSize" type="MaterialTapTargetSize"/>
+        <property name="animationDuration" type="Duration"/>
+        <property name="child" type="Widget"/>
+    </Class>
+
+
+    <Class constructorname="" type="Scaffold">
+        <property name="appBar" type="Widget"/>
+        <property name="body" type="Widget"/>
+        <property name="floatingActionButton" type="Widget"/>
+        <property name="floatingActionButtonLocation" type="FloatingActionButtonLocation"/>
+        <property name="floatingActionButtonAnimator" type="FloatingActionButtonAnimator"/>
+        <property collection="true" name="persistentFooterButtons" type="Widget"/>
+        <property name="drawer" type="Widget"/>
+        <property name="endDrawer" type="Widget"/>
+        <property name="bottomNavigationBar" type="Widget"/>
+        <property name="bottomSheet" type="Widget"/>
+        <property name="backgroundColor" type="Color"/>
+        <property name="resizeToAvoidBottomPadding" type="bool"/>
+        <property name="resizeToAvoidBottomInset" type="bool"/>
+        <property defaultvalue="true" name="primary" type="bool"/>
+        <property defaultvalue="DragStartBehavior.start" name="drawerDragStartBehavior" type="DragStartBehavior"/>
+        <property defaultvalue="false" name="extendBody" type="bool"/>
+        <property name="drawerScrimColor" type="Color"/>
+    </Class>
+
+
+    <Class constructorname="" type="AppBar">
+        <property name="leading" type="Widget"/>
+        <property defaultvalue="true" name="automaticallyImplyLeading" type="bool"/>
+        <property name="title" type="Widget"/>
+        <property collection="true" name="actions" type="Widget"/>
+        <property name="flexibleSpace" type="Widget"/>
+        <property name="bottom" type="PreferredSizeWidget"/>
         <property name="elevation" type="double"/>
         <property name="shape" type="ShapeBorder"/>
-        <property defaultvalue="true" name="borderOnForeground" type="bool"/>
-        <property name="margin" type="EdgeInsetsGeometry"/>
-        <property name="clipBehavior" type="Clip"/>
-        <property name="child" type="Widget"/>
-        <property defaultvalue="true" name="semanticContainer" type="bool"/>
+        <property name="backgroundColor" type="Color"/>
+        <property name="brightness" type="Brightness"/>
+        <property name="iconTheme" type="IconThemeData"/>
+        <property name="actionsIconTheme" type="IconThemeData"/>
+        <property name="textTheme" type="TextTheme"/>
+        <property defaultvalue="true" name="primary" type="bool"/>
+        <property name="centerTitle" type="bool"/>
+        <property defaultvalue="NavigationToolbar.kMiddleSpacing" name="titleSpacing" type="double"/>
+        <property defaultvalue="1.0" name="toolbarOpacity" type="double"/>
+        <property defaultvalue="1.0" name="bottomOpacity" type="double"/>
+    </Class>
+
+
+    <Class constructorname="" type="FlutterLogo">
+        <property name="size" type="double"/>
+        <property name="colors" type="MaterialColor"/>
+        <property defaultvalue="const Color(0xFF616161)" name="textColor" type="Color"/>
+        <property defaultvalue="FlutterLogoStyle.markOnly" name="style" type="FlutterLogoStyle"/>
+        <property defaultvalue="const Duration(milliseconds: 750)" name="duration" type="Duration"/>
+        <property defaultvalue="Curves.fastOutSlowIn" name="curve" type="Curve"/>
+    </Class>
+
+
+    <Class constructorname="" type="Placeholder">
+        <property defaultvalue="const Color(0xFF455A64)" name="color" type="Color"/>
+        <property defaultvalue="2.0" name="strokeWidth" type="double"/>
+        <property defaultvalue="400.0" name="fallbackWidth" type="double"/>
+        <property defaultvalue="400.0" name="fallbackHeight" type="double"/>
     </Class>
 
 

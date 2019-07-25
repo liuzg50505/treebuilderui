@@ -38,10 +38,10 @@ public class DefTest {
         // build widget tree
         EnumDefinition enumDefinition = (EnumDefinition) manager.getTypeByName("MainAxisAlignment");
 
-        WidgetInstance column = new WidgetInstance(manager.getTypeByName("Column"));
-        WidgetInstance column2 = new WidgetInstance(manager.getTypeByName("Column"));
-        WidgetInstance column3 = new WidgetInstance(manager.getTypeByName("Column"));
-        WidgetInstance column4 = new WidgetInstance(manager.getTypeByName("Column"));
+        ConstructorInstance column = new ConstructorInstance(manager.getTypeByName("Column"));
+        ConstructorInstance column2 = new ConstructorInstance(manager.getTypeByName("Column"));
+        ConstructorInstance column3 = new ConstructorInstance(manager.getTypeByName("Column"));
+        ConstructorInstance column4 = new ConstructorInstance(manager.getTypeByName("Column"));
         column.setProperty("children", Arrays.asList(
                 column2, column3
         ));

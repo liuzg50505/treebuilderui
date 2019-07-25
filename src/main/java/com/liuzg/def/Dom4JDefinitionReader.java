@@ -31,11 +31,15 @@ public class Dom4JDefinitionReader extends DefinitionReader {
                     enumDefinition.addEnumItem(enumItem);
                 }
                 definitions.add(enumDefinition);
-            }else if("Widget".equals(element.getName())) {
+            }else if("Class".equals(element.getName())) {
                 String type = element.attributeValue("type");
+                String constructorname = element.attributeValue("constructorname");
+                String decoratorproperty = element.attributeValue("decoratorproperty");
 
-                WidgetDefinition widgetDefinition = new WidgetDefinition();
-                widgetDefinition.setTypeName(type);
+                ConstructorDefinition constructorDefinition = new ConstructorDefinition();
+                constructorDefinition.setTypeName(type);
+                constructorDefinition.setConstructorName(constructorname);
+                constructorDefinition.setDecoratorProperty(decoratorproperty);
                 for(Object itemElemobj: element.elements()) {
                     Element itemElem = (Element) itemElemobj;
                     String name = itemElem.attributeValue("name");
@@ -45,17 +49,17 @@ public class Dom4JDefinitionReader extends DefinitionReader {
                     String description = itemElem.attributeValue("description");
                     String defaultvalue = itemElem.attributeValue("defaultvalue");
 
-                    WidgetDefinition.ConstructorParam param = new WidgetDefinition.ConstructorParam();
+                    ConstructorDefinition.ConstructorParam param = new ConstructorDefinition.ConstructorParam();
                     param.paramname = name;
                     param.paramtypename = paramtype;
                     param.description = description;
                     param.description = defaultvalue;
                     param.iscollection = collection!=null && collection.toLowerCase().equals("true");
-                    param.parameterType = "".equals(parametertype)||parametertype==null? WidgetDefinition.ConstructorParamType.OptionalNamedParameter: WidgetDefinition.ConstructorParamType.valueOf(parametertype);
-                    widgetDefinition.addParameter(param);
+                    param.parameterType = "".equals(parametertype)||parametertype==null? ConstructorDefinition.ConstructorParamType.OptionalNamedParameter: ConstructorDefinition.ConstructorParamType.valueOf(parametertype);
+                    constructorDefinition.addParameter(param);
                 }
 
-                definitions.add(widgetDefinition);
+                definitions.add(constructorDefinition);
             }
         }
     }

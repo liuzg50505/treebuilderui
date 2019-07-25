@@ -13,22 +13,23 @@ public class WidgetBuilder {
         this.definitionManager = definitionManager;
     }
 
+
     public Instance buildWidgetCode(Element widgetroot) {
         String widgettypename = widgetroot.getName();
         TypeDefinition widgetDef = definitionManager.getTypeByName(widgettypename);
-        if(widgetDef instanceof WidgetDefinition) {
-            WidgetDefinition definition = (WidgetDefinition) widgetDef;
-            WidgetInstance widgetInstance = new WidgetInstance(definition);
-            for(WidgetDefinition.ConstructorParam constructorParam: definition.parameters){
+        if(widgetDef instanceof ConstructorDefinition) {
+            ConstructorDefinition definition = (ConstructorDefinition) widgetDef;
+            ConstructorInstance constructureInstance = new ConstructorInstance(definition);
+            for(ConstructorDefinition.ConstructorParam constructorParam: definition.parameters){
                 if(widgetroot.attribute(constructorParam.paramname)!=null) {
                     TypeDefinition t =  definitionManager.getTypeByName(constructorParam.paramtypename);
                     if(t instanceof EnumDefinition) {
                         EnumDefinition tdefinition = (EnumDefinition) t;
                         EnumDefinition.EnumItem v = tdefinition.parse(widgetroot.attributeValue(constructorParam.paramname));
                         EnumInstance instance = new EnumInstance(tdefinition, v);
-                        widgetInstance.setProperty(constructorParam.paramname, instance);
+                        constructureInstance.setProperty(constructorParam.paramname, instance);
                     }else{
-                        widgetInstance.setProperty(constructorParam.paramname, widgetroot.attributeValue(constructorParam.paramname));
+                        constructureInstance.setProperty(constructorParam.paramname, widgetroot.attributeValue(constructorParam.paramname));
                     }
                 }else if(widgetroot.element(constructorParam.paramname)!=null) {
                     Element propelem = widgetroot.element(constructorParam.paramname);
@@ -39,16 +40,24 @@ public class WidgetBuilder {
                             Instance subvalueinstance = buildWidgetCode(subelem);
                             subvalues.add(subvalueinstance);
                         }
-                        widgetInstance.setProperty(constructorParam.paramname, subvalues);
+                        constructureInstance.setProperty(constructorParam.paramname, subvalues);
                     }else {
                         if(propelem.elements().stream().findFirst().isPresent()){
                             Instance valueinstance = buildWidgetCode((Element) propelem.elements().stream().findFirst().get());
-                            widgetInstance.setProperty(constructorParam.paramname, valueinstance);
+                            constructureInstance.setProperty(constructorParam.paramname, valueinstance);
                         }
                     }
                 }
             }
-            return widgetInstance;
+            Element decoratorrootelem = widgetroot.element("decorateby");
+            if(decoratorrootelem!=null) {
+                for(Object decoratorelemobj: decoratorrootelem.elements()){
+                    Element decoratorelem = (Element) decoratorelemobj;
+                    Instance decoratorInstance = buildWidgetCode(decoratorelem);
+                    constructureInstance.addDecorator((ConstructorInstance) decoratorInstance);
+                }
+            }
+            return constructureInstance;
         }
         return null;
     }
