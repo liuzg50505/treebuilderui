@@ -23,7 +23,7 @@ public class MyTreeGenerator {
             ConstructorDefinition constructorDefinition = (ConstructorDefinition) constructureInstance.typeDefinition;
             for (ConstructorDefinition.ConstructorParam cparam: constructorDefinition.getParameters()){
                 if("Widget".equals(cparam.paramtypename)){
-                    if(constructureInstance.getProperty(cparam.paramname)!=null) {
+//                    if(constructureInstance.getProperty(cparam.paramname)!=null) {
                         if(cparam.iscollection) {
                             MyTreePropertyNode propertyNode = new MyTreePropertyNode(constructureInstance, cparam.paramname);
                             node.addTreeNode(propertyNode);
@@ -33,16 +33,17 @@ public class MyTreeGenerator {
                             node.addTreeNode(propertyInstanceNode);
                             generateSubTree(propertyInstanceNode);
                         }
-                    }
+//                    }
                 }
             }
         }else if(node instanceof MyTreePropertyInstanceNode) {
             MyTreePropertyInstanceNode instanceNode = (MyTreePropertyInstanceNode) node;
             ConstructorInstance constructureInstance = instanceNode.getValueInstance();
-            ConstructorDefinition constructorDefinition = (ConstructorDefinition) constructureInstance.typeDefinition;
-            for (ConstructorDefinition.ConstructorParam cparam: constructorDefinition.getParameters()){
-                if("Widget".equals(cparam.paramtypename)){
-                    if(constructureInstance.getProperty(cparam.paramname)!=null) {
+            if(constructureInstance!=null) {
+                ConstructorDefinition constructorDefinition = (ConstructorDefinition) constructureInstance.typeDefinition;
+                for (ConstructorDefinition.ConstructorParam cparam: constructorDefinition.getParameters()){
+                    if("Widget".equals(cparam.paramtypename)){
+//                    if(constructureInstance.getProperty(cparam.paramname)!=null) {
                         if(cparam.iscollection) {
                             MyTreePropertyNode propertyNode = new MyTreePropertyNode(constructureInstance, cparam.paramname);
                             node.addTreeNode(propertyNode);
@@ -52,8 +53,10 @@ public class MyTreeGenerator {
                             node.addTreeNode(propertyInstanceNode);
                             generateSubTree(propertyInstanceNode);
                         }
+//                    }
                     }
                 }
+
             }
 
         }

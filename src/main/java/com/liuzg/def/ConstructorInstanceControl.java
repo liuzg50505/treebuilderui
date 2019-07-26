@@ -56,7 +56,8 @@ public class ConstructorInstanceControl extends AnchorPane {
         imgExpanded = new Image(this.getClass().getResourceAsStream("/assets/treeeditor/expanded.png"), 16,16,false, true);
         imgCollapsed = new Image(this.getClass().getResourceAsStream("/assets/treeeditor/collapsed.png"), 16,16,false, true);
         expandIcon = new ImageView(imgExpanded);
-        instanceLabel = new Label(instance.typeDefinition.typeName);
+        if(instance==null) instanceLabel = new Label();
+        else instanceLabel = new Label(instance.typeDefinition.typeName);
         hboxDecorators = new HBox();
         hboxDecorators.setAlignment(Pos.CENTER_LEFT);
         hboxDecorators.setSpacing(5);
@@ -83,37 +84,39 @@ public class ConstructorInstanceControl extends AnchorPane {
 
         nodeDecoratorMap.clear();
         dragitem = null;
-        for (ConstructorInstance decorator: instance.decorators) {
-            DecoratorLabel decoratorLabel = new DecoratorLabel(decorator.typeDefinition.typeName);
-            if(instance.decorators.indexOf(decorator)==0) {
-                decoratorLabel.setColor(Color.RED);
+        if(instance!=null) {
+            for (ConstructorInstance decorator: instance.decorators) {
+                DecoratorLabel decoratorLabel = new DecoratorLabel(decorator.typeDefinition.typeName);
+                if(instance.decorators.indexOf(decorator)==0) {
+                    decoratorLabel.setColor(Color.RED);
+                }
+
+                nodeDecoratorMap.put(decoratorLabel, decorator);
+                decoratorLabel.setOnDragDetected(event -> {
+                    Dragboard dragboard = decoratorLabel.startDragAndDrop(TransferMode.ANY);
+                    dragboard.setDragView(decoratorLabel.snapshot(null, null));
+
+                    ClipboardContent content = new ClipboardContent();
+                    content.putString(decoratorLabel.getText());
+                    dragboard.setContent(content);
+                    dragitem = decoratorLabel;
+                });
+
+                hboxDecorators.getChildren().add(decoratorLabel);
+                HBox.setMargin(decoratorLabel, new Insets(0,0,0,15));
+                decoratorLabel.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+                    for(Node node: hboxDecorators.getChildren()) {
+                        DecoratorLabel label = (DecoratorLabel) node;
+                        label.setColor(Color.TRANSPARENT);
+                    }
+                    decoratorLabel.setColor(Color.RED);
+
+                    for (DecoratorClickHandler handler: decoratorClickHandlers){
+                        if(handler!=null) handler.onDecoratorClick(decorator);
+                    }
+                    event.consume();
+                });
             }
-
-            nodeDecoratorMap.put(decoratorLabel, decorator);
-            decoratorLabel.setOnDragDetected(event -> {
-                Dragboard dragboard = decoratorLabel.startDragAndDrop(TransferMode.ANY);
-                dragboard.setDragView(decoratorLabel.snapshot(null, null));
-
-                ClipboardContent content = new ClipboardContent();
-                content.putString(decoratorLabel.getText());
-                dragboard.setContent(content);
-                dragitem = decoratorLabel;
-            });
-
-            hboxDecorators.getChildren().add(decoratorLabel);
-            HBox.setMargin(decoratorLabel, new Insets(0,0,0,15));
-            decoratorLabel.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                for(Node node: hboxDecorators.getChildren()) {
-                    DecoratorLabel label = (DecoratorLabel) node;
-                    label.setColor(Color.TRANSPARENT);
-                }
-                decoratorLabel.setColor(Color.RED);
-
-                for (DecoratorClickHandler handler: decoratorClickHandlers){
-                    if(handler!=null) handler.onDecoratorClick(decorator);
-                }
-                event.consume();
-            });
         }
 
         hboxDecorators.setOnDragEntered(event -> {

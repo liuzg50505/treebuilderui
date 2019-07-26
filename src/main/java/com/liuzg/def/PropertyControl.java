@@ -57,6 +57,7 @@ public class PropertyControl extends AnchorPane {
             }
             event.consume();
         });
+
     }
 
     public void addExpandedHandler(MyTreeNodeControlExpandedHandler expandedHandler){

@@ -27,6 +27,8 @@ public class MyTreePropertyNode extends MyTreeNode {
                 handler.onTreeNodeExpandedChanged(this);
             }
         });
+
+
     }
 
     public ConstructorInstance getConstructureInstance() {

@@ -55,6 +55,7 @@ public class MyTreePropertyInstanceNode extends MyTreeNode {
 
     @Override
     public String getNodeText() {
+        if(valueInstance==null) return String.format("%s:", property);
         return String.format("%s: %s", property, valueInstance.typeDefinition.typeName);
     }
 
