@@ -38,8 +38,6 @@ public class ConstructorInstanceControl extends AnchorPane {
     private Label instanceLabel;
     private ImageView expandIcon;
 
-    private Color selectedColor = Color.CADETBLUE;
-
     private Map<Node, ConstructorInstance> nodeDecoratorMap;
     private Node dragitem;
 
@@ -200,15 +198,8 @@ public class ConstructorInstanceControl extends AnchorPane {
         else expandIcon.setImage(imgCollapsed);
     }
 
-    public boolean isSelected() {
-        return isSelected;
-    }
-
-    public void setSelected(boolean selected) {
-        isSelected = selected;
-        if(isSelected) {
-            this.setBackground(new Background(new BackgroundFill(selectedColor, null, null)));
-        }
+    public void setBackgroundColor(Color color) {
+        this.setBackground(new Background(new BackgroundFill(color, null, null)));
     }
 
     public void setText(String text) {

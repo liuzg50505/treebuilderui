@@ -2,9 +2,7 @@ package com.liuzg.def;
 
 import com.liuzg.models.TreeNode;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 public class InstanceNodePool {
 
@@ -107,6 +105,12 @@ public class InstanceNodePool {
 
     public MyTreeNode getTreeNode(Instance instance, String property) {
         return instancePropertyTreeNodeMap.get(new InstanceProperty(instance, property));
+    }
+
+    public Set<MyTreeNode> getTreeNodes() {
+        HashSet<MyTreeNode> t = new HashSet<>(instanceTreeNodeMap.values());
+        t.addAll(instancePropertyTreeNodeMap.values());
+        return t;
     }
 
 }

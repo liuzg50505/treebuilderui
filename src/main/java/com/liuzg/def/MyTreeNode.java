@@ -4,6 +4,8 @@ import javafx.scene.Node;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Function;
 
 public abstract class MyTreeNode {
 
@@ -52,6 +54,14 @@ public abstract class MyTreeNode {
     public abstract void expandCurrent();
 
     public abstract void addExpandedChangedListener(ExpandedChangedHandler handler);
+
+    public abstract void addClickedListener(Consumer<MyTreeNode> handler);
+
+    public abstract void select();
+
+    public abstract void unselect();
+
+    public abstract boolean isSelected();
 
     private void expandRecursive(MyTreeNode node) {
         if(node==null) return;

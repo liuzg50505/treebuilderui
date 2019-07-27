@@ -16,24 +16,18 @@ import java.util.List;
 
 
 public class PropertyControl extends AnchorPane {
-    private String property;
     private boolean isExpanded = true;
-    private boolean isSelected = false;
     private final Image imgExpanded;
     private final Image imgCollapsed;
-    private ConstructorInstance instance;
     private int offsetX;
     private HBox hbox;
     private Label instanceLabel;
     private ImageView expandIcon;
 
-    private Color selectedColor = Color.CADETBLUE;
     private List<MyTreeNodeControlExpandedHandler> expandedHandlers;
 
     public PropertyControl(ConstructorInstance instance, String property, int offsetX) {
         expandedHandlers = new ArrayList<>();
-        this.property = property;
-        this.instance = instance;
         this.offsetX = offsetX;
         imgExpanded = new Image(this.getClass().getResourceAsStream("/assets/treeeditor/expanded.png"), 16,16,false, true);
         imgCollapsed = new Image(this.getClass().getResourceAsStream("/assets/treeeditor/collapsed.png"), 16,16,false, true);
@@ -85,14 +79,7 @@ public class PropertyControl extends AnchorPane {
         else expandIcon.setImage(imgCollapsed);
     }
 
-    public boolean isSelected() {
-        return isSelected;
-    }
-
-    public void setSelected(boolean selected) {
-        isSelected = selected;
-        if(isSelected) {
-            this.setBackground(new Background(new BackgroundFill(selectedColor, null, null)));
-        }
+    public void setBackgroundColor(Color color) {
+        this.setBackground(new Background(new BackgroundFill(color, null, null)));
     }
 }

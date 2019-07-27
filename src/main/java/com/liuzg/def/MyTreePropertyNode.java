@@ -1,15 +1,20 @@
 package com.liuzg.def;
 
 import javafx.scene.Node;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class MyTreePropertyNode extends MyTreeNode {
 
     private List<ExpandedChangedHandler> expandedChangedHandlers;
+    protected List<Consumer<MyTreeNode>> clickedHandlers;
     private ConstructorInstance constructureInstance;
     private String property;
+    private boolean isselected = false;
 
     private PropertyControl propertyControl;
 
@@ -18,6 +23,7 @@ public class MyTreePropertyNode extends MyTreeNode {
         assert property!=null;
         assert !"".equals(property);
         this.expandedChangedHandlers = new ArrayList<>();
+        this.clickedHandlers = new ArrayList<>();
         this.constructureInstance = constructureInstance;
         this.property = property;
         propertyControl = new PropertyControl(constructureInstance, property, 0);
@@ -25,6 +31,11 @@ public class MyTreePropertyNode extends MyTreeNode {
         propertyControl.addExpandedHandler(expanded -> {
             for(ExpandedChangedHandler handler: expandedChangedHandlers){
                 handler.onTreeNodeExpandedChanged(this);
+            }
+        });
+        propertyControl.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+            for (Consumer<MyTreeNode> handler :clickedHandlers) {
+                handler.accept(this);
             }
         });
 
@@ -64,6 +75,28 @@ public class MyTreePropertyNode extends MyTreeNode {
     @Override
     public void addExpandedChangedListener(ExpandedChangedHandler handler) {
         if(handler!=null) expandedChangedHandlers.add(handler);
+    }
+
+    @Override
+    public void addClickedListener(Consumer<MyTreeNode> handler) {
+        if(handler!=null) clickedHandlers.add(handler);
+    }
+
+    @Override
+    public void select() {
+        isselected = true;
+        propertyControl.setBackgroundColor(Color.LIGHTBLUE);
+    }
+
+    @Override
+    public void unselect() {
+        isselected = false;
+        propertyControl.setBackgroundColor(Color.TRANSPARENT);
+    }
+
+    @Override
+    public boolean isSelected() {
+        return isselected;
     }
 
     @Override
