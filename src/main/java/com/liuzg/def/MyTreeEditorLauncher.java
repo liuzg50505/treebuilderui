@@ -60,13 +60,18 @@ public class MyTreeEditorLauncher extends Application {
         System.out.println(instance.generateCode());
 
         BorderPane borderPane = new BorderPane();
-        borderPane.setCenter(new MyTreeEditor(instance));
+        MyTreeEditor editor = new MyTreeEditor(instance);
+        borderPane.setCenter(editor);
         Button btn1 = new Button("generate");
         btn1.setOnAction(event -> {
             System.out.println(instance.generateCode());
         });
+        Button btn2 = new Button("refresh tree");
+        btn2.setOnAction(event -> {
+            editor.renderUI();
+        });
 
-        borderPane.setTop(new HBox(btn1));
+        borderPane.setTop(new HBox(btn1, btn2));
 
         Scene scene = new Scene(borderPane, 1400, 875);
         primaryStage.setTitle("My Tree Editor Demo");

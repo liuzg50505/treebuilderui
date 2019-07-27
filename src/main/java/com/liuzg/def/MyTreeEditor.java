@@ -6,6 +6,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -15,9 +16,12 @@ public class MyTreeEditor extends VBox {
     private int itemheight = 30;
     private MyTreeNode rootnode;
 
+    private InstanceNodePool pool;
+
 
     public MyTreeEditor(Instance instance) {
         rootInstance = instance;
+        pool = new InstanceNodePool();
         renderUI();
         this.setStyle("-fx-font-size:16; -fx-font-family: 'Times New Roman'");
 
@@ -26,11 +30,25 @@ public class MyTreeEditor extends VBox {
     public void renderUI() {
         this.getChildren().clear();
 
-        MyTreeGenerator generator = new MyTreeGenerator();
+        MyTreeGenerator generator = new MyTreeGenerator(pool);
         rootnode = generator.generateTree((ConstructorInstance) rootInstance);
         List<MyTreeNode> nodes = generator.generateOrderedVisibleTreeNodes(rootnode);
         for(MyTreeNode node: nodes) {
-            this.getChildren().addAll(node.getTreeNodeControl());
+            if(node instanceof MyTreePropertyInstanceNode) {
+                MyTreePropertyInstanceNode tnode = (MyTreePropertyInstanceNode) node;
+                pool.addInstance(tnode.getValueInstance(), tnode);
+            }else if(node instanceof MyTreeInstanceNode) {
+                MyTreeInstanceNode tnode = (MyTreeInstanceNode) node;
+                pool.addInstance(tnode.getConstructureInstance(), tnode);
+            }else if(node instanceof MyTreePropertyNode) {
+                MyTreePropertyNode tnode = (MyTreePropertyNode) node;
+                pool.addInstanceProperty(tnode.getConstructureInstance(), tnode.getProperty(), tnode);
+            }
+            try{
+                this.getChildren().addAll(node.getTreeNodeControl());
+            }catch (Exception ee) {
+                ee.printStackTrace();
+            }
             node.addExpandedChangedListener(treeNode -> {
                 refreshUI();
             });
@@ -40,7 +58,7 @@ public class MyTreeEditor extends VBox {
     public void refreshUI() {
         this.getChildren().clear();
 
-        MyTreeGenerator generator = new MyTreeGenerator();
+        MyTreeGenerator generator = new MyTreeGenerator(pool);
         List<MyTreeNode> nodes = generator.generateOrderedVisibleTreeNodes(rootnode);
         for(MyTreeNode node: nodes) {
             this.getChildren().addAll(node.getTreeNodeControl());
