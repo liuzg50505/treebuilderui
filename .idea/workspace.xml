@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="mytreeeditor 基本功能ok">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="mytreeeditor 选择功能">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/ConstructorInstanceControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/def/ConstructorInstanceControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/InstanceNodePool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/def/InstanceNodePool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeEditor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeInstanceNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeInstanceNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreePropertyNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreePropertyNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/PropertyControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/def/PropertyControl.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,7 +78,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreePropertyInstanceNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
+            <state relative-caret-position="306">
               <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -95,7 +90,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreePropertyNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
+            <state relative-caret-position="1173">
               <caret line="87" column="58" selection-start-line="87" selection-start-column="43" selection-end-line="87" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -109,7 +104,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/InstanceNodePool.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
+            <state relative-caret-position="459">
               <caret line="89" column="34" selection-start-line="89" selection-start-column="34" selection-end-line="89" selection-end-column="34" />
               <folding>
                 <element signature="class#InstanceProperty#0;class#InstanceNodePool#0" />
@@ -120,12 +115,8 @@
                 <element signature="method#addInstanceProperty#0;class#InstanceNodePool#0" />
                 <element signature="method#addTreeNode#0;class#InstanceNodePool#0" />
                 <element signature="method#removeInstance#0;class#InstanceNodePool#0" />
-                <element signature="e#2451#2631#1" />
                 <element signature="method#removeTreeNode#0;class#InstanceNodePool#0" />
-                <element signature="e#2748#2926#1" />
                 <element signature="method#containsInstanceProperty#0;class#InstanceNodePool#0" />
-                <element signature="e#3420#3421#0" expanded="true" />
-                <element signature="e#3476#3477#0" expanded="true" />
                 <element signature="method#getTreeNode#1;class#InstanceNodePool#0" />
               </folding>
             </state>
@@ -135,8 +126,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeInstanceNode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="93" column="5" lean-forward="true" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
+            <state relative-caret-position="1258">
+              <caret line="93" column="5" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -144,14 +135,45 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeEditor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="91" column="42" selection-start-line="91" selection-start-column="42" selection-end-line="91" selection-end-column="42" />
+            <state relative-caret-position="487">
+              <caret line="68" column="56" lean-forward="true" selection-start-line="68" selection-start-column="56" selection-end-line="68" selection-end-column="56" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3476#3477#0" expanded="true" />
+                <element signature="method#MyTreeEditor#0;class#MyTreeEditor#0" />
+                <element signature="method#nofityHandlers#0;class#MyTreeEditor#0" />
+                <element signature="e#950#1023#1" />
+                <element signature="e#1223#1479#1" />
+                <element signature="e#1555#1723#1" />
+                <element signature="e#1767#1926#1" />
+                <element signature="e#1970#2158#1" />
+                <element signature="method#refreshSelected#0;class#MyTreeEditor#0" />
+                <element signature="e#2701#2755#0" />
+                <element signature="e#2736#2776#1" />
+                <element signature="e#2808#2854#1" />
+                <element signature="method#refreshExpand#0;class#MyTreeEditor#0" />
+                <element signature="e#3118#3195#1" />
+                <element signature="method#selectInstance#0;class#MyTreeEditor#0" />
+                <element signature="e#3340#3389#1" />
+                <element signature="method#selectTreeNode#0;class#MyTreeEditor#0" />
+                <element signature="e#3577#3656#1" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
+              <folding>
+                <element signature="method#addTreeNode#0;class#MyTreeNode#0" />
+                <element signature="method#removeTreeNode#0;class#MyTreeNode#0" />
+                <element signature="method#clearTreeNodes#0;class#MyTreeNode#0" />
+                <element signature="method#expandRecursive#0;class#MyTreeNode#0" />
+                <element signature="method#collapseRecursive#0;class#MyTreeNode#0" />
               </folding>
             </state>
           </provider>
@@ -272,11 +294,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/ConstructorInstanceControl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/PropertyControl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeNode.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreePropertyNode.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeInstanceNode.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/InstanceNodePool.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeEditor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeNode.java" />
       </list>
     </option>
   </component>
@@ -287,7 +309,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="81" />
     <option name="y" value="23" />
     <option name="width" value="1852" />
@@ -304,7 +326,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="treebuilderui" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="treebuilderui" type="2674bda8:ScopeViewTreeModel$GroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -351,17 +383,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="treebuilderui" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="treebuilderui" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -589,7 +611,8 @@
       <workItem from="1563939083934" duration="7274000" />
       <workItem from="1564041469639" duration="18391000" />
       <workItem from="1564234030098" duration="267000" />
-      <workItem from="1564236737513" duration="3202000" />
+      <workItem from="1564236737513" duration="5072000" />
+      <workItem from="1564303355951" duration="2615000" />
     </task>
     <task id="LOCAL-00001" summary="update pom dependency">
       <created>1562629923029</created>
@@ -675,7 +698,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564217897019</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="mytreeeditor 选择功能">
+      <created>1564240075894</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1564240075894</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -711,7 +741,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="259218000" />
+    <option name="totallyTimeSpent" value="263703000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -723,9 +753,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="81" y="23" width="1852" height="1057" extended-state="0" />
+    <frame x="81" y="23" width="1852" height="1057" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.22044198" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.22265193" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -734,7 +765,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32953367" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33056995" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33056995" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40829015" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -828,7 +859,8 @@
     <MESSAGE value="1. adjust ideui.fxml (icon, tooltip)&#10;2. refactor code in IDEController.java" />
     <MESSAGE value="1" />
     <MESSAGE value="mytreeeditor 基本功能ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="mytreeeditor 基本功能ok" />
+    <MESSAGE value="mytreeeditor 选择功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="mytreeeditor 选择功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -856,12 +888,6 @@
           <line>78</line>
           <properties />
           <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeEditor.java</url>
-          <line>73</line>
-          <properties />
-          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1173,20 +1199,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/ui/tt.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/ui/ideui.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="548">
           <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/javafx-src.zip!/javafx/scene/Node.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1383,25 +1409,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeNode.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreePropertyInstanceNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="57" column="72" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="72" />
+        <state relative-caret-position="306">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
           <folding>
-            <element signature="method#addTreeNode#0;class#MyTreeNode#0" />
-            <element signature="method#removeTreeNode#0;class#MyTreeNode#0" />
-            <element signature="e#909#910#0" expanded="true" />
-            <element signature="e#961#962#0" expanded="true" />
-            <element signature="method#clearTreeNodes#0;class#MyTreeNode#0" />
-            <element signature="method#expandRecursive#0;class#MyTreeNode#0" />
-            <element signature="method#collapseRecursive#0;class#MyTreeNode#0" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreePropertyNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
+        <state relative-caret-position="1173">
           <caret line="87" column="58" selection-start-line="87" selection-start-column="43" selection-end-line="87" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1411,29 +1431,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreePropertyInstanceNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeInstanceNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="93" column="5" lean-forward="true" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/InstanceNodePool.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
+        <state relative-caret-position="459">
           <caret line="89" column="34" selection-start-line="89" selection-start-column="34" selection-end-line="89" selection-end-column="34" />
           <folding>
             <element signature="class#InstanceProperty#0;class#InstanceNodePool#0" />
@@ -1444,24 +1444,59 @@
             <element signature="method#addInstanceProperty#0;class#InstanceNodePool#0" />
             <element signature="method#addTreeNode#0;class#InstanceNodePool#0" />
             <element signature="method#removeInstance#0;class#InstanceNodePool#0" />
-            <element signature="e#2451#2631#1" />
             <element signature="method#removeTreeNode#0;class#InstanceNodePool#0" />
-            <element signature="e#2748#2926#1" />
             <element signature="method#containsInstanceProperty#0;class#InstanceNodePool#0" />
-            <element signature="e#3420#3421#0" expanded="true" />
-            <element signature="e#3476#3477#0" expanded="true" />
             <element signature="method#getTreeNode#1;class#InstanceNodePool#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeInstanceNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="93" column="5" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeEditor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="91" column="42" selection-start-line="91" selection-start-column="42" selection-end-line="91" selection-end-column="42" />
+        <state relative-caret-position="487">
+          <caret line="68" column="56" lean-forward="true" selection-start-line="68" selection-start-column="56" selection-end-line="68" selection-end-column="56" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3476#3477#0" expanded="true" />
+            <element signature="method#MyTreeEditor#0;class#MyTreeEditor#0" />
+            <element signature="method#nofityHandlers#0;class#MyTreeEditor#0" />
+            <element signature="e#950#1023#1" />
+            <element signature="e#1223#1479#1" />
+            <element signature="e#1555#1723#1" />
+            <element signature="e#1767#1926#1" />
+            <element signature="e#1970#2158#1" />
+            <element signature="method#refreshSelected#0;class#MyTreeEditor#0" />
+            <element signature="e#2701#2755#0" />
+            <element signature="e#2736#2776#1" />
+            <element signature="e#2808#2854#1" />
+            <element signature="method#refreshExpand#0;class#MyTreeEditor#0" />
+            <element signature="e#3118#3195#1" />
+            <element signature="method#selectInstance#0;class#MyTreeEditor#0" />
+            <element signature="e#3340#3389#1" />
+            <element signature="method#selectTreeNode#0;class#MyTreeEditor#0" />
+            <element signature="e#3577#3656#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+          <folding>
+            <element signature="method#addTreeNode#0;class#MyTreeNode#0" />
+            <element signature="method#removeTreeNode#0;class#MyTreeNode#0" />
+            <element signature="method#clearTreeNodes#0;class#MyTreeNode#0" />
+            <element signature="method#expandRecursive#0;class#MyTreeNode#0" />
+            <element signature="method#collapseRecursive#0;class#MyTreeNode#0" />
           </folding>
         </state>
       </provider>
