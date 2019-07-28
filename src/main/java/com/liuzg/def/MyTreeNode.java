@@ -1,5 +1,6 @@
 package com.liuzg.def;
 
+import com.google.common.eventbus.EventBus;
 import javafx.scene.Node;
 
 import java.util.ArrayList;
@@ -9,15 +10,18 @@ import java.util.function.Function;
 
 public abstract class MyTreeNode {
 
-    public static interface ExpandedChangedHandler {
-        void onTreeNodeExpandedChanged(MyTreeNode treeNode);
-    }
+    protected EventBus eventBus;
 
     protected List<MyTreeNode> subTreeNodes;
     protected MyTreeNode parentNode;
 
-    public MyTreeNode() {
+    public MyTreeNode(EventBus eventBus) {
         subTreeNodes = new ArrayList<>();
+        this.eventBus = eventBus;
+    }
+
+    public void setEventBus(EventBus eventBus) {
+        this.eventBus = eventBus;
     }
 
     public abstract String getNodeText();
@@ -52,10 +56,6 @@ public abstract class MyTreeNode {
     public abstract boolean isExpanded();
 
     public abstract void expandCurrent();
-
-    public abstract void addExpandedChangedListener(ExpandedChangedHandler handler);
-
-    public abstract void addClickedListener(Consumer<MyTreeNode> handler);
 
     public abstract void select();
 

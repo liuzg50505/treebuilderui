@@ -1,5 +1,10 @@
 package com.liuzg.def;
 
+import com.google.common.eventbus.EventBus;
+import com.google.common.eventbus.Subscribe;
+import com.liuzg.def.events.MyTreeEditorSelectionChangedEvent;
+import com.liuzg.def.events.MyTreeNodeClickEvent;
+import com.liuzg.def.events.MyTreeNodeExpandEvent;
 import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
@@ -19,8 +24,12 @@ public class MyTreeEditor extends VBox {
     private InstanceNodePool pool;
     private List<MyTreeNode> currentnodes;
 
+    private EventBus eventBus;
+
 
     public MyTreeEditor(Instance instance) {
+        eventBus = new EventBus();
+        eventBus.register(this);
         currentnodes = new ArrayList<>();
         selectionChangedHandlers = new ArrayList<>();
         rootInstance = instance;
@@ -36,21 +45,30 @@ public class MyTreeEditor extends VBox {
         }
     }
 
+    @Subscribe
+    public void onTreeNodeClicked(MyTreeNodeClickEvent event){
+        MyTreeNode treeNode = event.treeNode;
+        if(selectedNode!=treeNode) {
+            selectedNode = treeNode;
+            eventBus.post(new MyTreeEditorSelectionChangedEvent(this, treeNode));
+            refreshSelected();
+        }
+    }
+
+    @Subscribe
+    public void onTreeNodeExpanded(MyTreeNodeExpandEvent event){
+        refreshExpand();
+    }
+
     public void renderUI() {
         this.getChildren().clear();
 
-        MyTreeGenerator generator = new MyTreeGenerator(pool);
+        MyTreeGenerator generator = new MyTreeGenerator(eventBus, pool);
         rootnode = generator.generateTree((ConstructorInstance) rootInstance);
         List<MyTreeNode> nodes = generator.generateOrderedVisibleTreeNodes(rootnode);
         currentnodes = nodes;
         for(MyTreeNode node: nodes) {
-            node.addClickedListener(treeNode -> {
-                if(selectedNode!=treeNode) {
-                    selectedNode = treeNode;
-                    notifyHandlers(selectionChangedHandlers, node);
-                    refreshSelected();
-                }
-            });
+            node.setEventBus(this.eventBus);
             if(node instanceof MyTreePropertyInstanceNode) {
                 MyTreePropertyInstanceNode tnode = (MyTreePropertyInstanceNode) node;
                 pool.addInstance(tnode.getValueInstance(), tnode);
@@ -66,9 +84,6 @@ public class MyTreeEditor extends VBox {
             }catch (Exception ee) {
                 ee.printStackTrace();
             }
-            node.addExpandedChangedListener(treeNode -> {
-                refreshExpand();
-            });
         }
     }
 
@@ -88,7 +103,7 @@ public class MyTreeEditor extends VBox {
     private void refreshExpand() {
         this.getChildren().clear();
 
-        MyTreeGenerator generator = new MyTreeGenerator(pool);
+        MyTreeGenerator generator = new MyTreeGenerator(eventBus, pool);
         List<MyTreeNode> nodes = generator.generateOrderedVisibleTreeNodes(rootnode);
         for(MyTreeNode node: nodes) {
             this.getChildren().addAll(node.getTreeNodeControl());

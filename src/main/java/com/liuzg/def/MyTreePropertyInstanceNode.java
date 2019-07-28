@@ -1,5 +1,6 @@
 package com.liuzg.def;
 
+import com.google.common.eventbus.EventBus;
 import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 
@@ -13,8 +14,8 @@ public class MyTreePropertyInstanceNode extends MyTreeInstanceNode {
     private ConstructorInstance valueInstance;
 
 
-    public MyTreePropertyInstanceNode(ConstructorInstance constructureInstance, String property, ConstructorInstance valueInstance) {
-        super(valueInstance);
+    public MyTreePropertyInstanceNode(EventBus eventBus, ConstructorInstance constructureInstance, String property, ConstructorInstance valueInstance) {
+        super(eventBus, valueInstance);
 
         assert property!=null;
         assert !"".equals(property);

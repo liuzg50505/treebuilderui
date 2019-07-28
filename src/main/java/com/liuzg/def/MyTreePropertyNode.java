@@ -1,5 +1,8 @@
 package com.liuzg.def;
 
+import com.google.common.eventbus.EventBus;
+import com.liuzg.def.events.MyTreeNodeClickEvent;
+import com.liuzg.def.events.MyTreeNodeExpandEvent;
 import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
@@ -10,33 +13,26 @@ import java.util.function.Consumer;
 
 public class MyTreePropertyNode extends MyTreeNode {
 
-    private List<ExpandedChangedHandler> expandedChangedHandlers;
-    protected List<Consumer<MyTreeNode>> clickedHandlers;
     private ConstructorInstance constructureInstance;
     private String property;
     private boolean isselected = false;
 
     private PropertyControl propertyControl;
 
-    public MyTreePropertyNode(ConstructorInstance constructureInstance, String property) {
+    public MyTreePropertyNode(EventBus eventBus, ConstructorInstance constructureInstance, String property) {
+        super(eventBus);
         assert constructureInstance!=null;
         assert property!=null;
         assert !"".equals(property);
-        this.expandedChangedHandlers = new ArrayList<>();
-        this.clickedHandlers = new ArrayList<>();
         this.constructureInstance = constructureInstance;
         this.property = property;
         propertyControl = new PropertyControl(constructureInstance, property, 0);
 
         propertyControl.addExpandedHandler(expanded -> {
-            for(ExpandedChangedHandler handler: expandedChangedHandlers){
-                handler.onTreeNodeExpandedChanged(this);
-            }
+            eventBus.post(new MyTreeNodeExpandEvent(this));
         });
         propertyControl.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-            for (Consumer<MyTreeNode> handler :clickedHandlers) {
-                handler.accept(this);
-            }
+            eventBus.post(new MyTreeNodeClickEvent(this));
         });
 
 
@@ -70,16 +66,6 @@ public class MyTreePropertyNode extends MyTreeNode {
     @Override
     public void expandCurrent() {
         propertyControl.setExpanded(true);
-    }
-
-    @Override
-    public void addExpandedChangedListener(ExpandedChangedHandler handler) {
-        if(handler!=null) expandedChangedHandlers.add(handler);
-    }
-
-    @Override
-    public void addClickedListener(Consumer<MyTreeNode> handler) {
-        if(handler!=null) clickedHandlers.add(handler);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.liuzg.def;
 
+import com.google.common.eventbus.EventBus;
 import javafx.scene.Node;
 
 import java.util.ArrayList;
@@ -9,9 +10,11 @@ import java.util.List;
 public class MyTreeGenerator {
 
     private InstanceNodePool pool;
+    private EventBus eventBus;
 
-    public MyTreeGenerator(InstanceNodePool pool) {
+    public MyTreeGenerator(EventBus eventBus, InstanceNodePool pool) {
         this.pool = pool;
+        this.eventBus = eventBus;
     }
 
     private MyTreeInstanceNode createOrGetTreeNode(ConstructorInstance instance) {
@@ -20,7 +23,7 @@ public class MyTreeGenerator {
             instanceNode = (MyTreeInstanceNode) pool.getTreeNode(instance);
             instanceNode.clearTreeNodes();
         }
-        else instanceNode = new MyTreeInstanceNode(instance);
+        else instanceNode = new MyTreeInstanceNode(eventBus, instance);
         return instanceNode;
     }
 
@@ -31,7 +34,7 @@ public class MyTreeGenerator {
             instanceNode.clearTreeNodes();
         }
         else
-            instanceNode = new MyTreePropertyNode(instance, property);
+            instanceNode = new MyTreePropertyNode(eventBus, instance, property);
         return instanceNode;
     }
     private MyTreePropertyInstanceNode createOrGetTreeNode(ConstructorInstance instance, String property, ConstructorInstance valueinstance) {
@@ -41,7 +44,7 @@ public class MyTreeGenerator {
             instanceNode.clearTreeNodes();
         }
         else
-            instanceNode = new MyTreePropertyInstanceNode(instance, property, valueinstance);
+            instanceNode = new MyTreePropertyInstanceNode(eventBus, instance, property, valueinstance);
         return instanceNode;
     }
 

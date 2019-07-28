@@ -1,5 +1,9 @@
 package com.liuzg.def;
 
+import com.google.common.eventbus.EventBus;
+import com.liuzg.def.events.MyTreeNodeClickEvent;
+import com.liuzg.def.events.MyTreeNodeDecoratorClickEvent;
+import com.liuzg.def.events.MyTreeNodeExpandEvent;
 import javafx.scene.Node;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
@@ -11,31 +15,24 @@ import java.util.function.Function;
 
 public class MyTreeInstanceNode extends MyTreeNode {
 
-    protected List<ExpandedChangedHandler> expandedChangedHandlers;
-    protected List<Consumer<MyTreeNode>> clickedHandlers;
     protected ConstructorInstance constructureInstance;
     protected ConstructorInstanceControl constructorInstanceControl;
     protected boolean isselected = false;
 
-    public MyTreeInstanceNode(ConstructorInstance constructureInstance) {
+    public MyTreeInstanceNode(EventBus eventBus, ConstructorInstance constructureInstance) {
+        super(eventBus);
         assert constructureInstance!=null;
 
-        this.expandedChangedHandlers = new ArrayList<>();
-        this.clickedHandlers = new ArrayList<>();
         this.constructureInstance = constructureInstance;
         constructorInstanceControl = new ConstructorInstanceControl(constructureInstance, 0);
         constructorInstanceControl.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-            for (Consumer<MyTreeNode> handler :clickedHandlers) {
-                handler.accept(this);
-            }
+            eventBus.post(new MyTreeNodeClickEvent(this));
         });
         constructorInstanceControl.addExpandedHandler(expanded -> {
-            for(ExpandedChangedHandler handler: expandedChangedHandlers){
-                handler.onTreeNodeExpandedChanged(this);
-            }
+            eventBus.post(new MyTreeNodeExpandEvent(this));
         });
         constructorInstanceControl.addDecoratorClickListener(decoratorInstance -> {
-            System.out.println("decorator");
+            eventBus.post(new MyTreeNodeDecoratorClickEvent(this, constructureInstance, constructureInstance.decorators));
         });
     }
 
@@ -64,17 +61,6 @@ public class MyTreeInstanceNode extends MyTreeNode {
     public void expandCurrent() {
         constructorInstanceControl.setExpanded(true);
     }
-
-    @Override
-    public void addExpandedChangedListener(ExpandedChangedHandler handler) {
-        if(handler!=null) expandedChangedHandlers.add(handler);
-    }
-
-    @Override
-    public void addClickedListener(Consumer<MyTreeNode> handler) {
-        if(handler!=null) clickedHandlers.add(handler);
-    }
-
 
     @Override
     public void select() {
