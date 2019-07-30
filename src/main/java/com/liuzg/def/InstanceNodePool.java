@@ -76,13 +76,6 @@ public class InstanceNodePool {
         }
     }
 
-    public void removeTreeNode(MyTreeNode treeNode) {
-        if (treeNodeInstanceMap.containsKey(treeNode)) {
-            Instance instance = treeNodeInstanceMap.get(treeNode);
-            instanceTreeNodeMap.remove(instance);
-            treeNodeInstanceMap.remove(treeNode);
-        }
-    }
 
     public boolean containsInstance(Instance instance) {
         return instanceTreeNodeMap.containsKey(instance);
@@ -106,6 +99,11 @@ public class InstanceNodePool {
 
     public MyTreeNode getTreeNode(Node control) {
         for (MyTreeNode treeNode: treeNodeInstanceMap.keySet()){
+            if(treeNode.getTreeNodeControl()==control){
+                return treeNode;
+            }
+        }
+        for (MyTreeNode treeNode: treeNodeInstancePropertyMap.keySet()){
             if(treeNode.getTreeNodeControl()==control){
                 return treeNode;
             }
