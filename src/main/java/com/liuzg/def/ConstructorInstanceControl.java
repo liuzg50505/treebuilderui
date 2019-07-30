@@ -101,7 +101,7 @@ public class ConstructorInstanceControl extends AnchorPane {
                 });
 
                 hboxDecorators.getChildren().add(decoratorLabel);
-                HBox.setMargin(decoratorLabel, new Insets(0,0,0,15));
+                HBox.setMargin(decoratorLabel, new Insets(5,0,5,15));
                 decoratorLabel.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                     for(Node node: hboxDecorators.getChildren()) {
                         DecoratorLabel label = (DecoratorLabel) node;

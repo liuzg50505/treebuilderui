@@ -5,9 +5,12 @@ import com.google.common.eventbus.Subscribe;
 import com.liuzg.def.events.MyTreeEditorSelectionChangedEvent;
 import com.liuzg.def.events.MyTreeNodeClickEvent;
 import com.liuzg.def.events.MyTreeNodeExpandEvent;
+import com.liuzg.def.events.MyTreeNodeStartDraggingEvent;
 import javafx.geometry.Bounds;
 import javafx.scene.Node;
 import javafx.scene.input.TransferMode;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
@@ -39,24 +42,6 @@ public class MyTreeEditor extends VBox {
         renderUI();
         this.setStyle("-fx-font-size:16; ");
 
-        for (int i = 0; i< this.getChildren().size(); i++) {
-            Node child = this.getChildren().get(i);
-            child.setOnDragDropped(event -> {
-                if(draggingnode==null) return;
-                MyTreeNode targetTreenode = pool.getTreeNode(child);
-                if(draggingnode instanceof MyTreeInstanceNode) {
-                    MyTreeInstanceNode treeInstanceNode = (MyTreeInstanceNode) draggingnode;
-                    removeTreeNode(treeInstanceNode);
-                    addInstance(targetTreenode, treeInstanceNode.getConstructorInstance());
-
-                }else if(draggingnode instanceof MyTreePropertyInstanceNode) {
-                    MyTreePropertyInstanceNode propertyInstanceNode = (MyTreePropertyInstanceNode) draggingnode;
-                    removeTreeNode(propertyInstanceNode);
-                    addInstance(targetTreenode, propertyInstanceNode.getValueInstance());
-                }
-                draggingnode = null;
-            });
-        }
         this.setOnDragEntered(event -> {
         });
         this.setOnDragExited(event -> {
@@ -64,34 +49,6 @@ public class MyTreeEditor extends VBox {
         this.setOnDragOver(event -> {
             event.acceptTransferModes(TransferMode.MOVE);
         });
-
-
-//        this.setOnDragDropped(event -> {
-//            if(draggingnode==null) return;
-//            double y = event.getSceneY();
-//            Node targetcontrol = null;
-//            for (int i = 0; i< this.getChildren().size(); i++) {
-//                Node child = this.getChildren().get(i);
-//                Bounds bounds = child.getLayoutBounds();
-//                Bounds t = child.localToParent(bounds);
-//                if(y>=t.getMinX()&&y<=t.getMaxX()){
-//                    targetcontrol = child;
-//                    break;
-//                }
-//            }
-//            if(targetcontrol!=null) {
-//                MyTreeNode targetTreenode = pool.getTreeNode(targetcontrol);
-//                if(draggingnode instanceof MyTreeInstanceNode) {
-//                    MyTreeInstanceNode treeInstanceNode = (MyTreeInstanceNode) draggingnode;
-//                    addInstance(targetTreenode, treeInstanceNode.getConstructorInstance());
-//                }else if(draggingnode instanceof MyTreePropertyInstanceNode) {
-//                    MyTreePropertyInstanceNode propertyInstanceNode = (MyTreePropertyInstanceNode) draggingnode;
-//                    addInstance(targetTreenode, propertyInstanceNode.getValueInstance());
-//                }
-//            }
-//
-//            draggingnode = null;
-//        });
     }
 
     private <T> void notifyHandlers(List<Consumer<T>> handlers, T target){
@@ -101,7 +58,7 @@ public class MyTreeEditor extends VBox {
     }
 
     @Subscribe
-    public void onTreeNodeClicked(MyTreeNodeClickEvent event){
+    public void on(MyTreeNodeClickEvent event){
         MyTreeNode treeNode = event.treeNode;
         if(selectedNode!=treeNode) {
             selectedNode = treeNode;
@@ -111,7 +68,12 @@ public class MyTreeEditor extends VBox {
     }
 
     @Subscribe
-    public void onTreeNodeExpanded(MyTreeNodeExpandEvent event){
+    public void on(MyTreeNodeExpandEvent event){
+        refreshExpand();
+    }
+
+    @Subscribe
+    public void on(MyTreeNodeStartDraggingEvent event) {
         refreshExpand();
     }
 
@@ -135,7 +97,30 @@ public class MyTreeEditor extends VBox {
                 pool.addInstanceProperty(tnode.getConstructureInstance(), tnode.getProperty(), tnode);
             }
             try{
-                this.getChildren().addAll(node.getTreeNodeControl());
+                Node child = node.getTreeNodeControl();
+                Region region = (Region) child;
+                if(region!=null) {
+                    region.setPrefHeight(40);
+                }
+                this.getChildren().add(child);
+
+                child.setOnDragDropped(event -> {
+                    if(draggingnode==null) return;
+                    MyTreeNode targetTreenode = pool.getTreeNode(child);
+                    if(draggingnode==targetTreenode) return;
+                    if(draggingnode instanceof MyTreeInstanceNode) {
+                        MyTreeInstanceNode treeInstanceNode = (MyTreeInstanceNode) draggingnode;
+                        removeTreeNode(treeInstanceNode);
+                        addInstance(targetTreenode, treeInstanceNode.getConstructorInstance());
+
+                    }else if(draggingnode instanceof MyTreePropertyInstanceNode) {
+                        MyTreePropertyInstanceNode propertyInstanceNode = (MyTreePropertyInstanceNode) draggingnode;
+                        removeTreeNode(propertyInstanceNode);
+                        addInstance(targetTreenode, propertyInstanceNode.getValueInstance());
+                    }
+                    draggingnode = null;
+                });
+
             }catch (Exception ee) {
                 ee.printStackTrace();
             }

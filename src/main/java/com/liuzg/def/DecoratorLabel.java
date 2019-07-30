@@ -1,5 +1,6 @@
 package com.liuzg.def;
 
+import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -12,10 +13,10 @@ public class DecoratorLabel extends AnchorPane {
     public DecoratorLabel() {
         label = new Label();
         this.getChildren().add(label);
-        AnchorPane.setTopAnchor(label, 5.0);
-        AnchorPane.setBottomAnchor(label, 5.0);
-        AnchorPane.setLeftAnchor(label, 10.0);
-        AnchorPane.setRightAnchor(label, 10.0);
+        AnchorPane.setTopAnchor(label, 2.0);
+        AnchorPane.setBottomAnchor(label, 2.0);
+        AnchorPane.setLeftAnchor(label, 5.0);
+        AnchorPane.setRightAnchor(label, 5.0);
 
     }
 

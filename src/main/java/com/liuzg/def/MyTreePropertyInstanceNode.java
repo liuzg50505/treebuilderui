@@ -4,6 +4,7 @@ import com.google.common.eventbus.EventBus;
 import com.liuzg.def.events.MyTreeNodeClickEvent;
 import com.liuzg.def.events.MyTreeNodeDecoratorClickEvent;
 import com.liuzg.def.events.MyTreeNodeExpandEvent;
+import com.liuzg.def.events.MyTreeNodeStartDraggingEvent;
 import javafx.scene.Node;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.Dragboard;
@@ -42,6 +43,7 @@ public class MyTreePropertyInstanceNode extends MyTreeNode {
             eventBus.post(new MyTreeNodeDecoratorClickEvent(this, constructorInstance, constructorInstance.decorators));
         });
         constructorInstanceControl.setOnDragDetected(event -> {
+            if(this.valueInstance==null) return;
             Dragboard dragboard = constructorInstanceControl.startDragAndDrop(TransferMode.ANY);
             dragboard.setDragView(constructorInstanceControl.snapshot(null, null));
 
@@ -50,6 +52,9 @@ public class MyTreePropertyInstanceNode extends MyTreeNode {
             dragboard.setContent(content);
 
             MyTreeEditor.draggingnode = this;
+
+            collapseCurrent();
+            eventBus.post(new MyTreeNodeStartDraggingEvent(this));
         });
 
 

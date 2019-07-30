@@ -35,15 +35,18 @@ public class InstanceNodePool {
     private Map<InstanceProperty, MyTreeNode> instancePropertyTreeNodeMap;
     private Map<MyTreeNode, Instance> treeNodeInstanceMap;
     private Map<MyTreeNode, InstanceProperty> treeNodeInstancePropertyMap;
+    private Set<MyTreeNode> treeNodes;
 
     public InstanceNodePool() {
         instanceTreeNodeMap = new HashMap<>();
         instancePropertyTreeNodeMap = new HashMap<>();
         treeNodeInstanceMap = new HashMap<>();
         treeNodeInstancePropertyMap = new HashMap<>();
+        treeNodes = new HashSet<>();
     }
 
     public void addInstance(Instance instance, MyTreeNode treeNode){
+        treeNodes.add(treeNode);
         if(instance==null) return;
         if(treeNode==null) return;
         instanceTreeNodeMap.put(instance, treeNode);
@@ -51,6 +54,7 @@ public class InstanceNodePool {
     }
 
     public void addInstanceProperty(Instance instance, String property, MyTreeNode treeNode) {
+        treeNodes.add(treeNode);
         if(instance==null) return;
         if(treeNode==null) return;
         if(property==null||"".equals(property)) return;
@@ -61,18 +65,12 @@ public class InstanceNodePool {
 
     }
 
-    public void addTreeNode(MyTreeNode treeNode, Instance instance){
-        if(instance==null) return;
-        if(treeNode==null) return;
-        instanceTreeNodeMap.put(instance, treeNode);
-        treeNodeInstanceMap.put(treeNode, instance);
-    }
-
     public void removeInstance(Instance instance) {
         if (instanceTreeNodeMap.containsKey(instance)) {
             MyTreeNode treeNode = instanceTreeNodeMap.get(instance);
             instanceTreeNodeMap.remove(instance);
             treeNodeInstanceMap.remove(treeNode);
+            treeNodes.remove(treeNode);
         }
     }
 
@@ -86,7 +84,7 @@ public class InstanceNodePool {
     }
 
     public boolean containsTreeNode(MyTreeNode treeNode) {
-        return treeNodeInstanceMap.containsKey(treeNode);
+        return treeNodes.contains(treeNode);
     }
 
     public MyTreeNode getTreeNode(Instance instance) {
@@ -98,12 +96,7 @@ public class InstanceNodePool {
     }
 
     public MyTreeNode getTreeNode(Node control) {
-        for (MyTreeNode treeNode: treeNodeInstanceMap.keySet()){
-            if(treeNode.getTreeNodeControl()==control){
-                return treeNode;
-            }
-        }
-        for (MyTreeNode treeNode: treeNodeInstancePropertyMap.keySet()){
+        for (MyTreeNode treeNode: treeNodes){
             if(treeNode.getTreeNodeControl()==control){
                 return treeNode;
             }
@@ -116,9 +109,10 @@ public class InstanceNodePool {
     }
 
     public Set<MyTreeNode> getTreeNodes() {
-        HashSet<MyTreeNode> t = new HashSet<>(instanceTreeNodeMap.values());
-        t.addAll(instancePropertyTreeNodeMap.values());
-        return t;
+        return treeNodes;
+//        HashSet<MyTreeNode> t = new HashSet<>(instanceTreeNodeMap.values());
+//        t.addAll(instancePropertyTreeNodeMap.values());
+//        return t;
     }
 
 }
