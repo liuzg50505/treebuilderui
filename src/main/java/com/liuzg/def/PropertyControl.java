@@ -32,10 +32,10 @@ public class PropertyControl extends AnchorPane {
         imgExpanded = new Image(this.getClass().getResourceAsStream("/assets/treeeditor/expanded.png"), 16,16,false, true);
         imgCollapsed = new Image(this.getClass().getResourceAsStream("/assets/treeeditor/collapsed.png"), 16,16,false, true);
         expandIcon = new ImageView(imgExpanded);
-        instanceLabel = new Label(property);
+        instanceLabel = new Label(property+":");
         hbox = new HBox(expandIcon, instanceLabel);
         hbox.setAlignment(Pos.CENTER_LEFT);
-        hbox.setSpacing(5);
+//        hbox.setSpacing(5);
         this.getChildren().add(hbox);
         AnchorPane.setLeftAnchor(hbox, (double) offsetX);
         AnchorPane.setRightAnchor(hbox, 0.0);

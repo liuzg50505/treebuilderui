@@ -35,7 +35,7 @@ public class MyTreeEditor extends VBox {
         rootInstance = instance;
         pool = new InstanceNodePool();
         renderUI();
-        this.setStyle("-fx-font-size:16; -fx-font-family: 'Times New Roman'");
+        this.setStyle("-fx-font-size:16; ");
 
     }
 

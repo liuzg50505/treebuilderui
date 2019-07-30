@@ -45,7 +45,6 @@ public class ConstructorInstanceControl extends AnchorPane {
     private List<MyTreeNodeControlExpandedHandler> expandedHandlers;
 
     public ConstructorInstanceControl(ConstructorInstance instance, int offsetX) {
-
         nodeDecoratorMap = new HashMap<>();
         decoratorClickHandlers = new ArrayList<>();
         expandedHandlers = new ArrayList<>();
