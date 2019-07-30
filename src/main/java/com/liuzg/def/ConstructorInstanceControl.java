@@ -97,6 +97,7 @@ public class ConstructorInstanceControl extends AnchorPane {
                     content.putString(decoratorLabel.getText());
                     dragboard.setContent(content);
                     dragitem = decoratorLabel;
+                    event.consume();
                 });
 
                 hboxDecorators.getChildren().add(decoratorLabel);

@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class MyTreeEditor extends VBox {
-    public static MyTreeInstanceNode draggingnode;
+    public static MyTreeNode draggingnode;
 
     protected Instance rootInstance;
     protected int levelindent = 20;
