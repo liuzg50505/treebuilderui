@@ -1,6 +1,7 @@
 package com.liuzg.def;
 
 import com.liuzg.models.TreeNode;
+import javafx.scene.Node;
 
 import java.util.*;
 
@@ -101,6 +102,15 @@ public class InstanceNodePool {
 
     public Instance getInstance(MyTreeNode treeNode) {
         return treeNodeInstanceMap.get(treeNode);
+    }
+
+    public MyTreeNode getTreeNode(Node control) {
+        for (MyTreeNode treeNode: treeNodeInstanceMap.keySet()){
+            if(treeNode.getTreeNodeControl()==control){
+                return treeNode;
+            }
+        }
+        return null;
     }
 
     public MyTreeNode getTreeNode(Instance instance, String property) {

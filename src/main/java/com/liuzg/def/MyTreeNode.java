@@ -51,6 +51,10 @@ public abstract class MyTreeNode {
         this.subTreeNodes.clear();
     }
 
+    public MyTreeNode getParentNode() {
+        return parentNode;
+    }
+
     public abstract Node getTreeNodeControl();
 
     public abstract boolean isExpanded();

@@ -81,7 +81,7 @@ public class MyTreeGenerator {
 
         }else if(node instanceof MyTreeInstanceNode) {
             MyTreeInstanceNode instanceNode = (MyTreeInstanceNode) node;
-            ConstructorInstance constructureInstance = instanceNode.getConstructureInstance();
+            ConstructorInstance constructureInstance = instanceNode.getConstructorInstance();
             ConstructorDefinition constructorDefinition = (ConstructorDefinition) constructureInstance.typeDefinition;
             for (ConstructorDefinition.ConstructorParam cparam: constructorDefinition.getParameters()){
                 if("Widget".equals(cparam.paramtypename)){

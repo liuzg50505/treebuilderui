@@ -5,26 +5,24 @@ import com.liuzg.def.events.MyTreeNodeClickEvent;
 import com.liuzg.def.events.MyTreeNodeDecoratorClickEvent;
 import com.liuzg.def.events.MyTreeNodeExpandEvent;
 import javafx.scene.Node;
+import javafx.scene.input.ClipboardContent;
+import javafx.scene.input.Dragboard;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.TransferMode;
 import javafx.scene.paint.Color;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Function;
 
 public class MyTreeInstanceNode extends MyTreeNode {
 
-    protected ConstructorInstance constructureInstance;
+    protected ConstructorInstance constructorInstance;
     protected ConstructorInstanceControl constructorInstanceControl;
     protected boolean isselected = false;
 
-    public MyTreeInstanceNode(EventBus eventBus, ConstructorInstance constructureInstance) {
+    public MyTreeInstanceNode(EventBus eventBus, ConstructorInstance constructorInstance) {
         super(eventBus);
-        assert constructureInstance!=null;
+        assert constructorInstance !=null;
 
-        this.constructureInstance = constructureInstance;
-        constructorInstanceControl = new ConstructorInstanceControl(constructureInstance, 0);
+        this.constructorInstance = constructorInstance;
+        constructorInstanceControl = new ConstructorInstanceControl(constructorInstance, 0);
         constructorInstanceControl.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             eventBus.post(new MyTreeNodeClickEvent(this));
         });
@@ -32,17 +30,27 @@ public class MyTreeInstanceNode extends MyTreeNode {
             eventBus.post(new MyTreeNodeExpandEvent(this));
         });
         constructorInstanceControl.addDecoratorClickListener(decoratorInstance -> {
-            eventBus.post(new MyTreeNodeDecoratorClickEvent(this, constructureInstance, constructureInstance.decorators));
+            eventBus.post(new MyTreeNodeDecoratorClickEvent(this, constructorInstance, constructorInstance.decorators));
+        });
+        constructorInstanceControl.setOnDragDetected(event -> {
+            Dragboard dragboard = constructorInstanceControl.startDragAndDrop(TransferMode.ANY);
+            dragboard.setDragView(constructorInstanceControl.snapshot(null, null));
+
+            ClipboardContent content = new ClipboardContent();
+            content.putString(constructorInstanceControl.getText());
+            dragboard.setContent(content);
+
+            MyTreeEditor.draggingnode = this;
         });
     }
 
-    public ConstructorInstance getConstructureInstance() {
-        return constructureInstance;
+    public ConstructorInstance getConstructorInstance() {
+        return constructorInstance;
     }
 
     @Override
     public String getNodeText() {
-        return constructureInstance.typeDefinition.typeName;
+        return constructorInstance.typeDefinition.typeName;
     }
 
     @Override

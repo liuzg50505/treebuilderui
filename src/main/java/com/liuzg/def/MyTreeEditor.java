@@ -5,27 +5,28 @@ import com.google.common.eventbus.Subscribe;
 import com.liuzg.def.events.MyTreeEditorSelectionChangedEvent;
 import com.liuzg.def.events.MyTreeNodeClickEvent;
 import com.liuzg.def.events.MyTreeNodeExpandEvent;
+import javafx.geometry.Bounds;
+import javafx.scene.Node;
 import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 import java.util.function.Consumer;
-import java.util.function.Function;
 
 public class MyTreeEditor extends VBox {
-    private Instance rootInstance;
-    private int levelindent = 20;
-    private int itemheight = 30;
-    private MyTreeNode rootnode;
-    private MyTreeNode selectedNode;
-    private List<Consumer<MyTreeNode>> selectionChangedHandlers;
+    public static MyTreeInstanceNode draggingnode;
 
-    private InstanceNodePool pool;
-    private List<MyTreeNode> currentnodes;
+    protected Instance rootInstance;
+    protected int levelindent = 20;
+    protected int itemheight = 30;
+    protected MyTreeNode rootnode;
+    protected MyTreeNode selectedNode;
+    protected List<Consumer<MyTreeNode>> selectionChangedHandlers;
 
-    private EventBus eventBus;
+    protected InstanceNodePool pool;
+    protected List<MyTreeNode> currentnodes;
 
+    protected EventBus eventBus;
 
     public MyTreeEditor(Instance instance) {
         eventBus = new EventBus();
@@ -37,6 +38,28 @@ public class MyTreeEditor extends VBox {
         renderUI();
         this.setStyle("-fx-font-size:16; ");
 
+        this.setOnDragDropped(event -> {
+            if(draggingnode==null) return;
+            double y = event.getSceneY();
+            Node targetcontrol = null;
+            for (int i = 0; i< this.getChildren().size(); i++) {
+                Node child = this.getChildren().get(i);
+                Bounds bounds = child.getLayoutBounds();
+                Bounds t = child.localToParent(bounds);
+                if(y>=t.getMinX()&&y<=t.getMaxX()){
+                    targetcontrol = child;
+                    break;
+                }
+            }
+            if(targetcontrol!=null) {
+                MyTreeNode targetTreenode = pool.getTreeNode(targetcontrol);
+
+            }
+
+
+
+            draggingnode = null;
+        });
     }
 
     private <T> void notifyHandlers(List<Consumer<T>> handlers, T target){
@@ -74,7 +97,7 @@ public class MyTreeEditor extends VBox {
                 pool.addInstance(tnode.getValueInstance(), tnode);
             }else if(node instanceof MyTreeInstanceNode) {
                 MyTreeInstanceNode tnode = (MyTreeInstanceNode) node;
-                pool.addInstance(tnode.getConstructureInstance(), tnode);
+                pool.addInstance(tnode.getConstructorInstance(), tnode);
             }else if(node instanceof MyTreePropertyNode) {
                 MyTreePropertyNode tnode = (MyTreePropertyNode) node;
                 pool.addInstanceProperty(tnode.getConstructureInstance(), tnode.getProperty(), tnode);
@@ -131,7 +154,7 @@ public class MyTreeEditor extends VBox {
     public void removeTreeNode(MyTreeNode treeNode) {
         if(treeNode instanceof MyTreePropertyInstanceNode) {
             MyTreePropertyInstanceNode current = (MyTreePropertyInstanceNode) treeNode;
-            ConstructorInstance parent = current.getConstructureInstance();
+            ConstructorInstance parent = current.getConstructorInstance();
             String property = current.getProperty();
             parent.setProperty(property, null);
             renderUI();
@@ -141,7 +164,7 @@ public class MyTreeEditor extends VBox {
             ConstructorInstance parent = propertyNode.getConstructureInstance();
             String property = propertyNode.getProperty();
             List value = (List) parent.getProperty(property);
-            value.remove(current.getConstructureInstance());
+            value.remove(current.getConstructorInstance());
             renderUI();
         }
     }
@@ -149,18 +172,28 @@ public class MyTreeEditor extends VBox {
     public void addInstance(MyTreeNode treeNode, Instance instance) {
         if(treeNode instanceof MyTreePropertyInstanceNode) {
             MyTreePropertyInstanceNode current = (MyTreePropertyInstanceNode) treeNode;
-            ConstructorInstance parent = current.getConstructureInstance();
+            ConstructorInstance parent = current.getConstructorInstance();
             String property = current.getProperty();
             parent.setProperty(property, instance);
             renderUI();
-        }else if(treeNode instanceof MyTreeInstanceNode) {
-            MyTreeInstanceNode current = (MyTreeInstanceNode) treeNode;
-            MyTreePropertyNode propertyNode = (MyTreePropertyNode) current.parentNode;
-            ConstructorInstance parent = propertyNode.getConstructureInstance();
-            String property = propertyNode.getProperty();
+        }else if(treeNode instanceof MyTreePropertyNode) {
+            MyTreePropertyNode current = (MyTreePropertyNode) treeNode;
+            ConstructorInstance parent = current.getConstructureInstance();
+            String property = current.getProperty();
             List value = (List) parent.getProperty(property);
             value.add(instance);
             renderUI();
+        }else if(treeNode instanceof MyTreeInstanceNode) {
+            MyTreeInstanceNode current = (MyTreeInstanceNode) treeNode;
+            MyTreeNode parent = current.getParentNode();
+            if(parent instanceof MyTreePropertyNode) {
+                MyTreePropertyNode propertyParent = (MyTreePropertyNode) parent;
+                String property = propertyParent.getProperty();
+                List value = (List) propertyParent.getConstructureInstance().getProperty(property);
+                int idx = value.indexOf(current.getConstructorInstance());
+                value.add(idx, instance);
+                renderUI();
+            }
         }
     }
 
