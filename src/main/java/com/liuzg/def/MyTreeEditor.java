@@ -7,6 +7,8 @@ import com.liuzg.def.events.MyTreeNodeClickEvent;
 import com.liuzg.def.events.MyTreeNodeExpandEvent;
 import com.liuzg.def.events.MyTreeNodeStartDraggingEvent;
 import javafx.scene.Node;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
@@ -15,13 +17,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
+import static sun.awt.image.PixelConverter.UshortGray.instance;
+
 public class MyTreeEditor extends VBox {
     public static MyTreeNode draggingnode;
     public static boolean iscopydragging;
 
     protected Instance rootInstance;
-    protected int levelindent = 20;
-    protected int itemheight = 30;
     protected MyTreeNode rootnode;
     protected MyTreeNode selectedNode;
     protected List<Consumer<MyTreeNode>> selectionChangedHandlers;
@@ -49,13 +51,11 @@ public class MyTreeEditor extends VBox {
             if (iscopydragging) event.acceptTransferModes(TransferMode.COPY);
             else event.acceptTransferModes(TransferMode.MOVE);
         });
+        this.setFocused(true);
     }
 
-    private <T> void notifyHandlers(List<Consumer<T>> handlers, T target){
-        for(Consumer<T> handler: handlers){
-            handler.accept(target);
-        }
-    }
+
+    // event handlers
 
     @Subscribe
     public void on(MyTreeNodeClickEvent event){
@@ -76,6 +76,40 @@ public class MyTreeEditor extends VBox {
     public void on(MyTreeNodeStartDraggingEvent event) {
         refreshExpand();
     }
+
+
+    // private methods
+
+    private void refreshSelected() {
+//        Set<MyTreeNode> nodes = pool.getTreeNodes();
+//        MyTreeGenerator generator = new MyTreeGenerator(pool);
+//        List<MyTreeNode> nodes = generator.generateOrderedVisibleTreeNodes(rootnode);
+
+        for(MyTreeNode node: currentnodes) {
+            node.unselect();
+        }
+        if(selectedNode!=null) {
+            selectedNode.select();
+        }
+    }
+
+    private void refreshExpand() {
+        this.getChildren().clear();
+
+        MyTreeGenerator generator = new MyTreeGenerator(eventBus, pool);
+        currentnodes = generator.generateOrderedVisibleTreeNodes(rootnode);
+        for(MyTreeNode node: currentnodes) {
+            this.getChildren().addAll(node.getTreeNodeControl());
+        }
+    }
+
+    private <T> void notifyHandlers(List<Consumer<T>> handlers, T target){
+        for(Consumer<T> handler: handlers){
+            handler.accept(target);
+        }
+    }
+
+    // public outlets
 
     public void renderUI() {
         this.getChildren().clear();
@@ -140,29 +174,6 @@ public class MyTreeEditor extends VBox {
             }catch (Exception ee) {
                 ee.printStackTrace();
             }
-        }
-    }
-
-    private void refreshSelected() {
-//        Set<MyTreeNode> nodes = pool.getTreeNodes();
-//        MyTreeGenerator generator = new MyTreeGenerator(pool);
-//        List<MyTreeNode> nodes = generator.generateOrderedVisibleTreeNodes(rootnode);
-
-        for(MyTreeNode node: currentnodes) {
-            node.unselect();
-        }
-        if(selectedNode!=null) {
-            selectedNode.select();
-        }
-    }
-
-    private void refreshExpand() {
-        this.getChildren().clear();
-
-        MyTreeGenerator generator = new MyTreeGenerator(eventBus, pool);
-        List<MyTreeNode> nodes = generator.generateOrderedVisibleTreeNodes(rootnode);
-        for(MyTreeNode node: nodes) {
-            this.getChildren().addAll(node.getTreeNodeControl());
         }
     }
 
@@ -237,5 +248,120 @@ public class MyTreeEditor extends VBox {
     }
 
 
+    // event outlets
+
+    public void selectionUp() {
+        if(selectedNode==null) {
+            if(currentnodes.size()>0) {
+                selectTreeNode(currentnodes.get(0));
+            }
+        }else{
+            if(currentnodes.size()>0) {
+                int idx = currentnodes.indexOf(selectedNode);
+                if(idx-1>=0){
+                    selectTreeNode(currentnodes.get(idx-1));
+                }
+            }
+        }
+    }
+
+    public void selectionDown() {
+        if(selectedNode==null) {
+            if(currentnodes.size()>0) {
+                selectTreeNode(currentnodes.get(0));
+            }
+        }else{
+            if(currentnodes.size()>0) {
+                int idx = currentnodes.indexOf(selectedNode);
+                if(idx+1<currentnodes.size()){
+                    selectTreeNode(currentnodes.get(idx+1));
+                }
+            }
+        }
+
+    }
+
+    public void removeSelected() {
+        MyTreeNode node = getSelectedTreeNode();
+        if(node!=null) {
+            removeTreeNode(node);
+            renderUI();
+        }
+    }
+
+    public void moveDown() {
+        MyTreeNode node = getSelectedTreeNode();
+        if(node instanceof MyTreeInstanceNode) {
+            MyTreeInstanceNode currentNode = (MyTreeInstanceNode) node;
+            MyTreePropertyNode parentNode = (MyTreePropertyNode) node.getParentNode();
+            ConstructorInstance parent = parentNode.getConstructureInstance();
+            String property = parentNode.getProperty();
+            List value = (List) parent.getProperty(property);
+            if(value!=null) {
+                int idx = value.indexOf(currentNode.getConstructorInstance());
+                if (idx+1<value.size()) {
+                    Object a = value.get(idx);
+                    Object b = value.get(idx+1);
+                    value.set(idx, b);
+                    value.set(idx+1, a);
+                    renderUI();
+                }
+            }
+        }
+
+    }
+
+    public void moveUp() {
+        MyTreeNode node = getSelectedTreeNode();
+        if(node instanceof MyTreeInstanceNode) {
+            MyTreeInstanceNode currentNode = (MyTreeInstanceNode) node;
+            MyTreePropertyNode parentNode = (MyTreePropertyNode) node.getParentNode();
+            ConstructorInstance parent = parentNode.getConstructureInstance();
+            String property = parentNode.getProperty();
+            List value = (List) parent.getProperty(property);
+            if(value!=null) {
+                int idx = value.indexOf(currentNode.getConstructorInstance());
+                if (idx-1>=0) {
+                    Object a = value.get(idx);
+                    Object b = value.get(idx-1);
+                    value.set(idx, b);
+                    value.set(idx-1, a);
+                    renderUI();
+                }
+            }
+        }
+    }
+
+    public void expandSelected() {
+        MyTreeNode node = getSelectedTreeNode();
+        if(node!=null) {
+            node.expandCurrent();
+            refreshExpand();
+        }
+    }
+
+    public void collapseSelected() {
+        MyTreeNode node = getSelectedTreeNode();
+        if(node!=null) {
+            node.collapseCurrent();
+            refreshExpand();
+        }
+    }
+
+    public void expandAllSelected() {
+        MyTreeNode node = getSelectedTreeNode();
+        if(node!=null) {
+            node.expandAll();
+            refreshExpand();
+        }
+    }
+
+    public void collapseAllSelected() {
+        MyTreeNode node = getSelectedTreeNode();
+        if(node!=null) {
+            node.collapseAll();
+            refreshExpand();
+        }
+    }
 
 }

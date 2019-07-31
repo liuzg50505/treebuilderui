@@ -1,10 +1,6 @@
 package com.liuzg.def;
 
-import com.liuzg.ui.IDEController;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.JavaFXBuilderFactory;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.KeyCode;
@@ -18,7 +14,6 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 import java.io.File;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -76,6 +71,36 @@ public class MyTreeEditorLauncher extends Application {
         borderPane.setTop(new HBox(btn1, btn2));
 
         Scene scene = new Scene(borderPane, 1400, 875);
+
+        scene.addEventFilter(KeyEvent.KEY_PRESSED, event -> {
+            if(event.getCode()==KeyCode.UP) {
+                if(event.isControlDown()) {
+                    editor.moveUp();
+                }else{
+                    editor.selectionUp();
+                }
+            }else if(event.getCode()==KeyCode.DOWN) {
+                if(event.isControlDown()) {
+                    editor.moveDown();
+                }else{
+                    editor.selectionDown();
+                }
+            }else if(event.getCode()==KeyCode.DELETE) {
+                editor.removeSelected();
+            }else if(event.getCode()==KeyCode.LEFT) {
+                if(event.isControlDown()) {
+                    editor.collapseAllSelected();
+                }else{
+                    editor.collapseSelected();
+                }
+            }else if(event.getCode()==KeyCode.RIGHT) {
+                if(event.isControlDown()) {
+                    editor.expandAllSelected();
+                }else{
+                    editor.expandSelected();
+                }
+            }
+        });
 
 
         primaryStage.setTitle("My Tree Editor Demo");
