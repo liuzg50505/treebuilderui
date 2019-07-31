@@ -34,6 +34,7 @@ public class MyTreeInstanceNode extends MyTreeNode {
             eventBus.post(new MyTreeNodeDecoratorClickEvent(this, constructorInstance, constructorInstance.decorators));
         });
         constructorInstanceControl.setOnDragDetected(event -> {
+
             Dragboard dragboard = constructorInstanceControl.startDragAndDrop(TransferMode.ANY);
             dragboard.setDragView(constructorInstanceControl.snapshot(null, null));
 
@@ -42,6 +43,8 @@ public class MyTreeInstanceNode extends MyTreeNode {
             dragboard.setContent(content);
 
             MyTreeEditor.draggingnode = this;
+            if(event.isSecondaryButtonDown()) MyTreeEditor.iscopydragging = true;
+            else MyTreeEditor.iscopydragging = false;
 
             collapseCurrent();
             eventBus.post(new MyTreeNodeStartDraggingEvent(this));

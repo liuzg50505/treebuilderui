@@ -7,6 +7,8 @@ import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
@@ -74,6 +76,8 @@ public class MyTreeEditorLauncher extends Application {
         borderPane.setTop(new HBox(btn1, btn2));
 
         Scene scene = new Scene(borderPane, 1400, 875);
+
+
         primaryStage.setTitle("My Tree Editor Demo");
         primaryStage.setScene(scene);
         primaryStage.show();

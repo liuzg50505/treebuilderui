@@ -9,6 +9,11 @@ public class EnumInstance extends Instance{
     }
 
     @Override
+    public Instance clone() {
+        return null;
+    }
+
+    @Override
     public String generateCode() {
         if(value==null) return "";
         return value.code;

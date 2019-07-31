@@ -1,6 +1,8 @@
 package com.liuzg.def;
 
-public abstract class Instance {
+import java.io.Serializable;
+
+public abstract class Instance implements Serializable {
     protected TypeDefinition typeDefinition;
 
     public Instance(TypeDefinition typeDefinition) {
@@ -14,6 +16,8 @@ public abstract class Instance {
     public void setTypeDefinition(TypeDefinition typeDefinition) {
         this.typeDefinition = typeDefinition;
     }
+
+    public abstract Instance clone();
 
     public abstract String generateCode();
 }

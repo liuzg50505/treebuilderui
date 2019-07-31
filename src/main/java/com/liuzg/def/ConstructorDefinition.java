@@ -1,6 +1,7 @@
 package com.liuzg.def;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -12,7 +13,7 @@ public class ConstructorDefinition extends TypeDefinition {
         OptionalPositionParameter,
     }
 
-    public static class ConstructorParam {
+    public static class ConstructorParam implements Serializable {
         public String paramname;
         public String paramtypename;
         public ConstructorParamType parameterType = ConstructorParamType.OptionalNamedParameter;

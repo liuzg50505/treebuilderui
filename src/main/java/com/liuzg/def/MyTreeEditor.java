@@ -6,10 +6,8 @@ import com.liuzg.def.events.MyTreeEditorSelectionChangedEvent;
 import com.liuzg.def.events.MyTreeNodeClickEvent;
 import com.liuzg.def.events.MyTreeNodeExpandEvent;
 import com.liuzg.def.events.MyTreeNodeStartDraggingEvent;
-import javafx.geometry.Bounds;
 import javafx.scene.Node;
 import javafx.scene.input.TransferMode;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 
@@ -19,6 +17,7 @@ import java.util.function.Consumer;
 
 public class MyTreeEditor extends VBox {
     public static MyTreeNode draggingnode;
+    public static boolean iscopydragging;
 
     protected Instance rootInstance;
     protected int levelindent = 20;
@@ -47,7 +46,8 @@ public class MyTreeEditor extends VBox {
         this.setOnDragExited(event -> {
         });
         this.setOnDragOver(event -> {
-            event.acceptTransferModes(TransferMode.MOVE);
+            if (iscopydragging) event.acceptTransferModes(TransferMode.COPY);
+            else event.acceptTransferModes(TransferMode.MOVE);
         });
     }
 
@@ -105,18 +105,34 @@ public class MyTreeEditor extends VBox {
                 this.getChildren().add(child);
 
                 child.setOnDragDropped(event -> {
+
                     if(draggingnode==null) return;
                     MyTreeNode targetTreenode = pool.getTreeNode(child);
                     if(draggingnode==targetTreenode) return;
-                    if(draggingnode instanceof MyTreeInstanceNode) {
-                        MyTreeInstanceNode treeInstanceNode = (MyTreeInstanceNode) draggingnode;
-                        removeTreeNode(treeInstanceNode);
-                        addInstance(targetTreenode, treeInstanceNode.getConstructorInstance());
+                    if(!iscopydragging) {
+                        if(draggingnode instanceof MyTreeInstanceNode) {
+                            MyTreeInstanceNode treeInstanceNode = (MyTreeInstanceNode) draggingnode;
+                            removeTreeNode(treeInstanceNode);
+                            addInstance(targetTreenode, treeInstanceNode.getConstructorInstance());
 
-                    }else if(draggingnode instanceof MyTreePropertyInstanceNode) {
-                        MyTreePropertyInstanceNode propertyInstanceNode = (MyTreePropertyInstanceNode) draggingnode;
-                        removeTreeNode(propertyInstanceNode);
-                        addInstance(targetTreenode, propertyInstanceNode.getValueInstance());
+                        }else if(draggingnode instanceof MyTreePropertyInstanceNode) {
+                            MyTreePropertyInstanceNode propertyInstanceNode = (MyTreePropertyInstanceNode) draggingnode;
+                            removeTreeNode(propertyInstanceNode);
+                            addInstance(targetTreenode, propertyInstanceNode.getValueInstance());
+                        }
+                    }else{
+                        if(draggingnode instanceof MyTreeInstanceNode) {
+                            MyTreeInstanceNode treeInstanceNode = (MyTreeInstanceNode) draggingnode;
+                            ConstructorInstance instance = treeInstanceNode.getConstructorInstance();
+                            ConstructorInstance newinstance = DefUtils.getCopyObj(instance);
+                            addInstance(targetTreenode, newinstance);
+
+                        }else if(draggingnode instanceof MyTreePropertyInstanceNode) {
+                            MyTreePropertyInstanceNode propertyInstanceNode = (MyTreePropertyInstanceNode) draggingnode;
+                            ConstructorInstance instance = propertyInstanceNode.getValueInstance();
+                            ConstructorInstance newinstance = DefUtils.getCopyObj(instance);
+                            addInstance(targetTreenode, newinstance);
+                        }
                     }
                     draggingnode = null;
                 });

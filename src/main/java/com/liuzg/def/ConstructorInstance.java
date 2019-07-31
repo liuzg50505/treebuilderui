@@ -16,6 +16,22 @@ public class ConstructorInstance extends Instance{
         decorators = new ArrayList<>();
     }
 
+    @Override
+    public ConstructorInstance clone() {
+        ConstructorInstance instance = new ConstructorInstance(typeDefinition);
+        for (Map.Entry<String, Object> entry: propertyValueMap.entrySet()) {
+            String property = entry.getKey();
+            Object value = entry.getValue();
+            if(value instanceof Cloneable) {
+                ArrayList newlist = new ArrayList((List) value);
+                this.propertyValueMap.put(property, newlist);
+            }else{
+                this.propertyValueMap.put(property, value);
+            }
+        }
+        return instance;
+    }
+
     public void setProperty(String property, Object value) {
         propertyValueMap.put(property, value);
     }

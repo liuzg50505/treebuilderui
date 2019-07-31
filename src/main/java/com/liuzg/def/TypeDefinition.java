@@ -1,6 +1,8 @@
 package com.liuzg.def;
 
-public abstract class TypeDefinition {
+import java.io.Serializable;
+
+public abstract class TypeDefinition implements Serializable {
     protected String typeName;
     protected String importlib;
 

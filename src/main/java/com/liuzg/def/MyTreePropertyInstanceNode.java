@@ -52,6 +52,8 @@ public class MyTreePropertyInstanceNode extends MyTreeNode {
             dragboard.setContent(content);
 
             MyTreeEditor.draggingnode = this;
+            if(event.isSecondaryButtonDown()) MyTreeEditor.iscopydragging = true;
+            else MyTreeEditor.iscopydragging = false;
 
             collapseCurrent();
             eventBus.post(new MyTreeNodeStartDraggingEvent(this));
