@@ -32,15 +32,14 @@ public class MyTreeEditor extends VBox {
     protected List<MyTreeNode> currentnodes;
 
     protected EventBus eventBus;
+    private boolean isdirty = false;
 
-    public MyTreeEditor(Instance instance) {
+    public MyTreeEditor() {
         eventBus = new EventBus();
         eventBus.register(this);
         currentnodes = new ArrayList<>();
         selectionChangedHandlers = new ArrayList<>();
-        rootInstance = instance;
         pool = new InstanceNodePool();
-        renderUI();
         this.setStyle("-fx-font-size:16; ");
 
         this.setOnDragEntered(event -> {
@@ -54,6 +53,10 @@ public class MyTreeEditor extends VBox {
         this.setFocused(true);
     }
 
+    public MyTreeEditor(Instance instance) {
+        this();
+        setRootIntance(instance);
+    }
 
     // event handlers
 
@@ -247,6 +250,16 @@ public class MyTreeEditor extends VBox {
         }
     }
 
+    public void setRootIntance(Instance instance){
+        pool.clear();
+        rootInstance = instance;
+        renderUI();
+    }
+
+    public Instance getRootInstance(){
+        return rootInstance;
+    }
+
 
     // event outlets
 
@@ -289,7 +302,7 @@ public class MyTreeEditor extends VBox {
         }
     }
 
-    public void moveDown() {
+    public void moveDownSelected() {
         MyTreeNode node = getSelectedTreeNode();
         if(node instanceof MyTreeInstanceNode) {
             MyTreeInstanceNode currentNode = (MyTreeInstanceNode) node;
@@ -311,7 +324,7 @@ public class MyTreeEditor extends VBox {
 
     }
 
-    public void moveUp() {
+    public void moveUpSelected() {
         MyTreeNode node = getSelectedTreeNode();
         if(node instanceof MyTreeInstanceNode) {
             MyTreeInstanceNode currentNode = (MyTreeInstanceNode) node;
@@ -328,6 +341,23 @@ public class MyTreeEditor extends VBox {
                     value.set(idx-1, a);
                     renderUI();
                 }
+            }
+        }
+    }
+
+    public void duplicateSelected() {
+        MyTreeNode node = getSelectedTreeNode();
+        if(node instanceof MyTreeInstanceNode) {
+            MyTreeInstanceNode currentNode = (MyTreeInstanceNode) node;
+            MyTreePropertyNode parentNode = (MyTreePropertyNode) node.getParentNode();
+            ConstructorInstance parent = parentNode.getConstructureInstance();
+            String property = parentNode.getProperty();
+            List value = (List) parent.getProperty(property);
+            if(value!=null) {
+                int idx = value.indexOf(currentNode.getConstructorInstance());
+                ConstructorInstance newinstance = DefUtils.getCopyObj(currentNode.getConstructorInstance());
+                value.add(idx, newinstance);
+                renderUI();
             }
         }
     }
@@ -364,4 +394,7 @@ public class MyTreeEditor extends VBox {
         }
     }
 
+    public boolean isDirty() {
+        return this.isdirty;
+    }
 }

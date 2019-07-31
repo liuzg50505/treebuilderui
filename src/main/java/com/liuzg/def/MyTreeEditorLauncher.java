@@ -75,13 +75,13 @@ public class MyTreeEditorLauncher extends Application {
         scene.addEventFilter(KeyEvent.KEY_PRESSED, event -> {
             if(event.getCode()==KeyCode.UP) {
                 if(event.isControlDown()) {
-                    editor.moveUp();
+                    editor.moveUpSelected();
                 }else{
                     editor.selectionUp();
                 }
             }else if(event.getCode()==KeyCode.DOWN) {
                 if(event.isControlDown()) {
-                    editor.moveDown();
+                    editor.moveDownSelected();
                 }else{
                     editor.selectionDown();
                 }

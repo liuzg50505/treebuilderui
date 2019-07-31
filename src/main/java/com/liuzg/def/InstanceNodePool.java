@@ -110,9 +110,14 @@ public class InstanceNodePool {
 
     public Set<MyTreeNode> getTreeNodes() {
         return treeNodes;
-//        HashSet<MyTreeNode> t = new HashSet<>(instanceTreeNodeMap.values());
-//        t.addAll(instancePropertyTreeNodeMap.values());
-//        return t;
+    }
+
+    public void clear() {
+        instanceTreeNodeMap.clear();
+        instancePropertyTreeNodeMap.clear();
+        treeNodeInstanceMap.clear();
+        treeNodeInstancePropertyMap.clear();
+        treeNodes.clear();
     }
 
 }
