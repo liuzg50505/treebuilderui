@@ -3,8 +3,6 @@ package com.liuzg.ui;
 import com.liuzg.models.Design;
 import com.liuzg.models.Project;
 import com.liuzg.models.Widget;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 
@@ -12,7 +10,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.logging.FileHandler;
 
 public class ProjectTreeView extends TreeView<ProjectTreeView.Node> {
     public static interface WidgetSelectedListener {
@@ -38,7 +35,7 @@ public class ProjectTreeView extends TreeView<ProjectTreeView.Node> {
             if(nodeType==NodeType.DESIGN) {
                 result = design.getRelativePath();
             }else if(nodeType==NodeType.WIDGET) {
-                result = widget.getControllerName();
+                result = widget.getName();
             }else if(nodeType==NodeType.ROOT) {
                 result = projectName;
             }
@@ -100,15 +97,13 @@ public class ProjectTreeView extends TreeView<ProjectTreeView.Node> {
             TreeItem<Node> designItem = new TreeItem<>(designNode);
             rootItem.getChildren().add(designItem);
 
-            for(Widget widget: design.getWidgets()) {
-                Node widgetNode = new Node();
-                widgetNode.nodeType = NodeType.WIDGET;
-                widgetNode.widget = widget;
-                TreeItem<Node> widgetItem = new TreeItem<>(widgetNode);
-                designItem.getChildren().add(widgetItem);
-            }
+            Widget widget = design.getWidget();
+            Node widgetNode = new Node();
+            widgetNode.nodeType = NodeType.WIDGET;
+            widgetNode.widget = widget;
+            TreeItem<Node> widgetItem = new TreeItem<>(widgetNode);
+            designItem.getChildren().add(widgetItem);
         }
-
         expandTreeView(this.getRoot());
     }
 

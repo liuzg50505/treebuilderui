@@ -1,4 +1,17 @@
 <root>
+    <!--特殊节点-->
+    <Class type="Foreach" constructorname="">
+        <property name="itemvar" type="String" parametertype="RequiredParameter"/>
+        <property name="collectionvar" type="String" parametertype="RequiredParameter"/>
+        <property name="template" type="Widget" parametertype="RequiredParameter"/>
+        <property name="indexvar" type="String" />
+    </Class>
+
+    <Class type="If" constructorname="">
+        <property name="condition" type="String" parametertype="RequiredParameter"/>
+        <property name="template" type="Widget" parametertype="RequiredParameter"/>
+    </Class>
+
     <!--枚举类型-->
     <Enum type="MainAxisAlignment">
         <item key="start" code="MainAxisAlignment.start" descrption=""/>

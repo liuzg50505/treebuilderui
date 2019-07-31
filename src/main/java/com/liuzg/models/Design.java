@@ -5,12 +5,11 @@ import java.util.List;
 
 public class Design {
     private String relativePath;
-    private List<Widget> widgets;
+    private Widget widget;
     private Project project;
     private boolean dirty;
 
     public Design() {
-        widgets = new ArrayList<>();
         relativePath = "";
     }
 
@@ -23,12 +22,12 @@ public class Design {
         this.relativePath = relativePath;
     }
 
-    public List<Widget> getWidgets() {
-        return widgets;
+    public Widget getWidget() {
+        return widget;
     }
 
-    public void setWidgets(List<Widget> widgets) {
-        this.widgets = widgets;
+    public void setWidget(Widget widget) {
+        this.widget = widget;
     }
 
     public Project getProject() {

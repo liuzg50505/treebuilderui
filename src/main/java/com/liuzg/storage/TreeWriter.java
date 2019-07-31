@@ -2,7 +2,6 @@ package com.liuzg.storage;
 
 import com.liuzg.models.TreeNode;
 import com.liuzg.models.Widget;
-import org.dom4j.Document;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 
@@ -11,11 +10,12 @@ import java.util.Map;
 
 public class TreeWriter {
     public Element widgetXml(Widget widget) {
-        Element elem = treeNodeToElem(widget.getTreeNode());
-        Element widgetelem = DocumentHelper.createElement("widget");
-        widgetelem.addAttribute("controller", widget.getControllerName());
-        widgetelem.add(elem);
-        return widgetelem;
+//        Element elem = treeNodeToElem(widget.getInstance());
+//        Element widgetelem = DocumentHelper.createElement("widget");
+//        widgetelem.addAttribute("controller", widget.getName());
+//        widgetelem.add(elem);
+//        return widgetelem;
+        return null;
     }
 
     private Element treeNodeToElem(TreeNode treeNode) {

@@ -17,7 +17,5 @@ public abstract class Instance implements Serializable {
         this.typeDefinition = typeDefinition;
     }
 
-    public abstract Instance clone();
-
     public abstract String generateCode();
 }

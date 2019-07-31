@@ -1,9 +1,8 @@
 package com.liuzg.models;
 
+import com.liuzg.def.DefinitionManager;
 import com.liuzg.storage.TreeReader;
-import com.liuzg.treenodes.TreeNodeDefinitionManager;
 import org.dom4j.Document;
-import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
@@ -15,7 +14,7 @@ public class Project {
     private String projectPath;
     private List<File> designXmlFiles;
     private List<String> ignoredPrefixList;
-    private TreeNodeDefinitionManager treeNodeDefinitionManager;
+    private DefinitionManager definitionManager;
     private List<Design> designs;
 
     public Project() {
@@ -36,8 +35,8 @@ public class Project {
         this.projectPath = projectPath;
     }
 
-    public void setTreeNodeDefinitionManager(TreeNodeDefinitionManager treeNodeDefinitionManager) {
-        this.treeNodeDefinitionManager = treeNodeDefinitionManager;
+    public void setTreeNodeDefinitionManager(DefinitionManager definitionManager) {
+        this.definitionManager = definitionManager;
     }
 
     // outlets
@@ -70,22 +69,20 @@ public class Project {
         // read all widgets
         designs.clear();
         for(File designXmlFile: designXmlFiles) {
-            List<Widget> widgets = readWidgets(designXmlFile);
+            Widget widget = readWidget(designXmlFile);
+            if(widget==null) continue;
             Design design = new Design();
             design.setProject(this);
             design.setRelativePath(relativePath(new File(projectPath), designXmlFile));
-            design.setWidgets(widgets);
-            for (Widget widget: widgets) {
-                widget.setDesign(design);
-            }
+            design.setWidget(widget);
+            widget.setDesign(design);
             designs.add(design);
         }
     }
 
-    private List<Widget> readWidgets(File designFile) {
-        TreeReader reader = new TreeReader(treeNodeDefinitionManager);
-        reader.readFile(designFile.getAbsolutePath());
-        return reader.getWidgets();
+    private Widget readWidget(File designFile) {
+        TreeReader reader = new TreeReader(definitionManager);
+        return reader.readFile(designFile.getAbsolutePath());
     }
 
     private boolean matchIgnorePrefix(File xmlFile) {
@@ -116,8 +113,9 @@ public class Project {
         try{
             Document document = reader.read(xmlFile);
             Element root = document.getRootElement();
-            Element widgetselems = root.element("widgets");
-            return widgetselems!=null;
+            if(root.getName().equals("widget")){
+                return root.attribute("name")!=null;
+            }
         }catch (Exception ignored) {}
         return false;
     }

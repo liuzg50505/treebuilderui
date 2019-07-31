@@ -1,35 +1,38 @@
 package com.liuzg.models;
 
+import com.liuzg.def.ConstructorInstance;
+import com.liuzg.def.Instance;
+
 public class Widget {
-    private TreeNode treeNode;
-    private String controllerName;
+    private Instance instance;
+    private String name;
     private Design design;
 
-    public Widget(TreeNode treeNode, String controllerName) {
-        this.treeNode = treeNode;
-        this.controllerName = controllerName;
+    public Widget(Instance instance, String name) {
+        this.instance = instance;
+        this.name = name;
     }
 
-    public Widget(TreeNode treeNode, String controllerName, Design design) {
-        this.treeNode = treeNode;
-        this.controllerName = controllerName;
+    public Widget(Instance instance, String name, Design design) {
+        this.instance = instance;
+        this.name = name;
         this.design = design;
     }
 
-    public TreeNode getTreeNode() {
-        return treeNode;
+    public Instance getInstance() {
+        return instance;
     }
 
-    public void setTreeNode(TreeNode treeNode) {
-        this.treeNode = treeNode;
+    public void setInstance(Instance instance) {
+        this.instance = instance;
     }
 
-    public String getControllerName() {
-        return controllerName;
+    public String getName() {
+        return name;
     }
 
-    public void setControllerName(String controllerName) {
-        this.controllerName = controllerName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Design getDesign() {

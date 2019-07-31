@@ -1,11 +1,10 @@
 package com.liuzg.ui;
 
-import com.liuzg.def.MyTreeEditor;
+import com.liuzg.def.*;
 import com.liuzg.editorui.ValueEditorFactory;
 import com.liuzg.flutter.FlutterRunner;
 import com.liuzg.models.*;
 import com.liuzg.storage.TreeWriter;
-import com.liuzg.treenodes.TreeNodeDefinitionManager;
 import com.liuzg.uitls.FxUtils;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -16,6 +15,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.DirectoryChooser;
 import org.dom4j.Document;
@@ -28,7 +28,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class IDEController {
@@ -61,7 +64,7 @@ public class IDEController {
 
 
     private ValueEditorFactory editorFactory;
-    private TreeNodeDefinitionManager definationManager;
+    private DefinitionManager definitionManager;
     private ViewNode prevselectedtreeitem;
     private List<FlutterRunner> flutterRunners;
     private Widget selectedProjectWidget;
@@ -85,7 +88,7 @@ public class IDEController {
         accordion.setExpandedPane(defaulttab);
         ApplicationContext context = new ClassPathXmlApplicationContext("classpath:treenode.xml");
         editorFactory = (ValueEditorFactory) context.getBean("editorFactory");
-        definationManager = (TreeNodeDefinitionManager) context.getBean("definationManager");
+        definitionManager = readDefinitionXml("definition_auto.xml");
         flutterRunners = (List<FlutterRunner>) context.getBean("flutterRunners");
 
         choiceRunner.setItems(FXCollections.observableArrayList(flutterRunners));
@@ -156,44 +159,56 @@ public class IDEController {
 
     // methods
 
+    private DefinitionManager readDefinitionXml(String xmlfile)  {
+        try{
+            SAXReader reader = new SAXReader();
+            Document document = reader.read(new File(xmlfile));
+            Element root = document.getRootElement();
+
+            List<Element> elementList = new ArrayList<>();
+            for(Object subelemobj: root.elements()) {
+                Element subelem = (Element) subelemobj;
+                elementList.add(subelem);
+            }
+
+            DefinitionReader definitionReader = new Dom4JDefinitionReader(elementList);
+            definitionReader.read();
+            List<TypeDefinition> definitions = definitionReader.getDefinitions();
+            DefinitionManager manager = new DefinitionManagerImpl(definitions);
+            return manager;
+        }catch (Exception e){
+        }
+        return null;
+    }
+
+
     private void loadControlToolbox() {
         acc_controls.getChildren().clear();
-//        List<TreeNodeDefinition> definitions = definationManager.getTreeNodeDefinitions();
-//
-//        for (TreeNodeDefinition definition : definitions.stream()
-//                .sorted(Comparator.comparing(TreeNodeDefinition::getName))
-//                .collect(Collectors.toList())) {
-//            AnchorPane pane = new AnchorPane();
-//            Button btn = new Button();
-//            btn.setText(definition.getName());
-//            btn.setOnAction(event -> {
-//                TreeNode treeNode = new TreeNode(definition);
-//                MyTreeNode selectednode = treenodeEditor.getSelectedTreeNode();
-//                if (selectednode != null) {
-//                    TreeNode parent = viewnode.getParentTreeNode();
-//                    if (viewnode.getType() == ViewNodeType.NODE_PROPERTY) {
-//                        parent.setProperty(viewnode.getProp(), treeNode);
-//                    } else if (viewnode.getType() == ViewNodeType.NODES_PROPERTY) {
-//                        TreeNodeCollection curnodes = (TreeNodeCollection) parent.getProperty(viewnode.getProp());
-//                        if (curnodes == null) curnodes = new TreeNodeCollection();
-//                        TreeNodeCollection newnodes = new TreeNodeCollection(curnodes);
-//                        newnodes.add(treeNode);
-//                        parent.setProperty(viewnode.getProp(), newnodes);
-//
-//                    }
-//                    onWidgetTreeChanged();
-//                    treenodeEditor.expandViewNode(viewnode, true);
-//                    treenodeEditor.refresh();
-//                }
-//
-//            });
-//            pane.getChildren().add(btn);
-//            AnchorPane.setLeftAnchor(btn, 0.0);
-//            AnchorPane.setRightAnchor(btn, 0.0);
-//            AnchorPane.setTopAnchor(btn, 0.0);
-//            AnchorPane.setBottomAnchor(btn, 0.0);
-//            acc_controls.getChildren().add(pane);
-//        }
+
+        List<TypeDefinition> definitions = definitionManager.getTypes();
+
+        for (TypeDefinition definition : definitions.stream()
+                .sorted(Comparator.comparing(TypeDefinition::getTypeName))
+                .filter(typeDefinition -> typeDefinition instanceof ConstructorDefinition)
+                .collect(Collectors.toList())) {
+            AnchorPane pane = new AnchorPane();
+            Button btn = new Button();
+            btn.setText(definition.getTypeName());
+            btn.setOnAction(event -> {
+                MyTreeNode selectednode = treenodeEditor.getSelectedTreeNode();
+                if (selectednode != null) {
+                    ConstructorInstance newinstance = new ConstructorInstance(definition);
+                    treenodeEditor.addInstance(selectednode, newinstance);
+                    onWidgetTreeChanged();
+                }
+            });
+            pane.getChildren().add(btn);
+            AnchorPane.setLeftAnchor(btn, 0.0);
+            AnchorPane.setRightAnchor(btn, 0.0);
+            AnchorPane.setTopAnchor(btn, 0.0);
+            AnchorPane.setBottomAnchor(btn, 0.0);
+            acc_controls.getChildren().add(pane);
+        }
     }
 
 
@@ -242,10 +257,10 @@ public class IDEController {
                         selectedProjectWidget.getDesign().setDirty(true);
                     }
                 }
-                editorPane.setText(String.format("Editor: %s(%s)", selectedProjectWidget.getControllerName(),selectedProjectWidget.getDesign().getRelativePath()));
+                editorPane.setText(String.format("Editor: %s(%s)", selectedProjectWidget.getName(),selectedProjectWidget.getDesign().getRelativePath()));
 
                 this.currentWidget = selectedProjectWidget;
-//                treenodeEditor.setRootIntance(selectedProjectWidget.getTreeNode());
+                treenodeEditor.setRootIntance(selectedProjectWidget.getInstance());
             }
         }
     }
@@ -258,7 +273,7 @@ public class IDEController {
             // load project
             currentProject = new Project();
             currentProject.setProjectPath(file.getAbsolutePath());
-            currentProject.setTreeNodeDefinitionManager(definationManager);
+            currentProject.setTreeNodeDefinitionManager(definitionManager);
             currentProject.scanFile();
             // update project view
             projectTreeView.setProject(currentProject);
@@ -282,11 +297,10 @@ public class IDEController {
                     Element root = document.getRootElement();
                     Element widgetselems = root.element("widgets");
                     widgetselems.clearContent();
-                    for (Widget widget: design.getWidgets()) {
-                        TreeWriter treeWriter = new TreeWriter();
-                        Element elem = treeWriter.widgetXml(widget);
-                        widgetselems.add(elem);
-                    }
+                    Widget widget =design.getWidget();
+                    TreeWriter treeWriter = new TreeWriter();
+                    Element elem = treeWriter.widgetXml(widget);
+                    widgetselems.add(elem);
 
                     OutputFormat format = OutputFormat.createPrettyPrint();
                     format.setEncoding("UTF-8");
