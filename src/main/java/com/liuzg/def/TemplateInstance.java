@@ -10,22 +10,12 @@ import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TemplateInstance extends Instance {
+public class TemplateInstance extends ConstructorInstance {
 
-    protected Map<String, Object> propertyValueMap;
 
     public TemplateInstance(TypeDefinition typeDefinition) {
         super(typeDefinition);
-        propertyValueMap = new HashMap<>();
 
-    }
-
-    public void setProperty(String property, Object value) {
-        propertyValueMap.put(property, value);
-    }
-
-    public Object getProperty(String property) {
-        return propertyValueMap.get(property);
     }
 
     @Override

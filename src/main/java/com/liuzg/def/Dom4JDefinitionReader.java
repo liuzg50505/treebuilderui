@@ -61,9 +61,11 @@ public class Dom4JDefinitionReader extends DefinitionReader {
                 definitions.add(constructorDefinition);
             }else if("Template".equals(element.getName())){
                 String type = element.attributeValue("type");
+                String iscollectionstr = element.attributeValue("iscollection");
 
                 TemplateDefinition templateDefinition = new TemplateDefinition();
                 templateDefinition.setTypeName(type);
+                templateDefinition.setCollection("true".equals(iscollectionstr));
                 for(Object itemElemobj: element.elements()) {
                     Element itemElem = (Element) itemElemobj;
                     if(itemElem.getName().equals("property")){
@@ -74,13 +76,13 @@ public class Dom4JDefinitionReader extends DefinitionReader {
                         String description = itemElem.attributeValue("description");
                         String defaultvalue = itemElem.attributeValue("defaultvalue");
 
-                        TemplateDefinition.TemplateParam param = new TemplateDefinition.TemplateParam();
+                        ConstructorDefinition.ConstructorParam param = new ConstructorDefinition.ConstructorParam();
                         param.paramname = name;
                         param.paramtypename = paramtype;
                         param.description = description;
                         param.description = defaultvalue;
                         param.iscollection = collection!=null && collection.toLowerCase().equals("true");
-                        param.parameterType = "".equals(parametertype)||parametertype==null? TemplateDefinition.TemplateParamType.OptionalNamedParameter: TemplateDefinition.TemplateParamType.valueOf(parametertype);
+                        param.parameterType = "".equals(parametertype)||parametertype==null? ConstructorDefinition.ConstructorParamType.OptionalNamedParameter: ConstructorDefinition.ConstructorParamType.valueOf(parametertype);
                         templateDefinition.addParameter(param);
                     }else if(itemElem.getName().equals("template")){
                         templateDefinition.setTemplateString(itemElem.getText().trim());

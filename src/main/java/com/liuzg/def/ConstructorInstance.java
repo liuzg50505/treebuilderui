@@ -1,5 +1,7 @@
 package com.liuzg.def;
 
+import sun.jvm.hotspot.debugger.cdbg.TemplateType;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;
@@ -76,7 +78,17 @@ public class ConstructorInstance extends Instance{
             List<String> itemcodes = new ArrayList<>();
             for(Object item: collection) {
                 String itemcode = generateParamCode(item);
-                itemcodes.add(itemcode);
+                if(item instanceof TemplateInstance) {
+                    TemplateInstance templateInstance = (TemplateInstance) item;
+                    TemplateDefinition templateDefinition = (TemplateDefinition) templateInstance.typeDefinition;
+                    if(templateDefinition.isCollection()){
+                        itemcodes.add("  ...?"+itemcode.trim());
+                    }else{
+                        itemcodes.add(itemcode);
+                    }
+                }else{
+                    itemcodes.add(itemcode);
+                }
             }
             String code = String.format("[\n%s\n]",  String.join(", \n", itemcodes));
             return indentCode(code, 1).trim();

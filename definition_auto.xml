@@ -1,6 +1,6 @@
 <root>
     <!--特殊节点-->
-    <Template type="Foreach" >
+    <Template type="Foreach" iscollection="true">
         <property name="itemvar" type="String" parametertype="RequiredParameter"/>
         <property name="collectionvar" type="String" parametertype="RequiredParameter"/>
         <property name="template" type="Widget" parametertype="RequiredParameter"/>
@@ -8,16 +8,26 @@
         <template><![CDATA[
 Foreach(
     collection: ${collectionvar},
-    builder: (${itemvar}, ${indexvar}) {
-        ${template.generateCode()}
+    builder: (${itemvar}, ${indexvar!"i"}) {
+        return ${template.generateCode()};
     }
 )
         ]]></template>
     </Template>
 
     <Template type="If" >
-        <property name="condition" type="String" parametertype="RequiredParameter"/>
-        <property name="template" type="Widget" parametertype="RequiredParameter"/>
+        <property name="condition" type="String" />
+        <property name="template" type="Widget" />
+        <template><![CDATA[
+If(
+    condition: () {
+        return ${condition};
+    },
+    builder: () {
+        return ${template.generateCode()};
+    }
+)
+        ]]></template>
     </Template>
 
     <!--枚举类型-->
