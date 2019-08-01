@@ -73,6 +73,8 @@ public class IDEController {
     private Widget currentWidget;
     private Scene scene;
 
+    private Instance clipboardInstance;
+
     public IDEController() {
     }
 
@@ -150,6 +152,39 @@ public class IDEController {
             }else if(event.getCode()==KeyCode.D) {
                 if(event.isControlDown()) {
                     treenodeEditor.duplicateSelected();
+                }
+            }else if(event.getCode()==KeyCode.C) {
+                if(event.isControlDown()) {
+                    MyTreeNode node = treenodeEditor.getSelectedTreeNode();
+                    if(node instanceof MyTreeInstanceNode) {
+                        MyTreeInstanceNode instancenode = (MyTreeInstanceNode) node;
+                        clipboardInstance =  instancenode.getConstructorInstance();
+                    }else if(node instanceof MyTreePropertyInstanceNode) {
+                        MyTreePropertyInstanceNode propertyInstanceNode = (MyTreePropertyInstanceNode) node;
+                        clipboardInstance =  propertyInstanceNode.getValueInstance();
+                    }
+                }
+            }else if(event.getCode()==KeyCode.X) {
+                if(event.isControlDown()) {
+                    MyTreeNode node = treenodeEditor.getSelectedTreeNode();
+                    if(node instanceof MyTreeInstanceNode) {
+                        MyTreeInstanceNode instancenode = (MyTreeInstanceNode) node;
+                        clipboardInstance =  instancenode.getConstructorInstance();
+                        treenodeEditor.removeSelected();
+                    }else if(node instanceof MyTreePropertyInstanceNode) {
+                        MyTreePropertyInstanceNode propertyInstanceNode = (MyTreePropertyInstanceNode) node;
+                        clipboardInstance =  propertyInstanceNode.getValueInstance();
+                        treenodeEditor.removeSelected();
+                    }
+                }
+            }else if(event.getCode()==KeyCode.V) {
+                if(event.isControlDown()) {
+                    MyTreeNode node = treenodeEditor.getSelectedTreeNode();
+                    if(clipboardInstance!=null) {
+                        Instance newinstance = DefUtils.getCopyObj(clipboardInstance);
+                        treenodeEditor.addInstance(node, newinstance);
+                        treenodeEditor.renderUI();
+                    }
                 }
             }
         });
