@@ -13,10 +13,10 @@ public class DecoratorLabel extends AnchorPane {
     public DecoratorLabel() {
         label = new Label();
         this.getChildren().add(label);
-        AnchorPane.setTopAnchor(label, 2.0);
-        AnchorPane.setBottomAnchor(label, 2.0);
-        AnchorPane.setLeftAnchor(label, 5.0);
-        AnchorPane.setRightAnchor(label, 5.0);
+//        AnchorPane.setTopAnchor(label, 2.0);
+//        AnchorPane.setBottomAnchor(label, 2.0);
+//        AnchorPane.setLeftAnchor(label, 5.0);
+//        AnchorPane.setRightAnchor(label, 5.0);
 
     }
 
@@ -27,7 +27,7 @@ public class DecoratorLabel extends AnchorPane {
 
     public void setColor(Color color) {
         this.color = color;
-        this.setBorder(new Border(new BorderStroke(color, BorderStrokeStyle.SOLID, new CornerRadii(5), new BorderWidths(1))));
+//        this.setBorder(new Border(new BorderStroke(color, BorderStrokeStyle.SOLID, new CornerRadii(5), new BorderWidths(1))));
 //        this.setBackground(new Background(new BackgroundFill(color, new CornerRadii(5), null)));
     }
 

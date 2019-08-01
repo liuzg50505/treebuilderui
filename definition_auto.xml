@@ -7,10 +7,10 @@
         <property name="indexvar" type="String" defaultvalue="_"/>
         <template><![CDATA[
 Foreach(
-    collection: ${collectionvar},
-    builder: (${itemvar}, ${indexvar!"i"}) {
-        return ${template.generateCode()};
-    }
+  collection: ${collectionvar},
+  builder: (${itemvar}, ${indexvar!"i"}) {
+    return ${template.generateCode()};
+  }
 )
         ]]></template>
     </Template>
@@ -20,12 +20,12 @@ Foreach(
         <property name="template" type="Widget" />
         <template><![CDATA[
 If(
-    condition: () {
-        return ${condition};
-    },
-    builder: () {
-        return ${template.generateCode()};
-    }
+  condition: () {
+    return ${condition};
+  },
+  builder: () {
+    return ${template.generateCode()};
+  }
 )
         ]]></template>
     </Template>

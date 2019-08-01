@@ -32,7 +32,9 @@ public class MyTreeEditor extends VBox {
     protected List<MyTreeNode> currentnodes;
 
     protected EventBus eventBus;
-    private boolean isdirty = false;
+    protected boolean isdirty = false;
+
+    protected int lineHeight = 30;
 
     public MyTreeEditor() {
         eventBus = new EventBus();
@@ -40,7 +42,6 @@ public class MyTreeEditor extends VBox {
         currentnodes = new ArrayList<>();
         selectionChangedHandlers = new ArrayList<>();
         pool = new InstanceNodePool();
-        this.setStyle("-fx-font-size:16; ");
 
         this.setOnDragEntered(event -> {
         });
@@ -56,6 +57,20 @@ public class MyTreeEditor extends VBox {
     public MyTreeEditor(Instance instance) {
         this();
         setRootIntance(instance);
+    }
+
+    // getter and setters
+
+    public boolean isDirty() {
+        return this.isdirty;
+    }
+
+    public int getLineHeight() {
+        return lineHeight;
+    }
+
+    public void setLineHeight(int lineHeight) {
+        this.lineHeight = lineHeight;
     }
 
     // event handlers
@@ -137,7 +152,9 @@ public class MyTreeEditor extends VBox {
                 Node child = node.getTreeNodeControl();
                 Region region = (Region) child;
                 if(region!=null) {
-                    region.setPrefHeight(40);
+                    region.setMinHeight(lineHeight);
+                    region.setPrefHeight(lineHeight);
+                    region.setMaxHeight(lineHeight);
                 }
                 this.getChildren().add(child);
 
@@ -195,6 +212,7 @@ public class MyTreeEditor extends VBox {
         if(pool.containsTreeNode(treeNode)) {
             selectedNode = treeNode;
             refreshSelected();
+            selectedNode.getTreeNodeControl().requestFocus();
         }
     }
 
@@ -394,7 +412,4 @@ public class MyTreeEditor extends VBox {
         }
     }
 
-    public boolean isDirty() {
-        return this.isdirty;
-    }
 }
