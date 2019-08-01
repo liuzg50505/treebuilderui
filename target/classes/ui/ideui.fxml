@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.liuzg.def.MyTreeEditor?>
 <?import com.liuzg.ui.ProjectTreeView?>
-<?import com.liuzg.ui.TreeNodeEditor?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
@@ -9,6 +9,7 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextArea?>
@@ -23,7 +24,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<?import com.liuzg.def.MyTreeEditor?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="1043.0" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liuzg.ui.IDEController">
     <top>
         <BorderPane>
@@ -237,7 +237,9 @@
                                     <children>
                                         <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <center>
-                                                <MyTreeEditor fx:id="treenodeEditor" style="-fx-font-size: 18;" BorderPane.alignment="CENTER"/>
+                                                <ScrollPane fitToWidth="true" hbarPolicy="NEVER">
+                                                    <MyTreeEditor fx:id="treenodeEditor"  lineHeight="25" BorderPane.alignment="CENTER" />
+                                                </ScrollPane>
                                             </center>
                                             <top>
                                                 <ToolBar prefHeight="1.0" prefWidth="543.0" BorderPane.alignment="CENTER">
