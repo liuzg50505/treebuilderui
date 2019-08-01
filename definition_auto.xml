@@ -1,16 +1,24 @@
 <root>
     <!--特殊节点-->
-    <Class type="Foreach" constructorname="">
+    <Template type="Foreach" >
         <property name="itemvar" type="String" parametertype="RequiredParameter"/>
         <property name="collectionvar" type="String" parametertype="RequiredParameter"/>
         <property name="template" type="Widget" parametertype="RequiredParameter"/>
-        <property name="indexvar" type="String" />
-    </Class>
+        <property name="indexvar" type="String" defaultvalue="_"/>
+        <template><![CDATA[
+Foreach(
+    collection: ${collectionvar},
+    builder: (${itemvar}, ${indexvar}) {
+        ${template.generateCode()}
+    }
+)
+        ]]></template>
+    </Template>
 
-    <Class type="If" constructorname="">
+    <Template type="If" >
         <property name="condition" type="String" parametertype="RequiredParameter"/>
         <property name="template" type="Widget" parametertype="RequiredParameter"/>
-    </Class>
+    </Template>
 
     <!--枚举类型-->
     <Enum type="MainAxisAlignment">

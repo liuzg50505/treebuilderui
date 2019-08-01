@@ -15,7 +15,18 @@
         <body>
             <Column mainAxisAlignment="start">
                 <children>
-                    <Column/>
+                    <Column>
+                        <children>
+                            <Foreach itemvar="person" collectionvar="controller.persons">
+                                <template>
+                                    <Row>
+                                        <Text data="${person.name}"/>
+                                        <Text data="${person.age}"/>
+                                    </Row>
+                                </template>
+                            </Foreach>
+                        </children>
+                    </Column>
                 </children>
             </Column>
         </body>

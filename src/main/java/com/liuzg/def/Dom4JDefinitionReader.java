@@ -58,8 +58,35 @@ public class Dom4JDefinitionReader extends DefinitionReader {
                     param.parameterType = "".equals(parametertype)||parametertype==null? ConstructorDefinition.ConstructorParamType.OptionalNamedParameter: ConstructorDefinition.ConstructorParamType.valueOf(parametertype);
                     constructorDefinition.addParameter(param);
                 }
-
                 definitions.add(constructorDefinition);
+            }else if("Template".equals(element.getName())){
+                String type = element.attributeValue("type");
+
+                TemplateDefinition templateDefinition = new TemplateDefinition();
+                templateDefinition.setTypeName(type);
+                for(Object itemElemobj: element.elements()) {
+                    Element itemElem = (Element) itemElemobj;
+                    if(itemElem.getName().equals("property")){
+                        String name = itemElem.attributeValue("name");
+                        String paramtype = itemElem.attributeValue("type");
+                        String parametertype = itemElem.attributeValue("parametertype");
+                        String collection = itemElem.attributeValue("collection");
+                        String description = itemElem.attributeValue("description");
+                        String defaultvalue = itemElem.attributeValue("defaultvalue");
+
+                        TemplateDefinition.TemplateParam param = new TemplateDefinition.TemplateParam();
+                        param.paramname = name;
+                        param.paramtypename = paramtype;
+                        param.description = description;
+                        param.description = defaultvalue;
+                        param.iscollection = collection!=null && collection.toLowerCase().equals("true");
+                        param.parameterType = "".equals(parametertype)||parametertype==null? TemplateDefinition.TemplateParamType.OptionalNamedParameter: TemplateDefinition.TemplateParamType.valueOf(parametertype);
+                        templateDefinition.addParameter(param);
+                    }else if(itemElem.getName().equals("template")){
+                        templateDefinition.setTemplateString(itemElem.getText().trim());
+                    }
+                }
+                definitions.add(templateDefinition);
             }
         }
     }
