@@ -1,12 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="界面调整">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="IDE scrollpane 宽度自适应 （fitWidth)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/storage/TreeWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/ConstructorDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/def/ConstructorDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/Dom4JDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/def/Dom4JDefinitionReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/TestDrag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/TestDrag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/TestRuntime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/TestRuntime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/ConstructorDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/ConstructorDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/ConstructorInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/ConstructorInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/ConstructorInstanceControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/ConstructorInstanceControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/DecoratorLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/DecoratorLabel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/DefUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/DefUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/DefinitionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/DefinitionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/DefinitionManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/DefinitionManagerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/DefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/reader/DefinitionReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/Dom4JDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/reader/Dom4JDefinitionReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/DraggableTreeEditor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/EnumDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/EnumDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/EnumInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/EnumInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/Instance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/Instance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/InstanceNodePool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/InstanceNodePool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/TreeEditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeEditorLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/MyTreeEditorLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/TreeGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeInstanceNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/TreeInstanceNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/TreeNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeNodeControlExpandedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/TreeNodeControlExpandedHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreePropertyInstanceNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/TreePropertyInstanceNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreePropertyNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/TreePropertyNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/PropertyControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/PropertyControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/SimpleTypeDefinition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/TemplateDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/TemplateDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/TemplateInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/TemplateInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/TypeDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/TypeDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/WidgetBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/InstanceBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/events/MyTreeEditorSelectionChangedEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/events/MyTreeEditorSelectionChangedEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/events/MyTreeNodeClickEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/events/MyTreeNodeClickEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/events/MyTreeNodeDecoratorClickEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/events/MyTreeNodeDecoratorClickEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/events/MyTreeNodeExpandEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/events/MyTreeNodeExpandEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/def/events/MyTreeNodeStartDraggingEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/events/MyTreeNodeStartDraggingEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/editorui/ComboEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/editorui/ComboEditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/editorui/OnEditorChangedCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/editorui/OnEditorChangedCallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/editorui/RegistedValueEditorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/editorui/RegistedValueEditorFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/editorui/StringEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/editorui/StringEditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/editorui/ValueEditor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/editorui/ValueEditor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/editorui/ValueEditorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/editorui/ValueEditorFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/flutter/FlutterRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/flutter/FlutterRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/flutter/MacosFlutterRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/flutter/MacosFlutterRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/models/Design.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/models/Design.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/models/EnumType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/models/EnumType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/models/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/models/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/models/TreeNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/models/TreeNodeCollection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/models/TreeNodeDefinition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/models/Widget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/models/Widget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/storage/TreeReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/storage/TreeReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/storage/TreeWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/treenodes/RegistedTreeNodeDefinitionManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/treenodes/TreeNodeDefinitionManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/ui/IDEController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/ui/IDEController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/ui/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/ui/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/ui/ProjectTreeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/ui/ProjectTreeView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/ui/TreeNodeEditor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/ui/ViewNode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/ui/ViewNodeType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/ui/WrapperController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/ui/WrapperController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/uitls/FxUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/uitls/FxUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/liuzg/uitls/ScrollBarState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/uitls/ScrollBarState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/treenode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/treenode.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ui/ideui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ui/ideui.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DefTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DefTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/TestRuntime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/editorui/ComboEditor$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/editorui/ComboEditor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/editorui/OnEditorChangedCallback.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/editorui/RegistedValueEditorFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/editorui/StringEditor$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/editorui/StringEditor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/editorui/ValueEditor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/editorui/ValueEditorFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/flutter/FlutterRunner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/flutter/MacosFlutterRunner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/models/EnumType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/models/TreeNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/models/TreeNodeCollection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/models/Widget.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/treenodes/TreeNodeDefinitionManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/ui/IDEController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/ui/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/ui/ViewNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/ui/ViewNodeType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/liuzg/ui/WrapperController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/treenode.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/treenode.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ui/ideui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ui/ideui.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/treenodes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/treenodes.xml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -77,158 +164,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/ui/Main.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/TreeGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-50">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeEditor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="67" column="32" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
-              <folding>
-                <element signature="method#MyTreeEditor#0;class#MyTreeEditor#0" />
-                <element signature="e#1461#1481#0" />
-                <element signature="e#1513#1533#0" />
-                <element signature="e#1563#1724#0" />
-                <element signature="method#MyTreeEditor#1;class#MyTreeEditor#0" />
-                <element signature="e#2028#2029#0" expanded="true" />
-                <element signature="e#2077#2078#0" expanded="true" />
-                <element signature="e#2121#2122#0" expanded="true" />
-                <element signature="method#on#0;class#MyTreeEditor#0" />
-                <element signature="e#2034#2195#1" />
-                <element signature="n#!!block;n#on#1;n#MyTreeEditor#0" />
-                <element signature="method#refreshSelected#0;class#MyTreeEditor#0" />
-                <element signature="e#2465#2519#0" />
-                <element signature="e#2717#2757#1" />
-                <element signature="e#2789#2835#1" />
-                <element signature="method#refreshExpand#0;class#MyTreeEditor#0" />
-                <element signature="e#3107#3184#1" />
-                <element signature="method#notifyHandlers#0;class#MyTreeEditor#0" />
-                <element signature="e#3309#3356#1" />
-                <element signature="method#renderUI#0;class#MyTreeEditor#0" />
-                <element signature="e#3757#6892#1" />
-                <element signature="e#3863#4031#1" />
-                <element signature="e#4075#4233#1" />
-                <element signature="e#4277#4465#1" />
-                <element signature="e#4481#6808#0" />
-                <element signature="e#4620#4685#1" />
-                <element signature="e#4773#6791#0" />
-                <element signature="e#5010#5768#1" />
-                <element signature="e#5083#5374#1" />
-                <element signature="e#5434#5746#1" />
-                <element signature="e#5772#6732#1" />
-                <element signature="e#5845#6239#1" />
-                <element signature="e#6299#6710#1" />
-                <element signature="e#6829#6882#0" />
-                <element signature="method#selectInstance#0;class#MyTreeEditor#0" />
-                <element signature="e#7037#7086#1" />
-                <element signature="method#selectTreeNode#0;class#MyTreeEditor#0" />
-                <element signature="e#7274#7353#1" />
-                <element signature="method#removeTreeNode#0;class#MyTreeEditor#0" />
-                <element signature="e#7474#7834#1" />
-                <element signature="e#7882#8404#1" />
-                <element signature="method#addInstance#0;class#MyTreeEditor#0" />
-                <element signature="e#8541#8844#1" />
-                <element signature="e#8892#9361#1" />
-                <element signature="e#9185#9294#1" />
-                <element signature="e#9409#10008#1" />
-                <element signature="e#9593#9998#1" />
-                <element signature="method#setRootIntance#0;class#MyTreeEditor#0" />
-                <element signature="n#!!block;n#getRootInstance#0;n#MyTreeEditor#0" />
-                <element signature="method#selectionUp#0;class#MyTreeEditor#0" />
-                <element signature="e#10310#10428#1" />
-                <element signature="e#10350#10418#1" />
-                <element signature="e#10432#10668#1" />
-                <element signature="e#10472#10658#1" />
-                <element signature="e#10564#10644#1" />
-                <element signature="method#selectionDown#0;class#MyTreeEditor#0" />
-                <element signature="e#10741#10859#1" />
-                <element signature="e#10781#10849#1" />
-                <element signature="e#10863#11116#1" />
-                <element signature="e#10903#11106#1" />
-                <element signature="e#11012#11092#1" />
-                <element signature="method#removeSelected#0;class#MyTreeEditor#0" />
-                <element signature="e#11232#11301#1" />
-                <element signature="method#moveDownSelected#0;class#MyTreeEditor#0" />
-                <element signature="e#11442#12200#1" />
-                <element signature="e#11828#12190#1" />
-                <element signature="e#11949#12176#1" />
-                <element signature="method#moveUpSelected#0;class#MyTreeEditor#0" />
-                <element signature="e#12340#13088#1" />
-                <element signature="e#12726#13078#1" />
-                <element signature="e#12837#13064#1" />
-                <element signature="method#duplicateSelected#0;class#MyTreeEditor#0" />
-                <element signature="e#13230#13902#1" />
-                <element signature="e#13616#13892#1" />
-                <element signature="method#expandSelected#0;class#MyTreeEditor#0" />
-                <element signature="e#14017#14091#1" />
-                <element signature="method#collapseSelected#0;class#MyTreeEditor#0" />
-                <element signature="e#14208#14284#1" />
-                <element signature="method#expandAllSelected#0;class#MyTreeEditor#0" />
-                <element signature="e#14402#14472#1" />
-                <element signature="method#collapseAllSelected#0;class#MyTreeEditor#0" />
-                <element signature="e#14592#14664#1" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/definition_auto.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="10" column="42" lean-forward="true" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/ui/ideui.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="240" column="89" selection-start-line="240" selection-start-column="89" selection-end-line="240" selection-end-column="89" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeGenerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="89" column="64" selection-start-line="89" selection-start-column="64" selection-end-line="89" selection-end-column="64" />
+            <state relative-caret-position="348">
+              <caret line="70" column="79" selection-start-line="70" selection-start-column="60" selection-end-line="70" selection-end-column="79" />
               <folding>
                 <element signature="method#MyTreeGenerator#0;class#MyTreeGenerator#0" />
                 <element signature="method#createOrGetTreeNode#0;class#MyTreeGenerator#0" />
-                <element signature="e#581#711#1" />
                 <element signature="method#createOrGetTreeNode#1;class#MyTreeGenerator#0" />
-                <element signature="e#1022#1162#1" />
                 <element signature="method#createOrGetTreeNode#2;class#MyTreeGenerator#0" />
-                <element signature="e#1539#1682#1" />
-                <element signature="e#2168#2169#0" expanded="true" />
-                <element signature="e#2198#2199#0" expanded="true" />
                 <element signature="method#generateOrderedVisibleTreeNodes#0;class#MyTreeGenerator#0" />
-                <element signature="e#6070#6316#1" />
-                <element signature="e#6162#6306#1" />
                 <element signature="method#generateControls#0;class#MyTreeGenerator#0" />
-                <element signature="e#6585#6831#1" />
-                <element signature="e#6698#6821#1" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeInstanceNode.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/ui/IDEController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="17" column="68" lean-forward="true" selection-start-line="17" selection-start-column="68" selection-end-line="17" selection-end-column="68" />
+            <state relative-caret-position="172">
+              <caret line="95" column="24" lean-forward="true" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -236,58 +193,148 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/ConstructorDefinition.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/treenode.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="42" column="18" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
+            <state relative-caret-position="1358">
+              <caret line="121" selection-start-line="121" selection-end-line="121" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/TreeEditor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="135" column="34" selection-start-line="135" selection-start-column="34" selection-end-line="135" selection-end-column="34" />
               <folding>
-                <element signature="e#1795#1796#0" expanded="true" />
-                <element signature="e#1911#1912#0" expanded="true" />
-                <element signature="e#1995#1996#0" expanded="true" />
-                <element signature="e#2119#2120#0" expanded="true" />
-                <element signature="e#2343#2344#0" expanded="true" />
-                <element signature="e#2455#2456#0" expanded="true" />
-                <element signature="e#2548#2549#0" expanded="true" />
+                <element signature="e#1301#1859#0" />
+                <element signature="e#1557#1577#0" />
+                <element signature="e#1609#1629#0" />
+                <element signature="e#1659#1820#0" />
+                <element signature="e#1865#1959#0" />
+                <element signature="e#2242#2547#0" />
+                <element signature="e#2380#2541#1" />
+                <element signature="e#2611#2643#0" />
+                <element signature="e#2778#3177#0" />
+                <element signature="e#2811#2863#0" />
+                <element signature="e#3053#3093#1" />
+                <element signature="e#3125#3171#1" />
+                <element signature="e#3183#3520#0" />
+                <element signature="e#3437#3514#1" />
+                <element signature="e#3526#3692#0" />
+                <element signature="e#3639#3686#1" />
+                <element signature="e#4079#7284#1" />
+                <element signature="e#4183#4347#1" />
+                <element signature="e#4389#4543#1" />
+                <element signature="e#4585#4769#1" />
+                <element signature="e#4785#7200#0" />
+                <element signature="e#4924#5103#1" />
+                <element signature="e#5191#7183#0" />
+                <element signature="e#5426#6172#1" />
+                <element signature="e#5497#5784#1" />
+                <element signature="e#5842#6150#1" />
+                <element signature="e#6176#7124#1" />
+                <element signature="e#6247#6637#1" />
+                <element signature="e#6695#7102#1" />
+                <element signature="e#7221#7274#0" />
+                <element signature="e#7296#7482#0" />
+                <element signature="e#7427#7476#1" />
+                <element signature="e#7568#7807#0" />
+                <element signature="e#7660#7801#1" />
+                <element signature="e#7813#8840#0" />
+                <element signature="e#7918#8274#1" />
+                <element signature="e#8320#8834#1" />
+                <element signature="e#10422#10549#0" />
+                <element signature="e#10588#10624#0" />
+                <element signature="e#10653#11076#0" />
+                <element signature="e#10712#10830#1" />
+                <element signature="e#10752#10820#1" />
+                <element signature="e#10834#11070#1" />
+                <element signature="e#10874#11060#1" />
+                <element signature="e#10966#11046#1" />
+                <element signature="e#11082#11525#0" />
+                <element signature="e#11143#11261#1" />
+                <element signature="e#11183#11251#1" />
+                <element signature="e#11265#11518#1" />
+                <element signature="e#11305#11508#1" />
+                <element signature="e#11414#11494#1" />
+                <element signature="e#11531#11707#0" />
+                <element signature="e#11632#11701#1" />
+                <element signature="e#11713#12595#0" />
+                <element signature="e#11838#12588#1" />
+                <element signature="e#12216#12578#1" />
+                <element signature="e#12337#12564#1" />
+                <element signature="e#12601#13470#0" />
+                <element signature="e#12724#13464#1" />
+                <element signature="e#13102#13454#1" />
+                <element signature="e#13213#13440#1" />
+                <element signature="e#13476#14272#0" />
+                <element signature="e#13602#14266#1" />
+                <element signature="e#13980#14256#1" />
+                <element signature="e#14278#14459#0" />
+                <element signature="e#14379#14453#1" />
+                <element signature="e#14465#14650#0" />
+                <element signature="e#14568#14644#1" />
+                <element signature="e#14656#14836#0" />
+                <element signature="e#14760#14830#1" />
+                <element signature="e#14842#15026#0" />
+                <element signature="e#14948#15020#1" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/Dom4JDefinitionReader.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/reader/DefinitionReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="37" column="100" selection-start-line="37" selection-start-column="75" selection-end-line="37" selection-end-column="100" />
+            <state relative-caret-position="68">
+              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/ConstructorInstanceControl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/reader/Dom4JDefinitionReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="109" column="55" lean-forward="true" selection-start-line="109" selection-start-column="55" selection-end-line="109" selection-end-column="55" />
-              <folding>
-                <element signature="class#DecoratorClickHandler#0;class#ConstructorInstanceControl#0" />
-                <element signature="e#2792#3171#0" />
-                <element signature="method#addDecoratorClickListener#0;class#ConstructorInstanceControl#0" />
-                <element signature="method#addExpandedHandler#0;class#ConstructorInstanceControl#0" />
-                <element signature="method#setOffsetX#0;class#ConstructorInstanceControl#0" />
-                <element signature="method#setExpanded#0;class#ConstructorInstanceControl#0" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/DecoratorLabel.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/DefinitionManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="30" column="51" lean-forward="true" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/DefinitionManagerImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/TypeDefinition.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="60" selection-start-line="4" selection-start-column="60" selection-end-line="4" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/InstanceBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -308,7 +355,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Padding</find>
       <find>print</find>
       <find>'x'</find>
       <find>setbackgr</find>
@@ -338,6 +384,7 @@
       <find>setStyle</find>
       <find>40</find>
       <find>isdirty</find>
+      <find>addinstance</find>
     </findStrings>
     <replaceStrings>
       <replace>/assets/nodes</replace>
@@ -361,16 +408,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeNOde.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreePropertyItem.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeInstanceItem.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/ClassDefinition.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/ConstructureInstance.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/ConstructureDefinition.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/TestDrag.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeNodeControlExpandedHandler.java" />
-        <option value="$PROJECT_DIR$/info.txt" />
-        <option value="$PROJECT_DIR$/src/test/java/TestEventBus.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/events/MyTreeNodeClickEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/events/MyTreeEditorSelectionChangedEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/events/MyTreeNodeExpandEvent.java" />
@@ -410,8 +447,18 @@
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/DecoratorLabel.java" />
         <option value="$PROJECT_DIR$/src/main/resources/ui/ideui.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/Dom4JDefinitionReader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/ConstructorDefinition.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeGenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/storage/TreeWriter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/ConstructorInstanceControl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/MyTreeGenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/MyTreeInstanceNode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/MyTreePropertyInstanceNode.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/WidgetBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/InstanceBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/TreeGenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/ui/IDEController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/treenode.xml" />
       </list>
     </option>
   </component>
@@ -474,75 +521,7 @@
               <item name="treebuilderui" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="treebuilderui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="treebuilderui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="liuzg" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="treebuilderui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="treebuilderui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="liuzg" type="462c0819:PsiDirectoryNode" />
-              <item name="def" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="treebuilderui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="treebuilderui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="liuzg" type="462c0819:PsiDirectoryNode" />
-              <item name="editorui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="treebuilderui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="treebuilderui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="liuzg" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="treebuilderui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="treebuilderui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="liuzg" type="462c0819:PsiDirectoryNode" />
-              <item name="storage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="treebuilderui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="treebuilderui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="liuzg" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="treebuilderui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="treebuilderui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="treebuilderui" type="b2602c69:ProjectViewProjectNode" />
-              <item name="treebuilderui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="treebuilderui" type="b2602c69:ProjectViewProjectNode" />
@@ -618,7 +597,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MyTreeEditorLauncher">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -638,9 +617,8 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.liuzg.ui.Main" />
+      <option name="MAIN_CLASS_NAME" value="com.liuzg.flutteride.ui.Main" />
       <module name="treebuilderui" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.liuzg.ui.*" />
@@ -652,9 +630,8 @@
       </method>
     </configuration>
     <configuration name="MyTreeEditorLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.liuzg.def.MyTreeEditorLauncher" />
+      <option name="MAIN_CLASS_NAME" value="com.liuzg.flutteride.def.MyTreeEditorLauncher" />
       <module name="treebuilderui" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.liuzg.def.*" />
@@ -666,9 +643,8 @@
       </method>
     </configuration>
     <configuration name="TestDrag" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.liuzg.TestDrag" />
+      <option name="MAIN_CLASS_NAME" value="com.liuzg.flutteride.TestDrag" />
       <module name="treebuilderui" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.liuzg.*" />
@@ -744,10 +720,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.MyTreeEditorLauncher" />
+      <item itemvalue="Application.TestDrag" />
+      <item itemvalue="JUnit.TestEventBus.test1" />
+      <item itemvalue="JUnit.TestFreeMarker.test1" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MyTreeEditorLauncher" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.MyTreeEditorLauncher" />
         <item itemvalue="JUnit.TestFreeMarker.test1" />
         <item itemvalue="JUnit.TestEventBus.test1" />
         <item itemvalue="Application.TestDrag" />
@@ -794,7 +777,7 @@
       <workItem from="1564303355951" duration="13283000" />
       <workItem from="1564368111679" duration="879000" />
       <workItem from="1564440120529" duration="37858000" />
-      <workItem from="1564629564823" duration="14067000" />
+      <workItem from="1564629564823" duration="16301000" />
     </task>
     <task id="LOCAL-00001" summary="update pom dependency">
       <created>1562629923029</created>
@@ -992,7 +975,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564650019565</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="IDE scrollpane 宽度自适应 （fitWidth)">
+      <created>1564653076699</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1564653076699</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1028,7 +1018,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="327175000" />
+    <option name="totallyTimeSpent" value="329409000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1043,7 +1033,7 @@
     <frame x="81" y="23" width="1852" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.22928177" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.22928177" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -1051,8 +1041,8 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32953367" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33056995" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32953367" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33056995" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40829015" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1160,31 +1150,32 @@
     <MESSAGE value="暂存" />
     <MESSAGE value="增加templatedefinition templateinstance&#10;更新mytreeeditor 支持templatenode" />
     <MESSAGE value="界面调整" />
-    <option name="LAST_COMMIT_MESSAGE" value="界面调整" />
+    <MESSAGE value="IDE scrollpane 宽度自适应 （fitWidth)" />
+    <option name="LAST_COMMIT_MESSAGE" value="IDE scrollpane 宽度自适应 （fitWidth)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/liuzg/TestRuntime.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/TestRuntime.java</url>
           <line>24</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/DefTest.java</url>
-          <line>87</line>
+          <line>89</line>
           <properties />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/DefTest.java</url>
-          <line>80</line>
+          <line>82</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/liuzg/TestDrag.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/TestDrag.java</url>
           <line>78</line>
           <properties />
           <option name="timeStamp" value="20" />
@@ -1196,25 +1187,25 @@
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/liuzg/ui/IDEController.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/ui/IDEController.java</url>
           <line>168</line>
           <properties />
           <option name="timeStamp" value="27" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/liuzg/ui/IDEController.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/ui/IDEController.java</url>
           <line>167</line>
           <properties />
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/liuzg/ui/IDEController.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/ui/IDEController.java</url>
           <line>125</line>
           <properties />
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeEditor.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/TreeEditor.java</url>
           <line>139</line>
           <properties />
           <option name="timeStamp" value="32" />
@@ -1299,170 +1290,7 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/PropertyControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-271">
-          <caret line="22" column="22" lean-forward="true" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/ui/TreeNodeEditor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2439">
-          <caret line="36" column="58" selection-start-line="36" selection-start-column="58" selection-end-line="36" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5277#5278#0" expanded="true" />
-            <element signature="e#5304#5305#0" expanded="true" />
-            <element signature="e#5439#5440#0" expanded="true" />
-            <element signature="e#5471#5472#0" expanded="true" />
-            <element signature="e#5523#5524#0" expanded="true" />
-            <element signature="e#5565#5566#0" expanded="true" />
-            <element signature="e#5597#5598#0" expanded="true" />
-            <element signature="e#5625#5626#0" expanded="true" />
-            <element signature="e#5867#5868#0" expanded="true" />
-            <element signature="e#5901#5902#0" expanded="true" />
-            <element signature="e#5947#5948#0" expanded="true" />
-            <element signature="e#5990#5991#0" expanded="true" />
-            <element signature="e#7413#7414#0" expanded="true" />
-            <element signature="e#7447#7448#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/DraggableTreeEditor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-          <folding>
-            <element signature="e#161#162#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/events/MyTreeNodeStartDraggingEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="62" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
-          <folding>
-            <element signature="e#243#244#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/javafx-src.zip!/javafx/scene/layout/Pane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="96" column="32" selection-start-line="96" selection-start-column="26" selection-end-line="96" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/javafx-src.zip!/javafx/scene/layout/AnchorPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="109" column="34" selection-start-line="109" selection-start-column="34" selection-end-line="109" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/javafx-src.zip!/javafx/scene/layout/Region.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="154" column="44" selection-start-line="154" selection-start-column="31" selection-end-line="154" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/javafx-src.zip!/javafx/geometry/Insets.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="77" column="11" selection-start-line="77" selection-start-column="11" selection-end-line="77" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ui/tt.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/lang/Iterable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="44" column="30" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/util/Collection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="143" column="40" lean-forward="true" selection-start-line="143" selection-start-column="40" selection-end-line="143" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="110" column="37" lean-forward="true" selection-start-line="110" selection-start-column="37" selection-end-line="110" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/lang/Cloneable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="352" column="23" selection-start-line="352" selection-start-column="18" selection-end-line="352" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="211" column="28" selection-start-line="211" selection-start-column="28" selection-end-line="211" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/TypeDefinition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="60" selection-start-line="4" selection-start-column="60" selection-end-line="4" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/DefUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeNodeControlExpandedHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreePropertyInstanceNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="55" column="52" selection-start-line="55" selection-start-column="52" selection-end-line="55" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/InstanceNodePool.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/InstanceNodePool.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
           <caret line="112" selection-start-line="112" selection-end-line="112" />
@@ -1476,21 +1304,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/storage/TreeWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="20" column="55" lean-forward="true" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/EnumInstance.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/EnumInstance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/models/Widget.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/models/Widget.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="11" column="32" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="32" />
@@ -1502,14 +1323,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/ui/ProjectTreeView.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/ui/ProjectTreeView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1343">
           <caret line="92" selection-start-line="92" selection-end-line="92" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/models/Design.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/models/Design.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
@@ -1536,20 +1357,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/DefinitionReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/models/Project.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="84" column="27" lean-forward="true" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/design.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1557,14 +1364,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/storage/TreeReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="30" column="55" lean-forward="true" selection-start-line="30" selection-start-column="55" selection-end-line="30" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeEditorLauncher.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/MyTreeEditorLauncher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="79">
           <caret line="49" column="15" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="15" />
@@ -1594,7 +1394,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/TemplateDefinition.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/TemplateDefinition.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
@@ -1607,7 +1407,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/TemplateInstance.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/TemplateInstance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
           <caret line="21" column="34" lean-forward="true" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
@@ -1617,174 +1417,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/Instance.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/Instance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="11" column="30" lean-forward="true" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/ConstructorInstance.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/ConstructorInstance.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="57" column="38" lean-forward="true" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
-          <folding>
-            <element signature="e#1347#1348#0" expanded="true" />
-            <element signature="e#1380#1381#0" expanded="true" />
-            <element signature="method#expandRecursive#0;class#MyTreeNode#0" />
-            <element signature="method#collapseRecursive#0;class#MyTreeNode#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/ui/IDEController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1831">
-          <caret line="170" column="52" selection-start-line="170" selection-start-column="52" selection-end-line="170" selection-end-column="52" />
-          <folding>
-            <element signature="e#15832#15833#0" expanded="true" />
-            <element signature="e#15882#15883#0" expanded="true" />
-            <element signature="e#15942#15943#0" expanded="true" />
-            <element signature="e#15991#15992#0" expanded="true" />
-            <element signature="e#16049#16050#0" expanded="true" />
-            <element signature="e#16096#16097#0" expanded="true" />
-            <element signature="e#16156#16157#0" expanded="true" />
-            <element signature="e#16208#16209#0" expanded="true" />
-            <element signature="e#16266#16267#0" expanded="true" />
-            <element signature="e#16316#16317#0" expanded="true" />
-            <element signature="e#16374#16375#0" expanded="true" />
-            <element signature="e#16421#16422#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/ui/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/ui/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-50">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeEditor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="67" column="32" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
-          <folding>
-            <element signature="method#MyTreeEditor#0;class#MyTreeEditor#0" />
-            <element signature="e#1461#1481#0" />
-            <element signature="e#1513#1533#0" />
-            <element signature="e#1563#1724#0" />
-            <element signature="method#MyTreeEditor#1;class#MyTreeEditor#0" />
-            <element signature="e#2028#2029#0" expanded="true" />
-            <element signature="e#2077#2078#0" expanded="true" />
-            <element signature="e#2121#2122#0" expanded="true" />
-            <element signature="method#on#0;class#MyTreeEditor#0" />
-            <element signature="e#2034#2195#1" />
-            <element signature="n#!!block;n#on#1;n#MyTreeEditor#0" />
-            <element signature="method#refreshSelected#0;class#MyTreeEditor#0" />
-            <element signature="e#2465#2519#0" />
-            <element signature="e#2717#2757#1" />
-            <element signature="e#2789#2835#1" />
-            <element signature="method#refreshExpand#0;class#MyTreeEditor#0" />
-            <element signature="e#3107#3184#1" />
-            <element signature="method#notifyHandlers#0;class#MyTreeEditor#0" />
-            <element signature="e#3309#3356#1" />
-            <element signature="method#renderUI#0;class#MyTreeEditor#0" />
-            <element signature="e#3757#6892#1" />
-            <element signature="e#3863#4031#1" />
-            <element signature="e#4075#4233#1" />
-            <element signature="e#4277#4465#1" />
-            <element signature="e#4481#6808#0" />
-            <element signature="e#4620#4685#1" />
-            <element signature="e#4773#6791#0" />
-            <element signature="e#5010#5768#1" />
-            <element signature="e#5083#5374#1" />
-            <element signature="e#5434#5746#1" />
-            <element signature="e#5772#6732#1" />
-            <element signature="e#5845#6239#1" />
-            <element signature="e#6299#6710#1" />
-            <element signature="e#6829#6882#0" />
-            <element signature="method#selectInstance#0;class#MyTreeEditor#0" />
-            <element signature="e#7037#7086#1" />
-            <element signature="method#selectTreeNode#0;class#MyTreeEditor#0" />
-            <element signature="e#7274#7353#1" />
-            <element signature="method#removeTreeNode#0;class#MyTreeEditor#0" />
-            <element signature="e#7474#7834#1" />
-            <element signature="e#7882#8404#1" />
-            <element signature="method#addInstance#0;class#MyTreeEditor#0" />
-            <element signature="e#8541#8844#1" />
-            <element signature="e#8892#9361#1" />
-            <element signature="e#9185#9294#1" />
-            <element signature="e#9409#10008#1" />
-            <element signature="e#9593#9998#1" />
-            <element signature="method#setRootIntance#0;class#MyTreeEditor#0" />
-            <element signature="n#!!block;n#getRootInstance#0;n#MyTreeEditor#0" />
-            <element signature="method#selectionUp#0;class#MyTreeEditor#0" />
-            <element signature="e#10310#10428#1" />
-            <element signature="e#10350#10418#1" />
-            <element signature="e#10432#10668#1" />
-            <element signature="e#10472#10658#1" />
-            <element signature="e#10564#10644#1" />
-            <element signature="method#selectionDown#0;class#MyTreeEditor#0" />
-            <element signature="e#10741#10859#1" />
-            <element signature="e#10781#10849#1" />
-            <element signature="e#10863#11116#1" />
-            <element signature="e#10903#11106#1" />
-            <element signature="e#11012#11092#1" />
-            <element signature="method#removeSelected#0;class#MyTreeEditor#0" />
-            <element signature="e#11232#11301#1" />
-            <element signature="method#moveDownSelected#0;class#MyTreeEditor#0" />
-            <element signature="e#11442#12200#1" />
-            <element signature="e#11828#12190#1" />
-            <element signature="e#11949#12176#1" />
-            <element signature="method#moveUpSelected#0;class#MyTreeEditor#0" />
-            <element signature="e#12340#13088#1" />
-            <element signature="e#12726#13078#1" />
-            <element signature="e#12837#13064#1" />
-            <element signature="method#duplicateSelected#0;class#MyTreeEditor#0" />
-            <element signature="e#13230#13902#1" />
-            <element signature="e#13616#13892#1" />
-            <element signature="method#expandSelected#0;class#MyTreeEditor#0" />
-            <element signature="e#14017#14091#1" />
-            <element signature="method#collapseSelected#0;class#MyTreeEditor#0" />
-            <element signature="e#14208#14284#1" />
-            <element signature="method#expandAllSelected#0;class#MyTreeEditor#0" />
-            <element signature="e#14402#14472#1" />
-            <element signature="method#collapseAllSelected#0;class#MyTreeEditor#0" />
-            <element signature="e#14592#14664#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/ConstructorInstanceControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="109" column="55" lean-forward="true" selection-start-line="109" selection-start-column="55" selection-end-line="109" selection-end-column="55" />
-          <folding>
-            <element signature="class#DecoratorClickHandler#0;class#ConstructorInstanceControl#0" />
-            <element signature="e#2792#3171#0" />
-            <element signature="method#addDecoratorClickListener#0;class#ConstructorInstanceControl#0" />
-            <element signature="method#addExpandedHandler#0;class#ConstructorInstanceControl#0" />
-            <element signature="method#setOffsetX#0;class#ConstructorInstanceControl#0" />
-            <element signature="method#setExpanded#0;class#ConstructorInstanceControl#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/DecoratorLabel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="30" column="51" lean-forward="true" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1796,58 +1446,6 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/WidgetBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
-          <folding>
-            <element signature="e#245#246#0" expanded="true" />
-            <element signature="e#303#304#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeInstanceNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="17" column="68" lean-forward="true" selection-start-line="17" selection-start-column="68" selection-end-line="17" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/MyTreeGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="89" column="64" selection-start-line="89" selection-start-column="64" selection-end-line="89" selection-end-column="64" />
-          <folding>
-            <element signature="method#MyTreeGenerator#0;class#MyTreeGenerator#0" />
-            <element signature="method#createOrGetTreeNode#0;class#MyTreeGenerator#0" />
-            <element signature="e#581#711#1" />
-            <element signature="method#createOrGetTreeNode#1;class#MyTreeGenerator#0" />
-            <element signature="e#1022#1162#1" />
-            <element signature="method#createOrGetTreeNode#2;class#MyTreeGenerator#0" />
-            <element signature="e#1539#1682#1" />
-            <element signature="e#2168#2169#0" expanded="true" />
-            <element signature="e#2198#2199#0" expanded="true" />
-            <element signature="method#generateOrderedVisibleTreeNodes#0;class#MyTreeGenerator#0" />
-            <element signature="e#6070#6316#1" />
-            <element signature="e#6162#6306#1" />
-            <element signature="method#generateControls#0;class#MyTreeGenerator#0" />
-            <element signature="e#6585#6831#1" />
-            <element signature="e#6698#6821#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/Dom4JDefinitionReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="37" column="100" selection-start-line="37" selection-start-column="75" selection-end-line="37" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/definition_auto.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
@@ -1855,10 +1453,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/def/ConstructorDefinition.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/ConstructorDefinition.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="42" column="18" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
+        <state relative-caret-position="391">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
           <folding>
             <element signature="e#1795#1796#0" expanded="true" />
             <element signature="e#1911#1912#0" expanded="true" />
@@ -1867,6 +1465,343 @@
             <element signature="e#2343#2344#0" expanded="true" />
             <element signature="e#2455#2456#0" expanded="true" />
             <element signature="e#2548#2549#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/models/EnumType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/models/TreeNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/models/TreeNodeCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/models/TreeNodeDefinition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/ui/TreeNodeEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-380">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/treenodes/TreeNodeDefinitionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/treenodes/RegistedTreeNodeDefinitionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/ui/ViewNodeType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/models/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="84" column="27" lean-forward="true" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/ui/ViewNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/storage/TreeReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/storage/TreeWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/TreeNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding>
+            <element signature="method#expandRecursive#0;class#MyTreeNode#0" />
+            <element signature="method#collapseRecursive#0;class#MyTreeNode#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/TreePropertyNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/TreeNodeControlExpandedHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/PropertyControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/ConstructorInstanceControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="86" column="110" selection-start-line="86" selection-start-column="110" selection-end-line="86" selection-end-column="110" />
+          <folding>
+            <element signature="class#DecoratorClickHandler#0;class#ConstructorInstanceControl#0" />
+            <element signature="method#addDecoratorClickListener#0;class#ConstructorInstanceControl#0" />
+            <element signature="method#addExpandedHandler#0;class#ConstructorInstanceControl#0" />
+            <element signature="method#setOffsetX#0;class#ConstructorInstanceControl#0" />
+            <element signature="method#setExpanded#0;class#ConstructorInstanceControl#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/TreeInstanceNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="60" column="35" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2601#2602#0" expanded="true" />
+            <element signature="e#2667#2668#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/TreePropertyInstanceNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="81" column="63" selection-start-line="81" selection-start-column="63" selection-end-line="81" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/DecoratorLabel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/reader/DefinitionReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/reader/Dom4JDefinitionReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/DefinitionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/DraggableTreeEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/SimpleTypeDefinition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/DefinitionManagerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/TypeDefinition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="60" selection-start-line="4" selection-start-column="60" selection-end-line="4" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/InstanceBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/ui/IDEController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="95" column="24" lean-forward="true" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/treenode.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1358">
+          <caret line="121" selection-start-line="121" selection-end-line="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/TreeEditor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="135" column="34" selection-start-line="135" selection-start-column="34" selection-end-line="135" selection-end-column="34" />
+          <folding>
+            <element signature="e#1301#1859#0" />
+            <element signature="e#1557#1577#0" />
+            <element signature="e#1609#1629#0" />
+            <element signature="e#1659#1820#0" />
+            <element signature="e#1865#1959#0" />
+            <element signature="e#2242#2547#0" />
+            <element signature="e#2380#2541#1" />
+            <element signature="e#2611#2643#0" />
+            <element signature="e#2778#3177#0" />
+            <element signature="e#2811#2863#0" />
+            <element signature="e#3053#3093#1" />
+            <element signature="e#3125#3171#1" />
+            <element signature="e#3183#3520#0" />
+            <element signature="e#3437#3514#1" />
+            <element signature="e#3526#3692#0" />
+            <element signature="e#3639#3686#1" />
+            <element signature="e#4079#7284#1" />
+            <element signature="e#4183#4347#1" />
+            <element signature="e#4389#4543#1" />
+            <element signature="e#4585#4769#1" />
+            <element signature="e#4785#7200#0" />
+            <element signature="e#4924#5103#1" />
+            <element signature="e#5191#7183#0" />
+            <element signature="e#5426#6172#1" />
+            <element signature="e#5497#5784#1" />
+            <element signature="e#5842#6150#1" />
+            <element signature="e#6176#7124#1" />
+            <element signature="e#6247#6637#1" />
+            <element signature="e#6695#7102#1" />
+            <element signature="e#7221#7274#0" />
+            <element signature="e#7296#7482#0" />
+            <element signature="e#7427#7476#1" />
+            <element signature="e#7568#7807#0" />
+            <element signature="e#7660#7801#1" />
+            <element signature="e#7813#8840#0" />
+            <element signature="e#7918#8274#1" />
+            <element signature="e#8320#8834#1" />
+            <element signature="e#10422#10549#0" />
+            <element signature="e#10588#10624#0" />
+            <element signature="e#10653#11076#0" />
+            <element signature="e#10712#10830#1" />
+            <element signature="e#10752#10820#1" />
+            <element signature="e#10834#11070#1" />
+            <element signature="e#10874#11060#1" />
+            <element signature="e#10966#11046#1" />
+            <element signature="e#11082#11525#0" />
+            <element signature="e#11143#11261#1" />
+            <element signature="e#11183#11251#1" />
+            <element signature="e#11265#11518#1" />
+            <element signature="e#11305#11508#1" />
+            <element signature="e#11414#11494#1" />
+            <element signature="e#11531#11707#0" />
+            <element signature="e#11632#11701#1" />
+            <element signature="e#11713#12595#0" />
+            <element signature="e#11838#12588#1" />
+            <element signature="e#12216#12578#1" />
+            <element signature="e#12337#12564#1" />
+            <element signature="e#12601#13470#0" />
+            <element signature="e#12724#13464#1" />
+            <element signature="e#13102#13454#1" />
+            <element signature="e#13213#13440#1" />
+            <element signature="e#13476#14272#0" />
+            <element signature="e#13602#14266#1" />
+            <element signature="e#13980#14256#1" />
+            <element signature="e#14278#14459#0" />
+            <element signature="e#14379#14453#1" />
+            <element signature="e#14465#14650#0" />
+            <element signature="e#14568#14644#1" />
+            <element signature="e#14656#14836#0" />
+            <element signature="e#14760#14830#1" />
+            <element signature="e#14842#15026#0" />
+            <element signature="e#14948#15020#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/liuzg/flutteride/def/treeeditor/TreeGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="70" column="79" selection-start-line="70" selection-start-column="60" selection-end-line="70" selection-end-column="79" />
+          <folding>
+            <element signature="method#MyTreeGenerator#0;class#MyTreeGenerator#0" />
+            <element signature="method#createOrGetTreeNode#0;class#MyTreeGenerator#0" />
+            <element signature="method#createOrGetTreeNode#1;class#MyTreeGenerator#0" />
+            <element signature="method#createOrGetTreeNode#2;class#MyTreeGenerator#0" />
+            <element signature="method#generateOrderedVisibleTreeNodes#0;class#MyTreeGenerator#0" />
+            <element signature="method#generateControls#0;class#MyTreeGenerator#0" />
           </folding>
         </state>
       </provider>

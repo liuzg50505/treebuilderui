@@ -15,8 +15,8 @@
 
     </treenodes>
     <valueeditors>
-        <editor type="String" editorclass="com.liuzg.editorui.StringEditor"/>
-        <editor type="AlignEnum" enum="Align" editorclass="com.liuzg.editorui.ComboEditor"/>
+        <editor type="String" editorclass="com.liuzg.flutteride.editorui.StringEditor"/>
+        <editor type="AlignEnum" enum="Align" editorclass="com.liuzg.flutteride.editorui.ComboEditor"/>
     </valueeditors>
     <enums>
         <enum name="Align">

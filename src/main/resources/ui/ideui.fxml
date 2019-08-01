@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.liuzg.def.MyTreeEditor?>
-<?import com.liuzg.ui.ProjectTreeView?>
+<?import com.liuzg.flutteride.def.treeeditor.TreeEditor?>
+<?import com.liuzg.flutteride.ui.ProjectTreeView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
@@ -24,7 +24,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="1043.0" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liuzg.ui.IDEController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="644.0" prefWidth="1043.0" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.liuzg.flutteride.ui.IDEController">
     <top>
         <BorderPane>
             <top>
@@ -238,7 +238,7 @@
                                         <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <center>
                                                 <ScrollPane fitToWidth="true" hbarPolicy="NEVER">
-                                                    <MyTreeEditor fx:id="treenodeEditor"  lineHeight="25" BorderPane.alignment="CENTER" />
+                                                    <TreeEditor fx:id="treenodeEditor" lineHeight="25" BorderPane.alignment="CENTER" />
                                                 </ScrollPane>
                                             </center>
                                             <top>

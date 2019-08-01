@@ -1,4 +1,6 @@
-import com.liuzg.def.*;
+import com.liuzg.flutteride.def.*;
+import com.liuzg.flutteride.def.reader.DefinitionReader;
+import com.liuzg.flutteride.def.reader.Dom4JDefinitionReader;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -83,8 +85,8 @@ public class DefTest {
         Element root = document.getRootElement();
         Element widgetroot = (Element) root.elements().get(0);
 
-        WidgetBuilder widgetBuilder = new WidgetBuilder(definitionManager);
-        Instance instance = widgetBuilder.buildWidgetCode(widgetroot);
+        InstanceBuilder instanceBuilder = new InstanceBuilder(definitionManager);
+        Instance instance = instanceBuilder.buildWidgetCode(widgetroot);
         System.out.println(instance.generateCode());
 
     }
